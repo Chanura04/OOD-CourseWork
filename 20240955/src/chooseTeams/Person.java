@@ -1,9 +1,9 @@
-package getPlayerDetails;
+package chooseTeams;
 
 public abstract class Person {
-    public String id;
-    public String name;
-    public String email;
+    protected String id;
+    protected String name;
+    protected String email;
 
     public Person(String id, String name, String email) {
         this.id = id;

@@ -1,13 +1,13 @@
-package getPlayerDetails;
+package chooseTeams;
 
 
 public class Player extends Person {
     // Each player personal details
 
-    public String preferredRole;
-    public String personalityType;
-    public int skillLevel;
-    public String interestSport;
+    private String preferredRole;
+    private String personalityType;
+    private int skillLevel;
+    private String interestSport;
 
     //Player class constructor
     public Player(String id, String name, String email, String preferredRole, String personalityType, int skillLevel, String interestSport) {
