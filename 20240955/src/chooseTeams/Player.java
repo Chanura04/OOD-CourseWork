@@ -71,6 +71,21 @@ public class Player extends Person {
         return totalScore;
     }
 
-    
+    public String checkPersonalityType(){
+        int score= getTotalScore();
+        if(score>=90){
+            return "Leader";
+        }
+        else if(score>=70){
+            return "Balanced";
+        }
+        else if(score>=50){
+            return "Thinker";
+        }
+        else{
+            return "Nan";
+        }
+
+    }
 
 }
