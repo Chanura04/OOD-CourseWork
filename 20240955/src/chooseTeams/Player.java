@@ -3,7 +3,7 @@ package chooseTeams;
 
 public class Player extends Person {
     // Each player personal details
-
+    private int totalScore;
     private String preferredRole;
     private String personalityType;
     private int skillLevel;
@@ -55,9 +55,22 @@ public class Player extends Person {
     public void setInterestSport(String interestSport){
         this.interestSport = interestSport;
     }
+    public int getTotalScore(){
+        return totalScore;
+    }
+    public void setTotalScore(int totalScore){
+        this.totalScore = totalScore;
+    }
     public String toString(){
         return "Player ID: " + id + "\n" + "Player Name: " + name + "\n" + "Player Email: " + email + "\n" + "Player Preferred Role: " + preferredRole + "\n" + "Player Personality Type: " + personalityType + "\n" + "Player Skill Level: " + skillLevel + "\n" + "Player Interest Sport: " + interestSport;
     }
 
+    public int calculateTotalScore(int q1_ans, int q2_ans, int q3_ans, int q4_ans, int q5_ans){
+        totalScore = (q1_ans + q2_ans + q3_ans + q4_ans + q5_ans) *4;
+        setTotalScore(totalScore);
+        return totalScore;
+    }
+
+    
 
 }
