@@ -102,6 +102,15 @@ public class Player extends Person {
         System.out.println("Player Data Stored Successfully");
     }
 
+    public int getStoredLastId(){
+       ArrayList<String> loadPlayerData=getPlayerData();
+       String lastPlayer=loadPlayerData.getLast();
+       String[] playerData=lastPlayer.split(",");
+       String id=playerData[3];
+       String idValue=id.split("P")[1];
+        return Integer.parseInt(idValue);
+
+    }
 
     public ArrayList<String> getPlayerData(){
         String filePath = "./data/participants_sample.csv";
