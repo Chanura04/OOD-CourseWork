@@ -3,6 +3,7 @@ package chooseTeams;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,19 +17,24 @@ public class Player extends Person {
     private String personalityType;
     private int skillLevel;
     private String interestSport;
+    private String id;
 
     //Player class constructor
-    public Player(String id, String name, String email, String preferredRole, String personalityType, int skillLevel, String interestSport) {
-        super(id, name, email);
+    public Player( String name, String email, String preferredRole, String personalityType, int skillLevel, String interestSport) {
+        super( name, email);
         this.preferredRole = preferredRole;
+        setId(newPlayerId());
         this.personalityType = personalityType;
         this.skillLevel = skillLevel;
         this.interestSport = interestSport;
     }
 
-    @Override
+
     public void setId(String id) {
         this.id = id;
+    }
+    public String getId(){
+        return id;
     }
     @Override
     public void setName(String name) {
@@ -97,23 +103,52 @@ public class Player extends Person {
     }
 
     //Store player data into a csv file
-    public void storePlayerData(){
+    public void storeNewPlayerData(){
         //save to csv file
-        System.out.println("Player Data Stored Successfully");
+        try (FileWriter writer = new FileWriter("students_loop.csv", true)) {
+            String[] data={
+                    getId(),getName(),getEmail(),getInterestSport(), String.valueOf(getSkillLevel()),getPreferredRole(), String.valueOf(getTotalScore()),getPersonalityType()
+            };
+            writer.append(String.join(",", data));
+            writer.append("\n");
+
+
+
+
+            System.out.printf("%s successfully added!",getName());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public int getStoredLastId(){
        ArrayList<String> loadPlayerData=getPlayerData();
+       if(loadPlayerData.isEmpty()){
+           return -1;
+       }
        String lastPlayer=loadPlayerData.getLast();
        String[] playerData=lastPlayer.split(",");
        String id=playerData[3];
        String idValue=id.split("P")[1];
-        return Integer.parseInt(idValue);
+       System.out.println("Last"+idValue);
 
+       return Integer.parseInt(idValue);
+    }
+
+    public String newPlayerId(){
+        int previousId=getStoredLastId();
+        if(previousId==-1){
+            setId("P1");
+        }
+        System.out.println(previousId);
+        setId("P"+(previousId + 1));
+        return "P"+(previousId + 1);
     }
 
     public ArrayList<String> getPlayerData(){
-        String filePath = "./data/participants_sample.csv";
+//        String filePath = "./data/participants_sample.csv";
+        String filePath = "students_loop.csv";
         String line;
         Map<String, String> player = new HashMap<>();
 

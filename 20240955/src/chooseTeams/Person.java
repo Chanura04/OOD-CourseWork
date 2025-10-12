@@ -1,25 +1,23 @@
 package chooseTeams;
 
 public abstract class Person {
-    protected String id;
+
     protected String name;
     protected String email;
 
-    public Person(String id, String name, String email) {
-        this.id = id;
+    public Person( String name, String email) {
+
         this.name = name;
         this.email = email;
     }
-    public String getId(){
-        return id;
-    }
+
     public String getName(){
         return name;
     }
     public String getEmail(){
         return email;
     }
-    public abstract void setId(String id);
+
     public abstract void setName(String name);
     public abstract void setEmail(String email);
 
