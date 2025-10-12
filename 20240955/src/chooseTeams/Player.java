@@ -128,9 +128,9 @@ public class Player extends Person {
        if(loadPlayerData.isEmpty()){
            return -1;
        }
-       String lastPlayer=loadPlayerData.getLast();
+       String lastPlayer= loadPlayerData.getLast();
        String[] playerData=lastPlayer.split(",");
-       String id=playerData[3];
+       String id=playerData[0];
        String idValue=id.split("P")[1];
        System.out.println("Last"+idValue);
 
@@ -142,7 +142,7 @@ public class Player extends Person {
         if(previousId==-1){
             setId("P1");
         }
-        System.out.println(previousId);
+
         setId("P"+(previousId + 1));
         return "P"+(previousId + 1);
     }

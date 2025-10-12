@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,23 +13,26 @@ public class PlayerDataLoader {
 //        String filePath = "./data/participants_sample.csv";
         String filePath = "students_loop.csv";
         String line;
-        Map<String, String> player = new HashMap<>();
+        String[] player=new String[8];
 
         ArrayList<String> playerData = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(",");
-                player.put("id", values[0]);
-                player.put("name", values[1]);
-                player.put("email", values[2]);
-                player.put("preferredGame", values[3]);
-                player.put("skillLevel", values[4]);
-                player.put("preferredRole", values[5]);
-                player.put("personalityScore", values[6]);
-                player.put("personalityType", values[7]);
+                player[0]=values[0];
+                player[1]=values[1];
+                player[2]=values[2];
+                player[3]=values[3];
+                player[4]=values[4];
+                player[5]=values[5];
+                player[6]=values[6];
+                player[7]=values[7];
 
-                playerData.add(player.toString());
+
+
+
+                playerData.add(Arrays.toString(player));
 
             }
         } catch (IOException e) {
