@@ -1,9 +1,6 @@
 package chooseTeams;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Objects;
-import java.util.Random;
+import java.util.*;
 
 
 public class TeamMembersSelection {
@@ -131,8 +128,13 @@ public class TeamMembersSelection {
 
             // ensure it is exactly 5 members before storing
             if (team.size() == 5) {
+                if(!isThirdIndexValid(team)){
+                    System.out.println("Team is not valid: " + team);
+                    continue;
+                }
                 allTeams.add(team);
                 System.out.println("Created Team: " + team);
+
             } else {
                 // handle unexpected selection problems (log and break to avoid infinite loops)
                 System.err.println("Unexpected team size: " + team.size());
@@ -152,9 +154,43 @@ public class TeamMembersSelection {
         System.out.println("\nAll Teams Formed: " + allTeams);
         System.out.println("Total Teams: " + allTeams.size());
         System.out.println("Remaining Leaders: " + cp_leaders);
+        System.out.println("leaders.size():" + cp_leaders.size());
         System.out.println("Remaining Balancers: " + cp_balancers);
+        System.out.println("Balancers.size():" + cp_balancers.size());
         System.out.println("Remaining Thinker: " + cp_thinkers);
+        System.out.println("Thinkers.size():" + cp_thinkers.size());
+        checkEachFormedTeamSkillSum();
+        finalTeamsSelection();
     }
+
+
+    double average=0;
+    ArrayList<ArrayList<String>> remainingTeams=new ArrayList<>();
+    public void checkEachFormedTeamSkillSum(){
+        int totalSum =0;
+        int teamSize=allTeams.size();
+        for(int i=0;i<allTeams.size();i++){
+            ArrayList<String> team=allTeams.get(i);
+            int teamSkillSum=0;
+            for(int j=0;j<team.size();j++){
+                String raw = team.get(j).replace("[", "").replace("]", "").trim();
+                String[] fields = raw.split(",");
+                String getSkillValue = fields[4].trim();
+                int skillValue=Integer.parseInt(getSkillValue);
+                teamSkillSum+=skillValue;
+            }
+            System.out.println("Team "+(i+1)+" skill sum:"+teamSkillSum);
+            totalSum +=teamSkillSum;
+
+        }
+        System.out.println(teamSize);
+        System.out.println("Total skill average:"+totalSum / teamSize);
+
+
+        
+
+    }
+
 
 
 }
