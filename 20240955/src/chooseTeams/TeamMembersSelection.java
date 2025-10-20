@@ -163,7 +163,23 @@ public class TeamMembersSelection {
         finalTeamsSelection();
     }
 
+    private boolean isThirdIndexValid(ArrayList<String> team) {
+        HashMap<String, Integer> countMap = new HashMap<>();
 
+        for (String player : team) {
+            String raw = player.replace("[", "").replace("]", "").trim();
+            String[] fields = raw.split(",");
+
+            if (fields.length > 3) {
+                String thirdValue = fields[3].trim();
+                countMap.put(thirdValue, countMap.getOrDefault(thirdValue, 0) + 1);
+                if (countMap.get(thirdValue) > 2) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
     double average=0;
     ArrayList<ArrayList<String>> remainingTeams=new ArrayList<>();
     public void checkEachFormedTeamSkillSum(){
@@ -219,7 +235,6 @@ public class TeamMembersSelection {
 
 
     }
-
 
 
 }
