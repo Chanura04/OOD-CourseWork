@@ -235,6 +235,78 @@ public class TeamMembersSelection {
 
 
     }
+    public void finalTeamsSelection(){
+        ArrayList<String> remainingPlayers = new ArrayList<>();
+        ArrayList<String> combinedRemainingPlayers = new ArrayList<>();
+
+
+        remainingPlayers.addAll(cp_leaders);
+        remainingPlayers.addAll(cp_balancers);
+        remainingPlayers.addAll(cp_thinkers);
+
+        for (ArrayList<String> team : remainingTeams) {
+            combinedRemainingPlayers.addAll(team);
+        }
+
+// Add your single remaining players
+        combinedRemainingPlayers.addAll(remainingPlayers);
+
+        System.out.println("Total combined remaining players: " + combinedRemainingPlayers.size());
+        HandleRemainingPlayers handleRemainingPlayers=new HandleRemainingPlayers();
+        System.out.println("\n\n\n\n\n");
+        handleRemainingPlayers.remainingTeamsCategorizeByPersonalityType(combinedRemainingPlayers, average);
+
+    }
 
 
 }
+
+
+
+
+
+
+
+
+
+//need to implement
+//merge remainigselected palyers with this
+//Ensure at least 3 different roles per team (more if team size > 5).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//
+//// number of teams
+//int teamsCount = allTeams.size();
+//
+//// get 1st team's 3rd member (indexing from 0)
+//String member = allTeams.get(0).get(2);
+//
+//// iterate and print nicely
+//for (int i = 0; i < allTeams.size(); i++) {
+//        System.out.println("Team " + (i + 1) + ":");
+//ArrayList<String> t = allTeams.get(i);
+//    for (int j = 0; j < t.size(); j++) {
+//        System.out.println("  member " + (j + 1) + ": " + t.get(j));
+//        }
+//        }
