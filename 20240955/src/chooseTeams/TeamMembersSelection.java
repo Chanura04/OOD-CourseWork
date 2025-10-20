@@ -2,20 +2,18 @@ package chooseTeams;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Random;
 
 
 public class TeamMembersSelection {
+    private ArrayList<String> all_leaders=new ArrayList<>();
+    private ArrayList<String> all_balancers=new ArrayList<>();
+    private ArrayList<String> all_thinkers=new ArrayList<>();
 
 
-    public void categorize_personality(){
+    public void categorizeByPersonalityType(){
         PlayerDataLoader playerDataLoader=new PlayerDataLoader();
 
-        ArrayList<String> all_leaders=new ArrayList<>();
-        ArrayList<String> all_balancers=new ArrayList<>();
-        ArrayList<String> all_thinkers=new ArrayList<>();
-
-
-        ArrayList<String> player_all_personalityType=new ArrayList<>();
 
 
         ArrayList<String> playerData = playerDataLoader.getPlayerData();
@@ -33,17 +31,51 @@ public class TeamMembersSelection {
             }
         }
 
-
-
-
-
-
-
-        System.out.println("all_thinkers:"+all_thinkers);
-        System.out.println("all_balancers:"+all_balancers);
-        System.out.println("all_leaders:"+all_leaders);
-        System.out.println(all_thinkers.size()+all_balancers.size()+all_leaders.size());
+//        System.out.println("all_thinkers:"+all_thinkers);
+//        System.out.println("all_balancers:"+all_balancers);
+//        System.out.println("all_leaders:"+all_leaders);
+//        System.out.println(all_thinkers.size()+all_balancers.size()+all_leaders.size());
 
     }
+
+    public void checkSkillAverageValue(){
+        PlayerDataLoader playerDataLoader=new PlayerDataLoader();
+
+        ArrayList<String> playerData = playerDataLoader.getPlayerData();
+        int totalSkillValue=0;
+        for(int i=1;i<playerData.size();i++){
+            String raw = playerData.get(i).replace("[", "").replace("]", "").trim();
+            String[] fields = raw.split(",");
+            String getSkillValue = fields[4].trim();
+            int skillValue=Integer.parseInt(getSkillValue);
+            totalSkillValue+=skillValue;
+        }
+        float averageSkillValue= (float) totalSkillValue /playerData.size();
+        System.out.println("averageSkillValue:"+averageSkillValue);
+
+    }
+// Maximum two from the same game for per team
+    public void getOneLeader(){
+        categorizeByPersonalityType();
+
+        ArrayList<String> cp_leaders=all_leaders;
+        ArrayList<String> cp_balancers=all_balancers;
+        ArrayList<String> cp_thinkers=all_thinkers;
+
+        ArrayList<String> selectedThinkers=new ArrayList<>();
+        ArrayList<String> selectedBalancers=new ArrayList<>();
+        ArrayList<String> selectedLeaders=new ArrayList<>();
+        Random rand = new Random();
+
+
+        String getRandomValueForLeader= cp_leaders.get(rand.nextInt(cp_leaders.size()));
+
+
+
+        System.out.println("getRandomValueForLeader:"+getRandomValueForLeader);
+
+
+    }
+
 
 }
