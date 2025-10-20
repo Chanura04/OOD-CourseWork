@@ -132,7 +132,7 @@ public class Player extends Person {
        String[] playerData=lastPlayer.split(",");
        String id=playerData[0];
        String idValue=id.split("P")[1];
-       System.out.println("Last"+idValue);
+//       System.out.println("Last"+idValue);
 
        return Integer.parseInt(idValue);
     }
