@@ -187,7 +187,36 @@ public class TeamMembersSelection {
         System.out.println("Total skill average:"+totalSum / teamSize);
 
 
-        
+        average = (double) totalSum / teamSize;
+
+        ArrayList<ArrayList<String>> selectedTeamsInFirstFilter=new ArrayList<>();
+
+
+        for(int i=0;i<allTeams.size();i++){
+            ArrayList<String> team=allTeams.get(i);
+            int teamSkillSum=0;
+            for(int j=0;j<team.size();j++){
+                String raw = team.get(j).replace("[", "").replace("]", "").trim();
+                String[] fields = raw.split(",");
+                String getSkillValue = fields[4].trim();
+                int skillValue=Integer.parseInt(getSkillValue);
+                teamSkillSum+=skillValue;
+            }
+            if(teamSkillSum>=average){
+                selectedTeamsInFirstFilter.add(team);
+            }else{
+                remainingTeams.add(team);
+            }
+        }
+        System.out.println("Selected Teams In First Filter:"+selectedTeamsInFirstFilter);
+        System.out.println("selectedTeamsInFirstFilter.size():"+selectedTeamsInFirstFilter.size());
+
+        System.out.println("Remaining Teams:"+remainingTeams);
+        System.out.println("remainingTeams.size():"+remainingTeams.size());
+
+
+//        HandleRemainingPlayers handleRemainingPlayers=new HandleRemainingPlayers();
+
 
     }
 
