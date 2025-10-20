@@ -107,5 +107,54 @@ public class TeamMembersSelection {
 //        System.out.println("Selected Balancers: " + selectedBalancers);
     }
 
+    // Field to store all teams
+    private ArrayList<ArrayList<String>> allTeams = new ArrayList<>();
+
+    public void createFiveMembersTeam() {
+        // keep forming teams while there are enough people
+        while (cp_thinkers.size() >= 2 && cp_balancers.size() >= 2 && cp_leaders.size() >= 1) {
+            // Clear per-selection lists
+            selectedLeaders.clear();
+            selectedThinkers.clear();
+            selectedBalancers.clear();
+
+            // pick members (use your corrected getLeader/getThinker/getBalancers methods)
+            getLeader();     // should fill selectedLeaders with 1 element
+            getBalancers();  // should fill selectedBalancers with 2 elements
+            getThinker();    // should fill selectedThinkers with 2 elements
+
+            // create a proper team list (NOT a single concatenated string)
+            ArrayList<String> team = new ArrayList<>();
+            team.addAll(selectedLeaders);
+            team.addAll(selectedBalancers);
+            team.addAll(selectedThinkers);
+
+            // ensure it is exactly 5 members before storing
+            if (team.size() == 5) {
+                allTeams.add(team);
+                System.out.println("Created Team: " + team);
+            } else {
+                // handle unexpected selection problems (log and break to avoid infinite loops)
+                System.err.println("Unexpected team size: " + team.size());
+                break;
+            }
+
+            // remove selected members from the original pools so they can't be reused
+            cp_leaders.removeAll(selectedLeaders);
+            cp_balancers.removeAll(selectedBalancers);
+            cp_thinkers.removeAll(selectedThinkers);
+        }
+
+
+        System.out.println("\nAll teams created: " + allTeams.size());
+
+
+        System.out.println("\nAll Teams Formed: " + allTeams);
+        System.out.println("Total Teams: " + allTeams.size());
+        System.out.println("Remaining Leaders: " + cp_leaders);
+        System.out.println("Remaining Balancers: " + cp_balancers);
+        System.out.println("Remaining Thinker: " + cp_thinkers);
+    }
+
 
 }
