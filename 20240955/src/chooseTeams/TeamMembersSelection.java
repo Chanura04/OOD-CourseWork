@@ -10,6 +10,9 @@ public class TeamMembersSelection {
     private ArrayList<String> all_balancers=new ArrayList<>();
     private ArrayList<String> all_thinkers=new ArrayList<>();
 
+    public TeamMembersSelection() {
+        categorizeByPersonalityType();
+    }
 
     public void categorizeByPersonalityType(){
         PlayerDataLoader playerDataLoader=new PlayerDataLoader();
@@ -55,14 +58,14 @@ public class TeamMembersSelection {
 
     }
 // Maximum two from the same game for per team
-    public void getOneLeader(){
+    public void getLeader(){
         categorizeByPersonalityType();
 
         ArrayList<String> cp_leaders=all_leaders;
         ArrayList<String> cp_balancers=all_balancers;
-        ArrayList<String> cp_thinkers=all_thinkers;
 
-        ArrayList<String> selectedThinkers=new ArrayList<>();
+
+
         ArrayList<String> selectedBalancers=new ArrayList<>();
         ArrayList<String> selectedLeaders=new ArrayList<>();
         Random rand = new Random();
@@ -75,6 +78,27 @@ public class TeamMembersSelection {
         System.out.println("getRandomValueForLeader:"+getRandomValueForLeader);
 
 
+    }
+
+    public void getThinker(){
+        int thinkersCount=2;
+//        categorizeByPersonalityType();
+        ArrayList<String> cp_thinkers=all_thinkers;
+        ArrayList<String> selectedThinkers=new ArrayList<>();
+
+        Random rand = new Random();
+        int track=1;
+
+        while(track<=thinkersCount){
+            String getRandomValueForThinker = cp_thinkers.get(rand.nextInt(cp_thinkers.size()));
+            if( !selectedThinkers.contains(getRandomValueForThinker)) {
+                selectedThinkers.add(getRandomValueForThinker);
+                track++;
+            }else{
+                getThinker();
+            }
+        }
+        System.out.println("getRandomValueForThinker:"+selectedThinkers.toString());
     }
 
 
