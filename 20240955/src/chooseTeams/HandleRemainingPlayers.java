@@ -8,7 +8,10 @@ public class HandleRemainingPlayers {
     private ArrayList<String> remaining_all_leaders = new ArrayList<>();
     private ArrayList<String> remaining_all_balancers = new ArrayList<>();
     private ArrayList<String> remaining_all_thinkers = new ArrayList<>();
+    private boolean hasTeam=false;
 
+
+    public ArrayList<ArrayList<String>> newTeams = new ArrayList<>();
     public void remainingTeamsCategorizeByPersonalityType(ArrayList<String> remainingPlayers, double avgSkillValue) {
 
         for (String player : remainingPlayers) {
@@ -32,43 +35,88 @@ public class HandleRemainingPlayers {
         System.out.println("Remaining Thinkers: " + remaining_all_thinkers.size());
 
 
+
         createNewTeams(avgSkillValue);
+//        while(!isTrue){
+//            createNewTeams(avgSkillValue);
+//        }
     }
 
     private void createNewTeams(double avgSkillValue) {
-        ArrayList<ArrayList<String>> newTeams = new ArrayList<>();
+        double avg=avgSkillValue;
+        int retryLimit = 50000000; // avoid infinite loop
+        int retryCount = 0;
         Random rand = new Random();
 
-        while (remaining_all_leaders.size() >= 1 &&
+
+
+        while (remaining_all_leaders.size() > 1 &&
                 remaining_all_balancers.size() >= 2 &&
                 remaining_all_thinkers.size() >= 2) {
 
-            ArrayList<String> newTeam = new ArrayList<>();
+            if (retryCount++ > retryLimit) {
+                System.out.println("⚠️ Breaking loop due to too many retries (no valid teams left).");
+                break;
+            }
 
-            newTeam.add(remaining_all_leaders.remove(rand.nextInt(remaining_all_leaders.size())));
-            newTeam.add(remaining_all_balancers.remove(rand.nextInt(remaining_all_balancers.size())));
-            newTeam.add(remaining_all_balancers.remove(rand.nextInt(remaining_all_balancers.size())));
-            newTeam.add(remaining_all_thinkers.remove(rand.nextInt(remaining_all_thinkers.size())));
-            newTeam.add(remaining_all_thinkers.remove(rand.nextInt(remaining_all_thinkers.size())));
+            ArrayList<String> newTeam = new ArrayList<>();
+            int randomIndexForLeaders = rand.nextInt(remaining_all_leaders.size());
+            int randomIndexForBalancers1 = rand.nextInt(remaining_all_balancers.size());
+            int randomIndexForBalancers2 = rand.nextInt(remaining_all_balancers.size());
+            while (randomIndexForBalancers2 == randomIndexForBalancers1 && remaining_all_balancers.size() > 1) {
+                randomIndexForBalancers2 = rand.nextInt(remaining_all_balancers.size());
+            }
+
+            int randomIndexForThinkers1 = rand.nextInt(remaining_all_thinkers.size());
+            int randomIndexForThinkers2 = rand.nextInt(remaining_all_thinkers.size());
+            while (randomIndexForThinkers2 == randomIndexForThinkers1 && remaining_all_thinkers.size() > 1) {
+                randomIndexForThinkers2 = rand.nextInt(remaining_all_thinkers.size());
+            }
+
+
+            newTeam.add(remaining_all_leaders.get(randomIndexForLeaders));
+            newTeam.add(remaining_all_balancers.get(randomIndexForBalancers1));
+            newTeam.add(remaining_all_balancers.get(randomIndexForBalancers2));
+            newTeam.add(remaining_all_thinkers.get(randomIndexForThinkers1));
+            newTeam.add(remaining_all_thinkers.get(randomIndexForThinkers2));
 
 
             if (!isThirdIndexValid(newTeam)) {
-                System.out.println("⚠️ Discarded team (more than 2 players share same 3rd index): " + newTeam);
                 continue; // Skip this team and try forming another
             }
 
             int teamSkillSum = calculateSkillSum(newTeam);
 
-            if (teamSkillSum >= avgSkillValue) {
+            double maxValue=avgSkillValue+3;
+            double minValue=avgSkillValue-3;
+
+
+            if (teamSkillSum >= minValue && teamSkillSum <= maxValue) {
                 newTeams.add(newTeam);
                 System.out.println("✅ New formed team (sum ≥ avg): " + newTeam);
-            } else {
-                System.out.println("⚠️ Discarded team (below avg): " + teamSkillSum);
-            }
+                remaining_all_leaders.remove(newTeam.get(0));
+                remaining_all_balancers.remove(newTeam.get(1));
+                remaining_all_balancers.remove(newTeam.get(2));
+                remaining_all_thinkers.remove(newTeam.get(3));
+                remaining_all_thinkers.remove(newTeam.get(4));
+                retryCount = 0;
+              }
+
+
+
         }
+        System.out.println("Remaining Leaders: " + remaining_all_leaders.size());
+        System.out.println("Remaining Balancers: " + remaining_all_balancers.size());
+        System.out.println("Remaining Thinkers: " + remaining_all_thinkers.size());
+        System.out.println(remaining_all_balancers);
+        System.out.println(remaining_all_thinkers);
+        System.out.println(remaining_all_leaders);
 
         System.out.println("\nTotal new teams formed from remaining players: " + newTeams.size());
     }
+
+
+
     private boolean isThirdIndexValid(ArrayList<String> team) {
         HashMap<String, Integer> countMap = new HashMap<>();
 
