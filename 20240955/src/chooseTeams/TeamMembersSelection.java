@@ -218,7 +218,11 @@ public class TeamMembersSelection {
                 int skillValue=Integer.parseInt(getSkillValue);
                 teamSkillSum+=skillValue;
             }
-            if(teamSkillSum>=average){
+
+            double maxValue=average+3;
+            double minValue=average-3;
+
+            if( teamSkillSum >= minValue && teamSkillSum <= maxValue){
                 selectedTeamsInFirstFilter.add(team);
             }else{
                 remainingTeams.add(team);
