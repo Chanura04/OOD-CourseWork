@@ -1,5 +1,7 @@
 package chooseTeams;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 
@@ -18,7 +20,9 @@ public class TeamMembersSelection {
     private ArrayList<String> selectedThinkers=new ArrayList<>();
     private ArrayList<String> selectedLeaders=new ArrayList<>();
 
+    private ArrayList<ArrayList<String>> selectedTeamsInFirstFilter=new ArrayList<>();
 
+    private ArrayList<ArrayList<String>> finalTeamCombination=new ArrayList<>();
 
     public TeamMembersSelection() {
         categorizeByPersonalityType();
@@ -205,7 +209,7 @@ public class TeamMembersSelection {
 
         average = (double) totalSum / teamSize;
 
-        ArrayList<ArrayList<String>> selectedTeamsInFirstFilter=new ArrayList<>();
+
 
 
         for(int i=0;i<allTeams.size();i++){
@@ -258,9 +262,38 @@ public class TeamMembersSelection {
         System.out.println("Total combined remaining players: " + combinedRemainingPlayers.size());
         HandleRemainingPlayers handleRemainingPlayers=new HandleRemainingPlayers();
         System.out.println("\n\n\n\n\n");
-        handleRemainingPlayers.remainingTeamsCategorizeByPersonalityType(combinedRemainingPlayers, average);
-
+        ArrayList<ArrayList<String>> handledRemainingTeams=handleRemainingPlayers.remainingTeamsCategorizeByPersonalityType(combinedRemainingPlayers, average);
+        System.out.println("Handled teams are: ");
+        finalTeamCombination.addAll(handledRemainingTeams);
+        finalTeamCombination.addAll(selectedTeamsInFirstFilter);
+        System.out.println("Final teams combination: "+finalTeamCombination);
+        System.out.println("Final teams combination size: "+finalTeamCombination.size());
+        writeFinalTeamsOnCsvFile();
     }
+
+    public void writeFinalTeamsOnCsvFile(){
+        int teamNumber=0;
+        try (FileWriter writer = new FileWriter("output_result.csv")) {
+            writer.write("ID,Name,Email,PreferredGame,SkillLevel,PreferredRole,PersonalityScore,PersonalityType,TeamNumber");
+            writer.write("\n");
+
+            for (ArrayList<String> group : finalTeamCombination) {
+                teamNumber++;
+                for (String row : group) {
+                    String no=","+teamNumber;
+                    row = row.replace("[", "").replace("]", no).trim();
+
+                    writer.write(String.join(",", row));
+
+                    writer.write("\n");
+                }
+            }
+            System.out.println("CSV file written successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 }
