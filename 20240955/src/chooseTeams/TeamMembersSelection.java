@@ -5,12 +5,12 @@ import java.io.IOException;
 import java.util.*;
 
 
-public class TeamMembersSelection {
+public class TeamMembersSelection implements TeamSelection {
+    private int teamPlayerCount;
 
     private ArrayList<String> all_leaders=new ArrayList<>();
     private ArrayList<String> all_balancers=new ArrayList<>();
     private ArrayList<String> all_thinkers=new ArrayList<>();
-
 
     private  ArrayList<String> cp_leaders=all_leaders;
     private  ArrayList<String> cp_balancers=all_balancers;
@@ -21,14 +21,20 @@ public class TeamMembersSelection {
     private ArrayList<String> selectedLeaders=new ArrayList<>();
 
     private ArrayList<ArrayList<String>> selectedTeamsInFirstFilter=new ArrayList<>();
-
     private ArrayList<ArrayList<String>> finalTeamCombination=new ArrayList<>();
 
-    public TeamMembersSelection() {
+    private double average=0;
+    private ArrayList<ArrayList<String>> remainingTeams=new ArrayList<>();
+
+    public TeamMembersSelection(int teamPlayerCount) {
+        this.teamPlayerCount = teamPlayerCount;
         categorizeByPersonalityType();
+
     }
 
     public void categorizeByPersonalityType(){
+
+
         PlayerDataLoader playerDataLoader=new PlayerDataLoader();
 
 
@@ -71,7 +77,7 @@ public class TeamMembersSelection {
         System.out.println("averageSkillValue:"+averageSkillValue);
 
     }
-// Maximum two from the same game for per team
+
     public void getLeader() {
         Random rand = new Random();
         selectedLeaders.clear();
@@ -95,11 +101,15 @@ public class TeamMembersSelection {
 //        System.out.println("Selected Thinkers: " + selectedThinkers);
     }
 
-    public void getBalancers() {
+    public void getBalancers(int teamPlayerCount) {
         Random rand = new Random();
         selectedBalancers.clear();
+        int balancerCount=teamPlayerCount-3;
 
-        while (selectedBalancers.size() < 2 && cp_balancers.size() > selectedBalancers.size()) {
+
+
+
+        while (selectedBalancers.size() < balancerCount && cp_balancers.size() > selectedBalancers.size() ) {
             String balancer = cp_balancers.get(rand.nextInt(cp_balancers.size()));
             if (!selectedBalancers.contains(balancer)) {
                 selectedBalancers.add(balancer);
@@ -109,7 +119,7 @@ public class TeamMembersSelection {
     }
 
     // Field to store all teams
-    private ArrayList<ArrayList<String>> allTeams = new ArrayList<>();
+    private final ArrayList<ArrayList<String>> allTeams = new ArrayList<>();
 
     public void createFiveMembersTeam() {
         // keep forming teams while there are enough people
@@ -119,9 +129,9 @@ public class TeamMembersSelection {
             selectedThinkers.clear();
             selectedBalancers.clear();
 
-            // pick members (use your corrected getLeader/getThinker/getBalancers methods)
+            // pick members
             getLeader();     // should fill selectedLeaders with 1 element
-            getBalancers();  // should fill selectedBalancers with 2 elements
+            getBalancers(teamPlayerCount);  // should fill selectedBalancers with 2 elements
             getThinker();    // should fill selectedThinkers with 2 elements
 
             // create a proper team list (NOT a single concatenated string)
@@ -131,13 +141,13 @@ public class TeamMembersSelection {
             team.addAll(selectedThinkers);
 
             // ensure it is exactly 5 members before storing
-            if (team.size() == 5) {
-                if(!isThirdIndexValid(team)){
-                    System.out.println("Team is not valid: " + team);
+            if (team.size() == teamPlayerCount) {
+                if(!isGameCountValid(team)){
+//                    System.out.println("Team is not valid: " + team);
                     continue;
                 }
                 allTeams.add(team);
-                System.out.println("Created Team: " + team);
+//                System.out.println("Created Team: " + team);
 
             } else {
                 // handle unexpected selection problems (log and break to avoid infinite loops)
@@ -166,8 +176,8 @@ public class TeamMembersSelection {
         checkEachFormedTeamSkillSum();
         finalTeamsSelection();
     }
-
-    private boolean isThirdIndexValid(ArrayList<String> team) {
+//Maximum 2 from same game per team
+    public boolean isGameCountValid(ArrayList<String> team) {
         HashMap<String, Integer> countMap = new HashMap<>();
 
         for (String player : team) {
@@ -184,8 +194,7 @@ public class TeamMembersSelection {
         }
         return true;
     }
-    double average=0;
-    ArrayList<ArrayList<String>> remainingTeams=new ArrayList<>();
+
     public void checkEachFormedTeamSkillSum(){
         int totalSum =0;
         int teamSize=allTeams.size();
@@ -260,7 +269,7 @@ public class TeamMembersSelection {
         combinedRemainingPlayers.addAll(remainingPlayers);
 
         System.out.println("Total combined remaining players: " + combinedRemainingPlayers.size());
-        HandleRemainingPlayers handleRemainingPlayers=new HandleRemainingPlayers();
+        HandleRemainingPlayers handleRemainingPlayers=new HandleRemainingPlayers(teamPlayerCount);
         System.out.println("\n\n\n\n\n");
         ArrayList<ArrayList<String>> handledRemainingTeams=handleRemainingPlayers.remainingTeamsCategorizeByPersonalityType(combinedRemainingPlayers, average);
         System.out.println("Handled teams are: ");
