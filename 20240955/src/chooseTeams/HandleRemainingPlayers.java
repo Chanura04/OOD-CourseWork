@@ -71,6 +71,37 @@ public class HandleRemainingPlayers extends TeamMembersSelection {
         return createTeams();
     }
 
+    @Override
+    public boolean validateTeam( ArrayList<String> team){
+        int leaderCount=0;
+        int balancerCount=0;
+        int thinkerCount=0;
+        boolean isTeamValid=false;
+        for (String player : team) {
+            String raw = player.replace("[", "").replace("]", "").trim();
+            String[] fields = raw.split(",");
+
+            // Defensive check for array length
+            if (fields.length < 8) continue;
+
+            String personalityType = fields[7].trim();
+
+
+
+            switch (personalityType) {
+                case "Leader" -> ++leaderCount;
+                case "Balanced" -> ++balancerCount;
+                case "Thinker" -> ++thinkerCount;
+            }
+        }
+        if(leaderCount==1 && thinkerCount>=2 && balancerCount>=1){
+            isTeamValid=true;
+
+
+        }
+        return isTeamValid;
+    }
+
 
     @Override
     public ArrayList<ArrayList<String>> createTeams() {
@@ -92,10 +123,16 @@ public class HandleRemainingPlayers extends TeamMembersSelection {
 
             ArrayList<String> candidateTeam = tryFormTeam(maxAttempts);
 
+
             if (candidateTeam == null) {
                 consecutiveFailures++;
                 System.out.println("❌ Failed to form team (attempt " + consecutiveFailures +
                         "/" + maxConsecutiveFailures + ")");
+                continue;
+            }
+
+            if(!validateTeam(candidateTeam)){
+                consecutiveFailures++;
                 continue;
             }
 
@@ -135,6 +172,7 @@ public class HandleRemainingPlayers extends TeamMembersSelection {
 
         for (int attempt = 0; attempt < maxAttempts; attempt++) {
             ArrayList<String> team = new ArrayList<>();
+            System.out.println("Wait..processing");
 
             // Try to select 1 leader
             if (remaining_all_leaders.isEmpty()) {
@@ -282,7 +320,7 @@ public class HandleRemainingPlayers extends TeamMembersSelection {
         if (!remaining_all_thinkers.isEmpty()) {
             System.out.println("Remaining Thinkers: " + remaining_all_thinkers);
         }
-
+        System.out.println(newTeams);
         System.out.println("\n✅ Total teams formed: " + newTeams.size());
     }
 }
