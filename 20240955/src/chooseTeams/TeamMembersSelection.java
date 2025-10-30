@@ -8,45 +8,81 @@ import java.util.*;
 public class TeamMembersSelection implements TeamSelection {
     private int teamPlayerCount;
 
-    private ArrayList<String> all_leaders=new ArrayList<>();
-    private ArrayList<String> all_balancers=new ArrayList<>();
-    private ArrayList<String> all_thinkers=new ArrayList<>();
+    private final ArrayList<String> all_leaders=new ArrayList<>();
+    private final ArrayList<String> all_balancers=new ArrayList<>();
+    private final ArrayList<String> all_thinkers=new ArrayList<>();
 
-    private  ArrayList<String> cp_leaders=all_leaders;
-    private  ArrayList<String> cp_balancers=all_balancers;
-    private ArrayList<String> cp_thinkers=all_thinkers;
+    private final ArrayList<String> cp_leaders=all_leaders;
+    private final ArrayList<String> cp_balancers=all_balancers;
+    private final ArrayList<String> cp_thinkers=all_thinkers;
 
-    private ArrayList<String> selectedBalancers=new ArrayList<>();
-    private ArrayList<String> selectedThinkers=new ArrayList<>();
-    private ArrayList<String> selectedLeaders=new ArrayList<>();
+    private final ArrayList<String> selectedBalancers=new ArrayList<>();
+    private final ArrayList<String> selectedThinkers=new ArrayList<>();
+    private final ArrayList<String> selectedLeaders=new ArrayList<>();
 
-    private ArrayList<ArrayList<String>> selectedTeamsInFirstFilter=new ArrayList<>();
-    private ArrayList<ArrayList<String>> finalTeamCombination=new ArrayList<>();
+    private final ArrayList<ArrayList<String>> selectedTeamsInFirstFilter=new ArrayList<>();
+    private final ArrayList<ArrayList<String>> finalTeamCombination=new ArrayList<>();
 
-    private double average=0;
-    private ArrayList<ArrayList<String>> remainingTeams=new ArrayList<>();
+    private double average;
+    private final ArrayList<ArrayList<String>> remainingTeams=new ArrayList<>();
 
     private ArrayList<String> rest_leaders=new ArrayList<>();
     private ArrayList<String> rest_balancers=new ArrayList<>();
     private ArrayList<String> rest_thinkers=new ArrayList<>();
 
-
+    private final ArrayList<ArrayList<String>> allTeams = new ArrayList<>();
     // Constructor for normal usage
+
+    private double maximumSkillAverage;
+    private double minimumSkillAverage;
+
     public TeamMembersSelection(int teamPlayerCount) {
-        this.teamPlayerCount = teamPlayerCount;
-
-
+        this.teamPlayerCount=teamPlayerCount;
     }
 
+
+    public void setMaximumSkillAverage(double maximumSkillAverage) {
+        this.maximumSkillAverage = maximumSkillAverage;
+    }
+    public void setMinimumSkillAverage(double minimumSkillAverage) {
+
+        this.minimumSkillAverage = minimumSkillAverage;
+    }
+    public double getMaximumSkillAverage() {
+        return maximumSkillAverage;
+    }
+    public double getMinimumSkillAverage() {
+        return minimumSkillAverage;
+    }
+
+    public void setTeamPlayerCount(int teamPlayerCount){
+        this.teamPlayerCount=teamPlayerCount;
+    }
+
+    public int getTeamPlayerCount(){
+        return teamPlayerCount;
+    }
     public double getAverage(){
         return average;
+    }
+    public  void setAverage(double average){
+        this.average=average;
     }
 
     public ArrayList<ArrayList<String>> getCreatedTeams() {
         return createTeams();
     }
 
-    
+    public int getRest_leaders(){
+        return rest_leaders.size();
+    }
+
+    public int getRest_balancers(){
+        return rest_balancers.size();
+    }
+    public int getRest_thinkers(){
+        return rest_thinkers.size();
+    }
 
     public void categorizeByPersonalityType(){
 
@@ -90,13 +126,9 @@ public class TeamMembersSelection implements TeamSelection {
 
             String leader = cp_leaders.get(rand.nextInt(cp_leaders.size()));
             selectedLeaders.add(leader);
-
         }
         return selectedLeaders;
-
-
-//        System.out.println("Selected Leader: " + selectedLeaders);
-}
+    }
 
     public ArrayList<String> selectUniqueThinkers(int count) {
         if (!(cp_thinkers.size() < count)) {
@@ -109,19 +141,14 @@ public class TeamMembersSelection implements TeamSelection {
                     selectedThinkers.add(thinker);
                 }
             }
-
         }
         return selectedThinkers;
-
-//        System.out.println("Selected Thinkers: " + selectedThinkers);
     }
 
     public ArrayList<String> selectUniqueBalancers(int count) {
         if (!(cp_balancers.size() < count)) {
             Random rand = new Random();
             selectedBalancers.clear();
-//        int balancerCount=teamPlayerCount-3;
-
 
             while (selectedBalancers.size() < count && cp_balancers.size() > selectedBalancers.size() ) {
                 String balancer = cp_balancers.get(rand.nextInt(cp_balancers.size()));
@@ -129,21 +156,45 @@ public class TeamMembersSelection implements TeamSelection {
                     selectedBalancers.add(balancer);
                 }
             }
-
         }
         return selectedBalancers;
 
 //        System.out.println("Selected Balancers: " + selectedBalancers);
     }
 
-    // Field to store all teams
-    private final ArrayList<ArrayList<String>> allTeams = new ArrayList<>();
+    public boolean validateTeam( ArrayList<String> team){
+        int leaderCount=0;
+        int balancerCount=0;
+        int thinkerCount=0;
+        boolean isTeamValid=false;
+        for (String player : team) {
+            String raw = player.replace("[", "").replace("]", "").trim();
+            String[] fields = raw.split(",");
+
+            // Defensive check for array length
+            if (fields.length < 8) continue;
+
+            String personalityType = fields[7].trim();
+
+            switch (personalityType) {
+                case "Leader" -> ++leaderCount;
+                case "Balanced" -> ++balancerCount;
+                case "Thinker" -> ++thinkerCount;
+            }
+        }
+        if(leaderCount==1 && thinkerCount>=2 && balancerCount>=1){
+            isTeamValid=true;
+        }
+        return isTeamValid;
+    }
+
 
     public ArrayList<ArrayList<String>> createTeams() {
         categorizeByPersonalityType();
         int leaderCount = 1;
         int thinkerCount = 2;
-        int balancerCount = teamPlayerCount - 3;
+        int balancerCount = getTeamPlayerCount() - 3;
+        System.out.println("Player count"+getTeamPlayerCount());
 
         // keep forming teams while there are enough people
         while (cp_thinkers.size() >= 2 && cp_balancers.size() >= 2 && cp_leaders.size() >= 1) {
@@ -152,7 +203,8 @@ public class TeamMembersSelection implements TeamSelection {
             selectedThinkers.clear();
             selectedBalancers.clear();
 
-            // pick members
+
+
 
             selectUniqueLeaders(leaderCount);     // should fill selectedLeaders with 1 element
             selectUniqueBalancers(balancerCount);  // should fill selectedBalancers with 2 elements
@@ -165,14 +217,16 @@ public class TeamMembersSelection implements TeamSelection {
             team.addAll(selectedBalancers);
             team.addAll(selectedThinkers);
 
+            if(!validateTeam(team)){
+                continue;
+            }
+
             // ensure it is exactly 5 members before storing
-            if (team.size() == teamPlayerCount) {
+            if (team.size() == getTeamPlayerCount()) {
                 if(!isGameCountValid(team)){
-//                    System.out.println("Team is not valid: " + team);
                     continue;
                 }
                 allTeams.add(team);
-//                System.out.println("Created Team: " + team);
 
             } else {
                 // handle unexpected selection problems (log and break to avoid infinite loops)
@@ -244,6 +298,8 @@ public class TeamMembersSelection implements TeamSelection {
 
         average = (double) totalSum / teamSize;
 
+        setAverage(average);
+
 
 
 
@@ -260,6 +316,10 @@ public class TeamMembersSelection implements TeamSelection {
 
             double maxValue=average+3;
             double minValue=average-3;
+            setMaximumSkillAverage(maxValue);
+            setMinimumSkillAverage(minValue);
+
+            System.out.println("minimum"+minValue+"maximum"+maxValue);
 
             if( teamSkillSum >= minValue && teamSkillSum <= maxValue){
                 selectedTeamsInFirstFilter.add(team);
@@ -297,7 +357,7 @@ public class TeamMembersSelection implements TeamSelection {
         System.out.println("Total combined remaining players: " + combinedRemainingPlayers.size());
         System.out.println("Combined remaining players: " + combinedRemainingPlayers.get(2));
 
-        HandleRemainingPlayers handleRemainingPlayers=new HandleRemainingPlayers(teamPlayerCount,combinedRemainingPlayers, average);
+        HandleRemainingPlayers handleRemainingPlayers=new HandleRemainingPlayers(getTeamPlayerCount(),combinedRemainingPlayers, average);
         System.out.println("\n\n\n\n\n");
         ArrayList<ArrayList<String>> handledRemainingTeams=handleRemainingPlayers.getCreatedTeams();
 
@@ -317,7 +377,7 @@ public class TeamMembersSelection implements TeamSelection {
 
     public void writeFinalTeamsOnCsvFile(){
         int teamNumber=0;
-        try (FileWriter writer = new FileWriter("output_result.csv")) {
+        try (FileWriter writer = new FileWriter("formed_teams.csv")) {
             writer.write("ID,Name,Email,PreferredGame,SkillLevel,PreferredRole,PersonalityScore,PersonalityType,TeamNumber");
             writer.write("\n");
 
@@ -326,10 +386,7 @@ public class TeamMembersSelection implements TeamSelection {
                 for (String row : group) {
                     String no=","+teamNumber;
                     row = row.replace("[", "").replace("]", no).trim();
-
-//                    writer.write(String.join(",", row));
                     writer.write(row);
-
                     writer.write("\n");
                 }
             }
