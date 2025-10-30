@@ -18,7 +18,11 @@ public abstract class Person {
         return email;
     }
 
-    public abstract void setName(String name);
-    public abstract void setEmail(String email);
+    public  void setName(String name){
+        this.name = name;
+    }
+    public  void setEmail(String email){
+        this.email = email;
+    }
 
 }
