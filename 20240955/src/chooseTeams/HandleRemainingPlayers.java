@@ -4,29 +4,46 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
-public class HandleRemainingPlayers {
-    private ArrayList<String> remaining_all_leaders = new ArrayList<>();
-    private ArrayList<String> remaining_all_balancers = new ArrayList<>();
-    private ArrayList<String> remaining_all_thinkers = new ArrayList<>();
-    private boolean hasTeam=false;
-    private int teamPlayerCount;
+public class HandleRemainingPlayers extends TeamMembersSelection {
+    private final ArrayList<String> remainingPlayers;
+    private final double avgSkillValue;
+    private final ArrayList<String> remaining_all_leaders = new ArrayList<>();
+    private final ArrayList<String> remaining_all_balancers = new ArrayList<>();
+    private final ArrayList<String> remaining_all_thinkers = new ArrayList<>();
 
-    private Random rand = new Random();
+    private final int teamPlayerCount;
 
-    private ArrayList<String> selectedBalancers=new ArrayList<>();
-    private ArrayList<String> selectedThinkers=new ArrayList<>();
-    private ArrayList<String> selectedLeaders=new ArrayList<>();
+    private final Random rand = new Random();
 
 
-
-    private ArrayList<String> newTeam = new ArrayList<>();
     public ArrayList<ArrayList<String>> newTeams = new ArrayList<>();
 
-    public HandleRemainingPlayers(int teamPlayerCount) {
+    public HandleRemainingPlayers(int teamPlayerCount,ArrayList<String> remainingPlayers, double avgSkillValue) {
+        super(teamPlayerCount);
         this.teamPlayerCount = teamPlayerCount;
+        this.remainingPlayers = remainingPlayers;
+        this.avgSkillValue=avgSkillValue;
+        System.out.println("Avg Skill Value:"+avgSkillValue);
+        System.out.println("Remaining Players:"+remainingPlayers);
+        categorizeByPersonalityType();
 
     }
-    public ArrayList<ArrayList<String>> remainingTeamsCategorizeByPersonalityType(ArrayList<String> remainingPlayers, double avgSkillValue) {
+
+
+    public ArrayList<String> getRemaining_all_leaders() {
+        return remaining_all_leaders;
+    }
+    public ArrayList<String> getRemaining_all_balancers() {
+        return remaining_all_balancers;
+    }
+    public ArrayList<String> getRemaining_all_thinkers() {
+        return remaining_all_thinkers;
+    }
+
+
+
+    @Override
+    public void categorizeByPersonalityType() {
 
         for (String player : remainingPlayers) {
             String raw = player.replace("[", "").replace("]", "").trim();
@@ -49,16 +66,14 @@ public class HandleRemainingPlayers {
         System.out.println("Remaining Thinkers: " + remaining_all_thinkers.size());
 
 
-
-        createNewTeams(avgSkillValue);
-        return  newTeams;
-
+    }
+    public ArrayList<ArrayList<String>> getCreatedTeams() {
+        return createTeams();
     }
 
 
-
-
-    private void createNewTeams(double avgSkillValue) {
+    @Override
+    public ArrayList<ArrayList<String>> createTeams() {
         int maxAttempts = 1000; // Max attempts per team formation
         int consecutiveFailures = 0;
         int maxConsecutiveFailures = 50; // Stop after 50 consecutive failures
@@ -90,7 +105,7 @@ public class HandleRemainingPlayers {
                 continue;
             }
 
-            int teamSkillSum = calculateSkillSum(candidateTeam);
+            int teamSkillSum = checkEachFormedTeamSkillSum(candidateTeam);
 
             // Check if skill sum is within acceptable range
             if (teamSkillSum >= minValue && teamSkillSum <= maxValue) {
@@ -107,12 +122,16 @@ public class HandleRemainingPlayers {
                         ", Range: " + minValue + "-" + maxValue + ")");
             }
         }
-
         printFinalStats();
+        return  newTeams;
+
+
     }
 
     private ArrayList<String> tryFormTeam(int maxAttempts) {
         int balancerCount = teamPlayerCount - 3; // 1 leader + 2 thinkers = 3
+        int leaderCount = 1;
+        int thinkerCount = 2;
 
         for (int attempt = 0; attempt < maxAttempts; attempt++) {
             ArrayList<String> team = new ArrayList<>();
@@ -124,7 +143,7 @@ public class HandleRemainingPlayers {
 //            String leader = remaining_all_leaders.get(rand.nextInt(remaining_all_leaders.size()));
 //            team.add(leader);
 
-            ArrayList<String> selectedLeaders = selectUniqueLeaders(1);
+            ArrayList<String> selectedLeaders = selectUniqueLeaders(leaderCount);
             if (selectedLeaders == null || selectedLeaders.isEmpty()) {
                 continue;
             }
@@ -138,8 +157,8 @@ public class HandleRemainingPlayers {
             team.addAll(selectedBalancers);
 
             // Try to select 2 thinkers
-            ArrayList<String> selectedThinkers = selectUniqueThinkers(2);
-            if (selectedThinkers == null || selectedThinkers.size() < 2) {
+            ArrayList<String> selectedThinkers = selectUniqueThinkers(thinkerCount);
+            if (selectedThinkers == null || selectedThinkers.size() < thinkerCount) {
                 continue; // Not enough thinkers available
             }
             team.addAll(selectedThinkers);
@@ -152,8 +171,8 @@ public class HandleRemainingPlayers {
 
         return null; // Failed to form team after max attempts
     }
-
-    private ArrayList<String> selectUniqueLeaders(int count) {
+    @Override
+    public ArrayList<String> selectUniqueLeaders(int count) {
         if (remaining_all_leaders.size() < count) {
             return null;
         }
@@ -161,8 +180,8 @@ public class HandleRemainingPlayers {
         selected.add(remaining_all_leaders.remove(rand.nextInt(remaining_all_leaders.size())));
         return selected.size() == count ? selected : null;
     }
-
-    private ArrayList<String> selectUniqueBalancers(int count) {
+    @Override
+    public ArrayList<String> selectUniqueBalancers(int count) {
         if (remaining_all_balancers.size() < count) {
             return null;
         }
@@ -177,8 +196,8 @@ public class HandleRemainingPlayers {
 
         return selected.size() == count ? selected : null;
     }
-
-    private ArrayList<String> selectUniqueThinkers(int count) {
+    @Override
+    public ArrayList<String> selectUniqueThinkers(int count) {
         if (remaining_all_thinkers.size() < count) {
             return null;
         }
@@ -218,7 +237,8 @@ public class HandleRemainingPlayers {
         }
     }
 
-    private boolean isGameCountValid(ArrayList<String> team) {
+    @Override
+    public boolean isGameCountValid(ArrayList<String> team) {
         HashMap<String, Integer> countMap = new HashMap<>();
 
         for (String player : team) {
@@ -235,8 +255,7 @@ public class HandleRemainingPlayers {
         }
         return true;
     }
-
-    private int calculateSkillSum(ArrayList<String> team) {
+    public int checkEachFormedTeamSkillSum(ArrayList<String> team) {
         int sum = 0;
         for (String player : team) {
             String raw = player.replace("[", "").replace("]", "").trim();
