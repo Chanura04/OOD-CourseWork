@@ -18,7 +18,7 @@ public class ViewTeams {
 
     public void viewFormedTeams(){
 
-        try(BufferedReader br=new BufferedReader((new FileReader("output_result.csv")))) {
+        try(BufferedReader br=new BufferedReader((new FileReader("formed_teams.csv")))) {
             br.readLine();
             String line;
             int teamNumber=1;

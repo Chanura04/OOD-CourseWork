@@ -13,5 +13,6 @@ public interface TeamSelection {
     void finalTeamsSelection();
     boolean isGameCountValid(ArrayList<String> team);
     void writeFinalTeamsOnCsvFile();
+    boolean validateTeam( ArrayList<String> team);
 
 }

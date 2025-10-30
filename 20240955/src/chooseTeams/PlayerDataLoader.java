@@ -29,9 +29,6 @@ public class PlayerDataLoader {
                 player[6]=values[6];
                 player[7]=values[7];
 
-
-
-
                 playerData.add(Arrays.toString(player));
 
             }
