@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public interface TeamSelection {
 
     void categorizeByPersonalityType();
-    void getLeader();
-    void getThinker();
-    void getBalancers();
-    void createFiveMembersTeam();
-    void checkEachFormedTeamSkillSum();
+    ArrayList<String> selectUniqueLeaders(int count);
+    ArrayList<String> selectUniqueThinkers(int count);
+    ArrayList<String> selectUniqueBalancers(int count);
+    ArrayList<ArrayList<String>> createTeams();
+    void formTeamsBySkillAverageValue();
     void finalTeamsSelection();
     boolean isGameCountValid(ArrayList<String> team);
     void writeFinalTeamsOnCsvFile();
