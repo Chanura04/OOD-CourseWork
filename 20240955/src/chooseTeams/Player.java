@@ -13,12 +13,13 @@ public class Player extends Person {
     private int skillLevel;
     private String interestSport;
     private String id;
+    private String fileName;
 
     //Player class constructor
-    public Player( String name, String email) {
+    public Player( String name, String email,String fileName) {
         super( name, email);
-
         setId(newPlayerId());
+        this.fileName=fileName;
     }
 
 
@@ -29,14 +30,6 @@ public class Player extends Person {
         return id;
     }
 
-//    @Override
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//    @Override
-//    public void setEmail(String email) {
-//        this.email = email;
-//    }
 
     public String getPreferredRole(){
         return preferredRole;
@@ -120,7 +113,7 @@ public class Player extends Person {
 
     public int getStoredLastId(){
        PlayerDataLoader playerDataLoader=new PlayerDataLoader();
-       ArrayList<String> loadPlayerData=playerDataLoader.getPlayerData();
+       ArrayList<String> loadPlayerData=playerDataLoader.getPlayerData(fileName);
        if(loadPlayerData.isEmpty()){
            return -1;
        }
@@ -143,11 +136,6 @@ public class Player extends Person {
         return "P"+(previousId + 1);
     }
 
-//    @Override
-//    public String toString(){
-//        return "Player ID: " + id+"\n" + "Player Name: " + name+"\n"+"Email: "+email;
-//
-//    }
 
 
 }
