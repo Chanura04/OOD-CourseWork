@@ -1,6 +1,7 @@
 package chooseTeams;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,14 +11,15 @@ import java.util.Set;
 
 
 public class PlayerDataLoader {
-    public ArrayList<String> getPlayerData(){
-        String filePath = "data/participants_sample.csv";
+    public ArrayList<String> getPlayerData(String csvFilePath){
+//        String filePath = "data/participants_sample.csv";
+
         String line;
         String[] player=new String[8];
 
         ArrayList<String> playerData = new ArrayList<>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(",");
                 player[0]=values[0];
@@ -35,18 +37,36 @@ public class PlayerDataLoader {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        boolean isDataSetValid=validatePlayerData(playerData);
-
-        if(!isDataSetValid){
-            System.out.println("Invalid player data set. Please check the file format and try again!");
-            System.exit(0);
-        }
-
 
         return playerData;
     }
 
-    public boolean validatePlayerData(ArrayList<String> playerData){
+    public boolean validatePlayerData(String csvFilePath) {
+
+        ArrayList<String> playerData = new ArrayList<>();
+        String[] player=new String[8];
+
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+            String line = br.readLine(); // Read the first line only
+
+            if (line != null) {
+                String[] values = line.split(",");
+
+                player[0] = values[0];
+                player[1] = values[1];
+                player[2] = values[2];
+                player[3] = values[3];
+                player[4] = values[4];
+                player[5] = values[5];
+                player[6] = values[6];
+                player[7] = values[7];
+
+                playerData.add(Arrays.toString(player));
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
 
         if(playerData.isEmpty()){
             return false;
