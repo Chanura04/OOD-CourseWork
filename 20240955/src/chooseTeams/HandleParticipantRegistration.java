@@ -1,0 +1,62 @@
+package chooseTeams;
+
+import java.io.File;
+import java.util.ArrayList;
+
+public class HandleParticipantRegistration {
+    private final String name;
+    private final String email;
+
+    public HandleParticipantRegistration(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
+
+    public boolean isARegisteredParticipant() {
+        String filePath = "data/students_loop.csv";
+        File playerDataFile = new File(filePath);
+
+        PlayerDataLoader playerDataLoader = new PlayerDataLoader();
+        ArrayList<String> playerData = playerDataLoader.getPlayerData(playerDataFile);
+
+        boolean isRegistered = false;
+
+        for (int i = 1; i < playerData.size(); i++) {
+            String raw = playerData.get(i).replace("[", "").replace("]", "").trim();
+            String[] fields = raw.split(",");
+
+            if (name.equals(fields[1].trim()) && email.equals(fields[2].trim()) ) {
+                isRegistered= true;
+                break;
+            }
+        }
+        return isRegistered;
+    }
+
+    public int getRegisteredParticipantStoredRawNumber() {
+        int rawNumber = 0;
+        String filePath = "data/students_loop.csv";
+        File playerDataFile = new File(filePath);
+
+        PlayerDataLoader playerDataLoader = new PlayerDataLoader();
+        ArrayList<String> playerData = playerDataLoader.getPlayerData(playerDataFile);
+
+
+
+        for (int i = 1; i < playerData.size(); i++) {
+            String raw = playerData.get(i).replace("[", "").replace("]", "").trim();
+            String[] fields = raw.split(",");
+
+            if (name.equals(fields[1].trim()) && email.equals(fields[2].trim()) ) {
+                rawNumber= i;
+                break;
+            }
+        }
+        return rawNumber;
+    }
+
+
+}
+
+
+
