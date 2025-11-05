@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Main {
     static String uploadCsvFileName ;
-    static ArrayList<ArrayList<String>> finalTeams;
+
     public static void main(String[] args) {
         int playersCount = 0;
         int rest_thinkers = 0;
@@ -51,8 +51,9 @@ public class Main {
 
                         if (playersCount > 0) {
                             TeamMembersSelection teamMembersSelection = new TeamMembersSelection(playersCount,uploadCsvFileName);
-                            finalTeams=teamMembersSelection.getFinalTeamCombination();
-                            teamMembersSelection.getCreatedTeams();
+                            teamMembersSelection.categorizeByPersonalityType();
+                            teamMembersSelection.createTeams();
+                            teamMembersSelection.randomizeTeamCombinationAgain();
                             avgSkillValue = teamMembersSelection.getAverage();
                             minAvg = teamMembersSelection.getMinimumSkillAverage();
                             maxAvg = teamMembersSelection.getMaximumSkillAverage();
