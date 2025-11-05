@@ -14,7 +14,7 @@ public class TeamMembersSelection implements TeamSelection {
     private final ArrayList<String> all_balancers=new ArrayList<>();
     private final ArrayList<String> all_thinkers=new ArrayList<>();
 
-    //Get copies from all saved arraylists
+
 //    private final ArrayList<String> cp_leaders=all_leaders;
 //    private final ArrayList<String> cp_balancers=all_balancers;
 //    private final ArrayList<String> cp_thinkers=all_thinkers;
@@ -52,7 +52,7 @@ public class TeamMembersSelection implements TeamSelection {
 
     private double maximumSkillAverage;
     private double minimumSkillAverage;
-
+    private boolean usingCustomPlayerList = false;
     public TeamMembersSelection(int teamPlayerCount,String csvFilePath) {
         this.teamPlayerCount=teamPlayerCount;
         this.csvFilePath=csvFilePath;
@@ -84,9 +84,7 @@ public class TeamMembersSelection implements TeamSelection {
     public  void setAverage(double average){
         this.average=average;
     }
-    public ArrayList<ArrayList<String>> getCreatedTeams() {
-        return createTeams();
-    }
+
     public int getRest_leaders(){
         return rest_leaders.size();
     }
@@ -97,26 +95,18 @@ public class TeamMembersSelection implements TeamSelection {
     public int getRest_thinkers(){
         return rest_thinkers.size();
     }
-
-//    public void categorizeByPersonalityType(){
-//        PlayerDataLoader playerDataLoader=new PlayerDataLoader();
-//        ArrayList<String> playerData = playerDataLoader.getPlayerData();
-//
-//        for(int i=1;i<playerData.size();i++){
-//            String raw = playerData.get(i).replace("[", "").replace("]", "").trim();
-//            String[] fields = raw.split(",");
-//            String personalityType = fields[7].trim();
-//            switch (personalityType.strip()) {
-//                case "Leader" -> all_leaders.add(playerData.get(i));
-//                case "Balanced" -> all_balancers.add(playerData.get(i));
-//                case "Thinker" -> all_thinkers.add(playerData.get(i));
-//            }
-//        }
-//    }
-
     public void categorizeByPersonalityType() {
         PlayerDataLoader playerDataLoader = new PlayerDataLoader();
         ArrayList<String> playerData = playerDataLoader.getPlayerData(csvFilePath);
+        categorizeByPersonalityType(playerData);
+    }
+
+    public void categorizeByPersonalityType(ArrayList<String> playerData) {
+
+        // Clear existing data
+        all_leaders.clear();
+        all_balancers.clear();
+        all_thinkers.clear();
 
         for (int i = 1; i < playerData.size(); i++) {
             String raw = playerData.get(i).replace("[", "").replace("]", "").trim();
@@ -129,7 +119,7 @@ public class TeamMembersSelection implements TeamSelection {
             }
         }
 
-        // ✅ FIX 3: Create deep copies AFTER loading data
+        // Create deep copies AFTER loading data
         cp_leaders = new ArrayList<>(all_leaders);
         cp_balancers = new ArrayList<>(all_balancers);
         cp_thinkers = new ArrayList<>(all_thinkers);
@@ -139,63 +129,7 @@ public class TeamMembersSelection implements TeamSelection {
                 ", Thinkers: " + cp_thinkers.size());
     }
 
-//    public void checkSkillAverageValue(){
-//        PlayerDataLoader playerDataLoader=new PlayerDataLoader();
-//
-//        ArrayList<String> playerData = playerDataLoader.getPlayerData();
-//        int totalSkillValue=0;
-//        for(int i=1;i<playerData.size();i++){
-//            String raw = playerData.get(i).replace("[", "").replace("]", "").trim();
-//            String[] fields = raw.split(",");
-//            String getSkillValue = fields[4].trim();
-//            int skillValue=Integer.parseInt(getSkillValue);
-//            totalSkillValue+=skillValue;
-//        }
-//        float averageSkillValue= (float) totalSkillValue /playerData.size();
-//        System.out.println("averageSkillValue:"+averageSkillValue);
-//
-//    }
 
-//    public ArrayList<String> selectUniqueLeaders(int count) {
-//        if (!(cp_leaders.size() < count)) {
-//            Random rand = new Random();
-//            selectedLeaders.clear();
-//
-//            String leader = cp_leaders.get(rand.nextInt(cp_leaders.size()));
-//            selectedLeaders.add(leader);
-//        }
-//        return selectedLeaders;
-//    }
-//
-//    public ArrayList<String> selectUniqueThinkers(int count) {
-//        if (!(cp_thinkers.size() < count)) {
-//            Random rand = new Random();
-//            selectedThinkers.clear();
-//
-//            while (selectedThinkers.size() < 2 && cp_thinkers.size() > selectedThinkers.size()) {
-//                String thinker = cp_thinkers.get(rand.nextInt(cp_thinkers.size()));
-//                if (!selectedThinkers.contains(thinker)) {
-//                    selectedThinkers.add(thinker);
-//                }
-//            }
-//        }
-//        return selectedThinkers;
-//    }
-//
-//    public ArrayList<String> selectUniqueBalancers(int count) {
-//        if (!(cp_balancers.size() < count)) {
-//            Random rand = new Random();
-//            selectedBalancers.clear();
-//
-//            while (selectedBalancers.size() < count && cp_balancers.size() > selectedBalancers.size() ) {
-//                String balancer = cp_balancers.get(rand.nextInt(cp_balancers.size()));
-//                if (!selectedBalancers.contains(balancer)) {
-//                    selectedBalancers.add(balancer);
-//                }
-//            }
-//        }
-//        return selectedBalancers;
-//    }
 
     public ArrayList<String> selectUniqueLeaders(int count) {
         selectedLeaders.clear();
@@ -211,7 +145,7 @@ public class TeamMembersSelection implements TeamSelection {
         selectedThinkers.clear();
         if (cp_thinkers.size() >= count) {
             Random rand = new Random();
-            // ✅ FIX 7: Use a temporary list to avoid modification during selection
+            // Use a temporary list to avoid modification during selection
             ArrayList<String> available = new ArrayList<>(cp_thinkers);
 
             while (selectedThinkers.size() < count && !available.isEmpty()) {
@@ -227,7 +161,7 @@ public class TeamMembersSelection implements TeamSelection {
         selectedBalancers.clear();
         if (cp_balancers.size() >= count) {
             Random rand = new Random();
-            // ✅ FIX 8: Use a temporary list to avoid modification during selection
+            // Use a temporary list to avoid modification during selection
             ArrayList<String> available = new ArrayList<>(cp_balancers);
 
             while (selectedBalancers.size() < count && !available.isEmpty()) {
@@ -269,90 +203,27 @@ public class TeamMembersSelection implements TeamSelection {
         }
 
         if(leaderCount==1 && thinkerCount>=2 && balancerCount>=1 && uniqueRoles.size()>=3){
-            System.out.println("Team is valid"+uniqueRoles.size()+":"+uniqueRoles.toString());
+//            System.out.println("Team is valid"+uniqueRoles.size()+":"+uniqueRoles.toString());
             isTeamValid=true;
         }
         return isTeamValid;
     }
 
 
-//    public ArrayList<ArrayList<String>> createTeams() {
-//        categorizeByPersonalityType();
-//        int leaderCount = 1;
-//        int thinkerCount = 2;
-//        int balancerCount = getTeamPlayerCount() - 3;
-//        System.out.println("Player count"+getTeamPlayerCount());
-//
-//        // keep forming teams while there are enough people
-//        while (cp_thinkers.size() >= 2 && cp_balancers.size() >= 2 && cp_leaders.size() >= 1) {
-//            // Clear per-selection lists
-//            selectedLeaders.clear();
-//            selectedThinkers.clear();
-//            selectedBalancers.clear();
-//
-//            selectUniqueLeaders(leaderCount);     // should fill selectedLeaders with 1 element
-//            selectUniqueBalancers(balancerCount);  // should fill selectedBalancers with rest
-//            selectUniqueThinkers(thinkerCount);    // should fill selectedThinkers with 2 elements
-//
-//            // create a proper team list
-//            ArrayList<String> team = new ArrayList<>();
-//            team.addAll(selectedLeaders);
-//            team.addAll(selectedBalancers);
-//            team.addAll(selectedThinkers);
-//
-//            //check team has required personality types.
-//            if(!validateTeam(team)){
-//                continue;
-//            }
-//
-//            // ensure it is exactly user input members count before storing
-//            if (team.size() == getTeamPlayerCount()) {
-//                if(!isGameCountValid(team)){
-//                    continue;
-//                }
-//                unfinalizedTeams.add(team);
-//
-//            } else {
-//                // handle unexpected selection problems
-//                System.err.println("Unexpected team size: " + team.size());
-//                break;
-//            }
-//
-//            // remove selected members from the original pools so they can't be reused
-//            cp_leaders.removeAll(selectedLeaders);
-//            cp_balancers.removeAll(selectedBalancers);
-//            cp_thinkers.removeAll(selectedThinkers);
-//        }
-//
-//
-//        System.out.println("\nAll teams created: " + unfinalizedTeams.size());
-//
-//        System.out.println("\nAll Teams Formed: " + unfinalizedTeams);
-//        System.out.println("Total Teams: " + unfinalizedTeams.size());
-//        System.out.println("Remaining Leaders: " + cp_leaders);
-//        System.out.println("leaders.size():" + cp_leaders.size());
-//        System.out.println("Remaining Balancers: " + cp_balancers);
-//        System.out.println("Balancers.size():" + cp_balancers.size());
-//        System.out.println("Remaining Thinker: " + cp_thinkers);
-//        System.out.println("Thinkers.size():" + cp_thinkers.size());
-//        formTeamsBySkillAverageValue();
-//        finalTeamsSelection();
-//        return unfinalizedTeams;
-//    }
 
     public ArrayList<ArrayList<String>> createTeams() {
-        categorizeByPersonalityType();
+//        categorizeByPersonalityType();
 
         int leaderCount = 1;
         int thinkerCount = 2;
         int balancerCount = getTeamPlayerCount() - 3;
 
-        System.out.println("Player count per team: " + getTeamPlayerCount());
-        System.out.println("Required per team - Leaders: " + leaderCount +
-                ", Balancers: " + balancerCount +
-                ", Thinkers: " + thinkerCount);
+//        System.out.println("Player count per team: " + getTeamPlayerCount());
+//        System.out.println("Required per team - Leaders: " + leaderCount +
+//                ", Balancers: " + balancerCount +
+//                ", Thinkers: " + thinkerCount);
 
-        // ✅ FIX 4: Add timeout and iteration limit
+        // Add timeout and iteration limit
         long startTime = System.currentTimeMillis();
         int iterations = 0;
         int consecutiveFailures = 0;
@@ -363,21 +234,21 @@ public class TeamMembersSelection implements TeamSelection {
                 cp_balancers.size() >= balancerCount &&
                 cp_leaders.size() >= leaderCount) {
 
-            // ✅ FIX 5: Safety checks
+            // Safety checks
             iterations++;
             if (iterations > MAX_ITERATIONS) {
-                System.err.println("⚠️ Reached maximum iterations (" + MAX_ITERATIONS + "). Stopping team formation.");
+//                System.err.println("⚠️ Reached maximum iterations (" + MAX_ITERATIONS + "). Stopping team formation.");
                 break;
             }
 
             long elapsed = System.currentTimeMillis() - startTime;
             if (elapsed > TIMEOUT_MS) {
-                System.err.println("⚠️ Timeout reached (" + (TIMEOUT_MS/1000) + "s). Stopping team formation.");
+//                System.err.println("⚠️ Timeout reached (" + (TIMEOUT_MS/1000) + "s). Stopping team formation.");
                 break;
             }
 
             if (consecutiveFailures > MAX_CONSECUTIVE_FAILURES) {
-                System.err.println("⚠️ Too many consecutive failures (" + consecutiveFailures + "). Stopping team formation.");
+//                System.err.println("⚠️ Too many consecutive failures (" + consecutiveFailures + "). Stopping team formation.");
                 break;
             }
 
@@ -386,14 +257,14 @@ public class TeamMembersSelection implements TeamSelection {
             selectedThinkers.clear();
             selectedBalancers.clear();
 
-            // ✅ FIX 6: Check if selection was successful
+            //  Check if selection was successful
             ArrayList<String> leaders = selectUniqueLeaders(leaderCount);
             ArrayList<String> balancers = selectUniqueBalancers(balancerCount);
             ArrayList<String> thinkers = selectUniqueThinkers(thinkerCount);
 
             if (leaders.isEmpty() || balancers.isEmpty() || thinkers.isEmpty()) {
                 consecutiveFailures++;
-                System.err.println("⚠️ Failed to select enough players (attempt " + consecutiveFailures + ")");
+//                System.err.println("⚠️ Failed to select enough players (attempt " + consecutiveFailures + ")");
                 continue;
             }
 
@@ -423,19 +294,12 @@ public class TeamMembersSelection implements TeamSelection {
                 cp_balancers.removeAll(selectedBalancers);
                 cp_thinkers.removeAll(selectedThinkers);
 
-                System.out.println("✅ Team " + unfinalizedTeams.size() + " formed. Remaining: L=" +
-                        cp_leaders.size() + ", B=" + cp_balancers.size() + ", T=" + cp_thinkers.size());
+
             } else {
                 consecutiveFailures++;
                 System.err.println("⚠️ Unexpected team size: " + team.size());
             }
         }
-
-        System.out.println("\n✅ All teams created: " + unfinalizedTeams.size());
-        System.out.println("Remaining - Leaders: " + cp_leaders.size() +
-                ", Balancers: " + cp_balancers.size() +
-                ", Thinkers: " + cp_thinkers.size());
-
         if (unfinalizedTeams.isEmpty()) {
             System.err.println("❌ No teams were formed! Check if you have enough players.");
             return unfinalizedTeams;
@@ -479,19 +343,13 @@ public class TeamMembersSelection implements TeamSelection {
                 int skillValue=Integer.parseInt(getSkillValue);
                 teamSkillSum+=skillValue;
             }
-            System.out.println("Team "+(i+1)+" skill sum:"+teamSkillSum);
+//            System.out.println("Team "+(i+1)+" skill sum:"+teamSkillSum);
             totalSum +=teamSkillSum;
 
         }
-        System.out.println(teamSize);
-        System.out.println("Total skill average:"+totalSum / teamSize);
-
-
         average = (double) totalSum / teamSize;
 
         setAverage(average);
-
-
 
 
         for(int i=0;i<unfinalizedTeams.size();i++){
@@ -510,7 +368,7 @@ public class TeamMembersSelection implements TeamSelection {
             setMaximumSkillAverage(maxValue);
             setMinimumSkillAverage(minValue);
 
-            System.out.println("minimum"+minValue+"maximum"+maxValue);
+//            System.out.println("minimum"+minValue+"maximum"+maxValue);
 
             if( teamSkillSum >= minValue && teamSkillSum <= maxValue){
                 selectedTeamsInFirstFilter.add(team);
@@ -519,12 +377,13 @@ public class TeamMembersSelection implements TeamSelection {
             }
         }
 
-        System.out.println("Selected Teams In First Filter:"+selectedTeamsInFirstFilter);
-        System.out.println("selectedTeamsInFirstFilter.size():"+selectedTeamsInFirstFilter.size());
-        System.out.println("Remaining Teams:"+remainingTeams);
-        System.out.println("remainingTeams.size():"+remainingTeams.size());
+//        System.out.println("Selected Teams In First Filter:"+selectedTeamsInFirstFilter);
+//        System.out.println("selectedTeamsInFirstFilter.size():"+selectedTeamsInFirstFilter.size());
+//        System.out.println("Remaining Teams:"+remainingTeams);
+//        System.out.println("remainingTeams.size():"+remainingTeams.size());
 
     }
+    int count=0;
     public void finalTeamsSelection(){
         ArrayList<String> remainingPlayers = new ArrayList<>();
         ArrayList<String> combinedRemainingPlayers = new ArrayList<>();
@@ -541,26 +400,88 @@ public class TeamMembersSelection implements TeamSelection {
         //combine remaining players for next filtering process
         combinedRemainingPlayers.addAll(remainingPlayers);
 
-        System.out.println("Total combined remaining players: " + combinedRemainingPlayers.size());
-        System.out.println("Combined remaining players: " + combinedRemainingPlayers.get(2));
 
         HandleRemainingPlayers handleRemainingPlayers=new HandleRemainingPlayers(getTeamPlayerCount(),combinedRemainingPlayers, average,csvFilePath);
-        System.out.println("\n\n\n\n\n");
+        System.out.println("\n\n");
         ArrayList<ArrayList<String>> handledRemainingTeams=handleRemainingPlayers.getCreatedTeams();
-
+        count=handledRemainingTeams.size();
         rest_leaders=handleRemainingPlayers.getRemaining_all_leaders();
         rest_balancers=handleRemainingPlayers.getRemaining_all_balancers();
         rest_thinkers=handleRemainingPlayers.getRemaining_all_thinkers();
 
-        System.out.println("Handled teams are: ");
+
         finalTeamCombination.addAll(handledRemainingTeams);
         finalTeamCombination.addAll(selectedTeamsInFirstFilter);
-        System.out.println("Final teams combination: "+finalTeamCombination);
-        System.out.println("Final teams combination size: "+finalTeamCombination.size());
 
+        printFinalStats();
         writeFinalTeamsOnCsvFile();
         writeRemainingPlayerInCsvFile();
     }
+    private void printFinalStats() {
+        System.out.println("\n********** Final  results **********");
+        System.out.println("Leaders: " + rest_leaders.size());
+        System.out.println("Balancers: " + rest_balancers.size());
+        System.out.println("Thinkers: " + rest_thinkers.size());
+
+        System.out.println("First filter selected teams: " + selectedTeamsInFirstFilter.size());
+        System.out.println("Second filter remaining teams: " + count);
+
+        System.out.println("✅ Total teams formed: " + finalTeamCombination.size());
+        System.out.println();
+    }
+
+    public void randomizeTeamCombinationAgain() {
+        System.out.println("\n===================================== Randomizing again =====================================");
+
+
+        ArrayList<String> convertedList = new ArrayList<>();
+
+        // Flatten all teams into a single list
+        for (ArrayList<String> team : finalTeamCombination) {
+            for (String player : team) {
+                convertedList.add(player);
+            }
+        }
+
+        // Shuffle the players
+        Collections.shuffle(convertedList);
+
+
+
+        // Clear previous results
+        unfinalizedTeams.clear();
+        selectedTeamsInFirstFilter.clear();
+        remainingTeams.clear();
+        finalTeamCombination.clear();
+
+        rest_leaders.clear();
+        rest_balancers.clear();
+        rest_thinkers.clear();
+
+        average=0;
+        count=0;
+
+        maximumSkillAverage=0;
+        minimumSkillAverage=0;
+
+        all_leaders.clear();
+        all_balancers.clear();
+        all_thinkers.clear();
+
+        cp_leaders.clear();
+        cp_balancers.clear();
+        cp_thinkers.clear();
+
+        selectedLeaders.clear();
+        selectedBalancers.clear();
+        selectedThinkers.clear();
+        // Categorize with shuffled list
+        categorizeByPersonalityType(convertedList);
+
+        // Reuse the same createTeams() method!
+        createTeams();
+    }
+
 
     public void writeFinalTeamsOnCsvFile(){
         int teamNumber=0;
@@ -577,7 +498,7 @@ public class TeamMembersSelection implements TeamSelection {
                     writer.write("\n");
                 }
             }
-            System.out.println("CSV file written successfully.");
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -592,7 +513,7 @@ public class TeamMembersSelection implements TeamSelection {
         restRemainingPlayers.addAll(rest_balancers);
         restRemainingPlayers.addAll(rest_thinkers);
 
-        System.out.println("Rest remaining players: " + restRemainingPlayers);
+
 
         try (FileWriter writer = new FileWriter("remaining_players.csv")) {
             writer.write("ID,Name,Email,PreferredGame,SkillLevel,PreferredRole,PersonalityScore,PersonalityType\n");
@@ -604,7 +525,7 @@ public class TeamMembersSelection implements TeamSelection {
                 writer.write("\n");
             }
 
-            System.out.println("CSV file written successfully.");
+            System.out.println("✅ Exported formed_teams.csv successfully.");
         } catch (IOException e) {
             e.printStackTrace();
         }
