@@ -7,7 +7,15 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
 public class HandleDataCsvFiles {
-    public String fileName;
+    private String fileName;
+
+    public String getFileName(){
+        return fileName;
+    }
+    public void setFileName(String fileName){
+        this.fileName=fileName;
+    }
+
 
     public void handleDataCsvFiles() {
             // Example user input (you can replace with Scanner input)
@@ -44,25 +52,63 @@ public class HandleDataCsvFiles {
         //  Set the destination path (same filename in current directory)
         Path destinationPath = currentDir.resolve(sourcePath.getFileName());
         System.out.println(sourcePath.getFileName());
-        fileName=String.valueOf(sourcePath.getFileName());
+
+        setFileName(String.valueOf(sourcePath.getFileName()));
         //  Copy file
         try {
             Files.copy(sourcePath, destinationPath, StandardCopyOption.REPLACE_EXISTING);
-            System.out.println("✅ File copied to current directory:");
-            System.out.println(destinationPath.toAbsolutePath());
+            System.out.println("✅ File is processing...");
+//            System.out.println(destinationPath.toAbsolutePath());
         } catch (IOException e) {
             System.out.println("⚠️ Error copying file: " + e.getMessage());
         }
 
+        boolean isCsvFile=isCsvFile(String.valueOf(sourcePath.getFileName()));
+        if(!isCsvFile){
+            System.out.println("⚠️ Invalid file format. Please upload a csv file!");
+            deleteCsvFile();
+            return;
+        }
+
+        //Check if the required fields are included.
         PlayerDataLoader playerDataLoader=new PlayerDataLoader();
         boolean isValid=playerDataLoader.validatePlayerData(String.valueOf(sourcePath.getFileName()));
 
 
         if(!isValid){
             System.out.println("Invalid player data set. Please check the file format and try again!");
+            deleteCsvFile();
             System.exit(0);
         }
+        if(isCsvFile && isValid){
+            System.out.println("✅ File is accepted and imported successfully!\n");
+        }
 
+    }
+
+    private void deleteCsvFile(){
+        Path currentDir = Paths.get(System.getProperty("user.dir"));
+        Path filePath = currentDir.resolve(fileName);
+
+        try {
+            if (Files.exists(filePath)) {
+                Files.delete(filePath);
+                System.out.println("🗑️ File rejected!!! " + filePath.toAbsolutePath());
+            } else {
+                System.out.println("❌ File not found in current directory: " + fileName);
+            }
+        } catch (IOException e) {
+            System.out.println("⚠️ Error deleting file: " + e.getMessage());
+        }
+
+    }
+
+    private boolean isCsvFile(String filePath){
+        File file = new File(filePath);
+        if(file.isFile() && file.getName().endsWith(".csv")){
+            return true;
+        }
+        return false;
     }
 
 
