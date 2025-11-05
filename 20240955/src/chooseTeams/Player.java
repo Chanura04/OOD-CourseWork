@@ -1,9 +1,10 @@
 package chooseTeams;
 
 
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Player extends Person {
     // Each player personal details
@@ -13,13 +14,20 @@ public class Player extends Person {
     private int skillLevel;
     private String interestSport;
     private String id;
-    private String fileName;
+    private int playerDataRowNumber;
 
     //Player class constructor
-    public Player( String name, String email,String fileName) {
+    public Player( String name, String email) {
         super( name, email);
         setId(newPlayerId());
-        this.fileName=fileName;
+
+    }
+    //Use for store survey data
+    public Player( String name, String email, int playerDataRowNumber) {
+        super( name, email);
+        setId(newPlayerId());
+        this.playerDataRowNumber=playerDataRowNumber;
+
     }
 
 
@@ -90,30 +98,96 @@ public class Player extends Person {
     }
 
     //Store player data into a csv file
-    public void storeNewPlayerData(){
+    public void storeRegisteredPlayerData(){
+        File playerDataFile = new File("data/students_loop.csv");
         //save to csv file
-        if(checkPersonalityType()){
-            try (FileWriter writer = new FileWriter("students_loop.csv", true)) {
+            try (FileWriter writer = new FileWriter(playerDataFile, true)) {
                 String[] data={
-                        getId(),getName(),getEmail(),getInterestSport(), String.valueOf(getSkillLevel()),getPreferredRole(), String.valueOf(getTotalScore()),getPersonalityType()
+                        getId(),getName(),getEmail(),"null","null","null","null","null"
                 };
                 writer.append(String.join(",", data));
                 writer.append("\n");
 
-                System.out.printf("%s successfully added!",getName());
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }else{
-            System.out.println("Your Personality Score is very low!!!. please try again!");
+
+    }
+//    public void storeSurveyData(){
+//        File playerDataFile = new File("data/students_loop.csv");
+//        //save to csv file
+//        if(checkPersonalityType()){
+//            try (FileWriter writer = new FileWriter(playerDataFile, true)) {
+//                String[] data={
+//                        getId(),getName(),getEmail(),getInterestSport(), String.valueOf(getSkillLevel()),getPreferredRole(), String.valueOf(getTotalScore()),getPersonalityType()
+//                };
+//                writer.append(String.join(",", data));
+//                writer.append("\n");
+//
+//                System.out.printf("%s successfully added!",getName());
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }else{
+//            System.out.println("Your Personality Score is very low!!!. please try again!");
+//        }
+//    }
+    public void storeSurveyData(){
+        List<String> lines = new ArrayList<>();
+        File playerDataFile = new File("data/students_loop.csv");
+        if(checkPersonalityType()){
+            try (BufferedReader br = new BufferedReader(new FileReader(playerDataFile))) {
+                br.readLine();
+                String line;
+                while ((line = br.readLine()) != null) {
+                    String[] values = line.split(",");
+
+                    if (values.length > 2 && name.equals(values[1].trim()) && email.equals(values[2].trim())) {
+                        String id = values[0];
+                        // Replace this line with new data
+                        String[] newData = {
+                                id, getName(), getEmail(), getInterestSport(),
+                                String.valueOf(getSkillLevel()), getPreferredRole(),
+                                String.valueOf(getTotalScore()), getPersonalityType()
+                        };
+                        line = String.join(",", newData);
+                    }
+
+                    lines.add(line);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else{
+            System.out.println("⚠️ Your Personality Score is very low!!!. Please try again!\n");
+            return;
         }
 
 
+        // Write the updated data back to the file
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(playerDataFile))) {
+            bw.write("ID,Name,Email,PreferredGame,SkillLevel,PreferredRole,PersonalityScore,PersonalityType");
+            bw.newLine();
+
+            for (String l : lines) {
+                bw.write(l);
+                bw.newLine();
+            }
+            System.out.println("✅ "+getName() + " successfully completed the survey!\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
+
 
     public int getStoredLastId(){
        PlayerDataLoader playerDataLoader=new PlayerDataLoader();
-       ArrayList<String> loadPlayerData=playerDataLoader.getPlayerData(fileName);
+       File playerDataFile = new File("data/students_loop.csv");
+
+        ArrayList<String> loadPlayerData=playerDataLoader.getPlayerData(playerDataFile);
        if(loadPlayerData.isEmpty()){
            return -1;
        }
