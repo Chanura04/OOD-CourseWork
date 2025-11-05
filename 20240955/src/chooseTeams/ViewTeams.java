@@ -1,13 +1,11 @@
 package chooseTeams;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class ViewTeams {
     private int teamPlayerCount;
+    private File csvFile;
 
     public void setTeamPlayerCount(int teamPlayerCount) {
         this.teamPlayerCount = teamPlayerCount;
@@ -15,10 +13,14 @@ public class ViewTeams {
     public int getTeamPlayerCount(){
         return teamPlayerCount;
     }
+    public ViewTeams(File csvFile){
+        this.csvFile=csvFile;
+
+    }
 
     public void viewFormedTeams(){
 
-        try(BufferedReader br=new BufferedReader((new FileReader("formed_teams.csv")))) {
+        try(BufferedReader br=new BufferedReader((new FileReader(csvFile)))) {
             br.readLine();
             String line;
             int teamNumber=1;
