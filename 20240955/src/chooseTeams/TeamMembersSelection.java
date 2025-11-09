@@ -4,10 +4,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+import java.util.List;
 
 public class TeamMembersSelection implements TeamSelection {
     private int teamPlayerCount;
     private final String csvFilePath;
+
+    private final Object teamLock = new Object();
+
 
     //Loaded player data categorized by personality type and saved arraylists
     private final ArrayList<String> all_leaders=new ArrayList<>();
@@ -95,6 +101,25 @@ public class TeamMembersSelection implements TeamSelection {
     public int getRest_thinkers(){
         return rest_thinkers.size();
     }
+
+    // helper methods (needed by TeamFormationTask)
+    public boolean hasEnoughPlayersForTeam(int leaderCount, int balancerCount, int thinkerCount) {
+        return cp_leaders.size() >= leaderCount &&
+                cp_balancers.size() >= balancerCount &&
+                cp_thinkers.size() >= thinkerCount;
+    }
+    public void addTeam(ArrayList<String> team) {
+        unfinalizedTeams.add(team);
+    }
+    public void removeSelectedPlayers(ArrayList<String> leaders,
+                                      ArrayList<String> balancers,
+                                      ArrayList<String> thinkers) {
+        cp_leaders.removeAll(leaders);
+        cp_balancers.removeAll(balancers);
+        cp_thinkers.removeAll(thinkers);
+    }
+
+
     public void categorizeByPersonalityType() {
         PlayerDataLoader playerDataLoader = new PlayerDataLoader();
         ArrayList<String> playerData = playerDataLoader.getPlayerData(csvFilePath);
@@ -212,102 +237,157 @@ public class TeamMembersSelection implements TeamSelection {
 
 
     public ArrayList<ArrayList<String>> createTeams() {
-//        categorizeByPersonalityType();
+//        int leaderCount = 1;
+//        int thinkerCount = 2;
+//        int balancerCount = getTeamPlayerCount() - 3;
+//
+////        System.out.println("Player count per team: " + getTeamPlayerCount());
+////        System.out.println("Required per team - Leaders: " + leaderCount +
+////                ", Balancers: " + balancerCount +
+////                ", Thinkers: " + thinkerCount);
+//
+//        // Add timeout and iteration limit
+//        long startTime = System.currentTimeMillis();
+//        int iterations = 0;
+//        int consecutiveFailures = 0;
+//        final int MAX_CONSECUTIVE_FAILURES = 100;
+//
+//        // Keep forming teams while there are enough people
+//        while (cp_thinkers.size() >= thinkerCount &&
+//                cp_balancers.size() >= balancerCount &&
+//                cp_leaders.size() >= leaderCount) {
+//
+//            // Safety checks
+//            iterations++;
+//            if (iterations > MAX_ITERATIONS) {
+////                System.err.println("⚠️ Reached maximum iterations (" + MAX_ITERATIONS + "). Stopping team formation.");
+//                break;
+//            }
+//
+//            long elapsed = System.currentTimeMillis() - startTime;
+//            if (elapsed > TIMEOUT_MS) {
+////                System.err.println("⚠️ Timeout reached (" + (TIMEOUT_MS/1000) + "s). Stopping team formation.");
+//                break;
+//            }
+//
+//            if (consecutiveFailures > MAX_CONSECUTIVE_FAILURES) {
+////                System.err.println("⚠️ Too many consecutive failures (" + consecutiveFailures + "). Stopping team formation.");
+//                break;
+//            }
+//
+//            // Clear per-selection lists
+//            selectedLeaders.clear();
+//            selectedThinkers.clear();
+//            selectedBalancers.clear();
+//
+//            //  Check if selection was successful
+//            ArrayList<String> leaders = selectUniqueLeaders(leaderCount);
+//            ArrayList<String> balancers = selectUniqueBalancers(balancerCount);
+//            ArrayList<String> thinkers = selectUniqueThinkers(thinkerCount);
+//
+//            if (leaders.isEmpty() || balancers.isEmpty() || thinkers.isEmpty()) {
+//                consecutiveFailures++;
+////                System.err.println("⚠️ Failed to select enough players (attempt " + consecutiveFailures + ")");
+//                continue;
+//            }
+//
+//            // Create a proper team list
+//            ArrayList<String> team = new ArrayList<>();
+//            team.addAll(selectedLeaders);
+//            team.addAll(selectedBalancers);
+//            team.addAll(selectedThinkers);
+//
+//            // Check team has required personality types
+//            if (!validateTeam(team)) {
+//                consecutiveFailures++;
+//                continue;
+//            }
+//
+//            // Ensure it is exactly user input members count before storing
+//            if (team.size() == getTeamPlayerCount()) {
+//                if (!isGameCountValid(team)) {
+//                    consecutiveFailures++;
+//                    continue;
+//                }
+//                unfinalizedTeams.add(team);
+//                consecutiveFailures = 0; // Reset on success
+//
+//                // Remove selected members from the pools
+//                cp_leaders.removeAll(selectedLeaders);
+//                cp_balancers.removeAll(selectedBalancers);
+//                cp_thinkers.removeAll(selectedThinkers);
+//
+//
+//            } else {
+//                consecutiveFailures++;
+//                System.err.println("⚠️ Unexpected team size: " + team.size());
+//            }
+//        }
+//        if (unfinalizedTeams.isEmpty()) {
+//            System.err.println("❌ No teams were formed! Check if you have enough players.");
+//            return unfinalizedTeams;
+//        }
+//
+//        formTeamsBySkillAverageValue();
+//        finalTeamsSelection();
+//        return unfinalizedTeams;
 
         int leaderCount = 1;
         int thinkerCount = 2;
         int balancerCount = getTeamPlayerCount() - 3;
 
-//        System.out.println("Player count per team: " + getTeamPlayerCount());
-//        System.out.println("Required per team - Leaders: " + leaderCount +
-//                ", Balancers: " + balancerCount +
-//                ", Thinkers: " + thinkerCount);
+        // Calculate maximum possible teams
+        int maxPossibleTeams = Math.min(
+                cp_leaders.size() / leaderCount,
+                Math.min(cp_balancers.size() / balancerCount, cp_thinkers.size() / thinkerCount)
+        );
 
-        // Add timeout and iteration limit
-        long startTime = System.currentTimeMillis();
-        int iterations = 0;
-        int consecutiveFailures = 0;
-        final int MAX_CONSECUTIVE_FAILURES = 100;
+        // Determine thread count (based on CPU cores, but max 8)
+        int threadCount = Math.min(Runtime.getRuntime().availableProcessors(), maxPossibleTeams);
+        threadCount = Math.max(1, Math.min(threadCount, 8));
 
-        // Keep forming teams while there are enough people
-        while (cp_thinkers.size() >= thinkerCount &&
-                cp_balancers.size() >= balancerCount &&
-                cp_leaders.size() >= leaderCount) {
+        CountDownLatch latch = new CountDownLatch(threadCount);
+        List<Thread> threads = new ArrayList<>();
 
-            // Safety checks
-            iterations++;
-            if (iterations > MAX_ITERATIONS) {
-//                System.err.println("⚠️ Reached maximum iterations (" + MAX_ITERATIONS + "). Stopping team formation.");
-                break;
-            }
+        System.out.println("🔄 Starting team formation with " + threadCount + " threads...");
 
-            long elapsed = System.currentTimeMillis() - startTime;
-            if (elapsed > TIMEOUT_MS) {
-//                System.err.println("⚠️ Timeout reached (" + (TIMEOUT_MS/1000) + "s). Stopping team formation.");
-                break;
-            }
-
-            if (consecutiveFailures > MAX_CONSECUTIVE_FAILURES) {
-//                System.err.println("⚠️ Too many consecutive failures (" + consecutiveFailures + "). Stopping team formation.");
-                break;
-            }
-
-            // Clear per-selection lists
-            selectedLeaders.clear();
-            selectedThinkers.clear();
-            selectedBalancers.clear();
-
-            //  Check if selection was successful
-            ArrayList<String> leaders = selectUniqueLeaders(leaderCount);
-            ArrayList<String> balancers = selectUniqueBalancers(balancerCount);
-            ArrayList<String> thinkers = selectUniqueThinkers(thinkerCount);
-
-            if (leaders.isEmpty() || balancers.isEmpty() || thinkers.isEmpty()) {
-                consecutiveFailures++;
-//                System.err.println("⚠️ Failed to select enough players (attempt " + consecutiveFailures + ")");
-                continue;
-            }
-
-            // Create a proper team list
-            ArrayList<String> team = new ArrayList<>();
-            team.addAll(selectedLeaders);
-            team.addAll(selectedBalancers);
-            team.addAll(selectedThinkers);
-
-            // Check team has required personality types
-            if (!validateTeam(team)) {
-                consecutiveFailures++;
-                continue;
-            }
-
-            // Ensure it is exactly user input members count before storing
-            if (team.size() == getTeamPlayerCount()) {
-                if (!isGameCountValid(team)) {
-                    consecutiveFailures++;
-                    continue;
-                }
-                unfinalizedTeams.add(team);
-                consecutiveFailures = 0; // Reset on success
-
-                // Remove selected members from the pools
-                cp_leaders.removeAll(selectedLeaders);
-                cp_balancers.removeAll(selectedBalancers);
-                cp_thinkers.removeAll(selectedThinkers);
-
-
-            } else {
-                consecutiveFailures++;
-                System.err.println("⚠️ Unexpected team size: " + team.size());
-            }
+        // Create and start threads
+        for (int i = 0; i < threadCount; i++) {
+            Thread thread = new Thread(
+                    new TeamFormationTask(this, leaderCount, balancerCount, thinkerCount,
+                            1000, latch, teamLock)
+            );
+            thread.setName("TeamFormation-" + (i + 1));
+            thread.start();
+            threads.add(thread);
         }
+
+        // Wait for all threads to complete
+        try {
+            boolean completed = latch.await(30, TimeUnit.SECONDS);
+            if (!completed) {
+                System.err.println("⚠️ Team formation timeout - stopping threads");
+                threads.forEach(Thread::interrupt);
+            }
+        } catch (InterruptedException e) {
+            System.err.println("Team formation interrupted");
+            threads.forEach(Thread::interrupt);
+            Thread.currentThread().interrupt();
+        }
+
         if (unfinalizedTeams.isEmpty()) {
             System.err.println("❌ No teams were formed! Check if you have enough players.");
             return unfinalizedTeams;
         }
 
+        System.out.println("✅ Formed " + unfinalizedTeams.size() + " teams using parallel processing");
+
         formTeamsBySkillAverageValue();
         finalTeamsSelection();
         return unfinalizedTeams;
+
+
+
     }
 
 
