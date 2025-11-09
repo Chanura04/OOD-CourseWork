@@ -5,7 +5,10 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
+// Process survey data
 public class Player extends Person {
     // Each player personal details
     private int totalScore;
@@ -114,70 +117,68 @@ public class Player extends Person {
             }
 
     }
-//    public void storeSurveyData(){
+
+    public void storeSurveyData(){
+//        List<String> lines = new ArrayList<>();
 //        File playerDataFile = new File("data/students_loop.csv");
-//        //save to csv file
 //        if(checkPersonalityType()){
-//            try (FileWriter writer = new FileWriter(playerDataFile, true)) {
-//                String[] data={
-//                        getId(),getName(),getEmail(),getInterestSport(), String.valueOf(getSkillLevel()),getPreferredRole(), String.valueOf(getTotalScore()),getPersonalityType()
-//                };
-//                writer.append(String.join(",", data));
-//                writer.append("\n");
+//            try (BufferedReader br = new BufferedReader(new FileReader(playerDataFile))) {
+//                br.readLine();
+//                String line;
+//                while ((line = br.readLine()) != null) {
+//                    String[] values = line.split(",");
 //
-//                System.out.printf("%s successfully added!",getName());
+//                    if (values.length > 2 && name.equals(values[1].trim()) && email.equals(values[2].trim())) {
+//                        String id = values[0];
+//                        // Replace this line with new data
+//                        String[] newData = {
+//                                id, getName(), getEmail(), getInterestSport(),
+//                                String.valueOf(getSkillLevel()), getPreferredRole(),
+//                                String.valueOf(getTotalScore()), getPersonalityType()
+//                        };
+//                        line = String.join(",", newData);
+//                    }
+//
+//                    lines.add(line);
+//                }
 //            } catch (IOException e) {
 //                e.printStackTrace();
 //            }
-//        }else{
-//            System.out.println("Your Personality Score is very low!!!. please try again!");
 //        }
-//    }
-    public void storeSurveyData(){
-        List<String> lines = new ArrayList<>();
-        File playerDataFile = new File("data/students_loop.csv");
-        if(checkPersonalityType()){
-            try (BufferedReader br = new BufferedReader(new FileReader(playerDataFile))) {
-                br.readLine();
-                String line;
-                while ((line = br.readLine()) != null) {
-                    String[] values = line.split(",");
+//        else{
+//            System.out.println("⚠️ Your Personality Score is very low!!!. Please try again!\n");
+//            return;
+//        }
+//
+//
+//        // Write the updated data back to the file
+//        try (BufferedWriter bw = new BufferedWriter(new FileWriter(playerDataFile))) {
+//            bw.write("ID,Name,Email,PreferredGame,SkillLevel,PreferredRole,PersonalityScore,PersonalityType");
+//            bw.newLine();
+//
+//            for (String l : lines) {
+//                bw.write(l);
+//                bw.newLine();
+//            }
+//            System.out.println("✅ "+getName() + " successfully completed the survey!\n");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
-                    if (values.length > 2 && name.equals(values[1].trim()) && email.equals(values[2].trim())) {
-                        String id = values[0];
-                        // Replace this line with new data
-                        String[] newData = {
-                                id, getName(), getEmail(), getInterestSport(),
-                                String.valueOf(getSkillLevel()), getPreferredRole(),
-                                String.valueOf(getTotalScore()), getPersonalityType()
-                        };
-                        line = String.join(",", newData);
-                    }
+        String filePath = "data/students_loop.csv";
+        CountDownLatch latch = new CountDownLatch(1);
 
-                    lines.add(line);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        else{
-            System.out.println("⚠️ Your Personality Score is very low!!!. Please try again!\n");
-            return;
-        }
+        // Create and start the thread with our separate task class
+        Thread surveyThread = new Thread(new SurveyProcessorTask(this, filePath, latch));
+        surveyThread.setName("Survey-" + getName());
+        surveyThread.start();
 
-
-        // Write the updated data back to the file
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(playerDataFile))) {
-            bw.write("ID,Name,Email,PreferredGame,SkillLevel,PreferredRole,PersonalityScore,PersonalityType");
-            bw.newLine();
-
-            for (String l : lines) {
-                bw.write(l);
-                bw.newLine();
-            }
-            System.out.println("✅ "+getName() + " successfully completed the survey!\n");
-        } catch (IOException e) {
-            e.printStackTrace();
+        try {
+            // Wait for the thread to complete (max 10 seconds)
+            latch.await(10, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            System.err.println("Survey processing interrupted for " + getName());
+            Thread.currentThread().interrupt();
         }
 
     }
