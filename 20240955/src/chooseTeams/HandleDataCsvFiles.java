@@ -76,7 +76,7 @@ public class HandleDataCsvFiles {
 
 
         if(!isValid){
-            System.out.println("Invalid player data set. Please check the file format and try again!");
+            System.out.println("⚠️ CSV upload failed: Required fields are missing.Please try again!");
             deleteCsvFile();
             System.exit(0);
         }
@@ -86,7 +86,7 @@ public class HandleDataCsvFiles {
 
     }
 
-    private void deleteCsvFile(){
+    public void deleteCsvFile(){
         Path currentDir = Paths.get(System.getProperty("user.dir"));
         Path filePath = currentDir.resolve(fileName);
 
@@ -94,6 +94,21 @@ public class HandleDataCsvFiles {
             if (Files.exists(filePath)) {
                 Files.delete(filePath);
                 System.out.println("🗑️ File rejected!!! " + filePath.toAbsolutePath());
+            } else {
+                System.out.println("❌ File not found in current directory: " + fileName);
+            }
+        } catch (IOException e) {
+            System.out.println("⚠️ Error deleting file: " + e.getMessage());
+        }
+
+    }
+    public void deleteCsvFile(File file){
+        Path currentDir = Paths.get(System.getProperty("user.dir"));
+        Path filePath = currentDir.resolve(file.getName());
+
+        try {
+            if (Files.exists(filePath)) {
+                Files.delete(filePath);
             } else {
                 System.out.println("❌ File not found in current directory: " + fileName);
             }
