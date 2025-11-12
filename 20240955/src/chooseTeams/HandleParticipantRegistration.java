@@ -13,7 +13,7 @@ public class HandleParticipantRegistration {
     }
 
     public boolean isARegisteredParticipant() {
-        String filePath = "data/students_loop.csv";
+        String filePath = "DataBase/students_loop.csv";
         File playerDataFile = new File(filePath);
 
         PlayerDataLoader playerDataLoader = new PlayerDataLoader();
@@ -35,7 +35,7 @@ public class HandleParticipantRegistration {
 
     public int getRegisteredParticipantStoredRawNumber() {
         int rawNumber = 0;
-        String filePath = "data/students_loop.csv";
+        String filePath = "DataBase/students_loop.csv";
         File playerDataFile = new File(filePath);
 
         PlayerDataLoader playerDataLoader = new PlayerDataLoader();

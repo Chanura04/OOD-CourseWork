@@ -33,6 +33,7 @@ public class SurveyProcessorTask implements Runnable {
 
         if (!player.checkPersonalityType()) {
             System.out.println("⚠️ " + player.getName() + "'s Personality Score is very low! Please try again!\n");
+            System.out.println("⚠️ Survey for " + player.getName() + " has been discarded.\n");
             return;
         }
 
@@ -71,7 +72,7 @@ public class SurveyProcessorTask implements Runnable {
                     bw.write(l);
                     bw.newLine();
                 }
-                System.out.println("✅ " + player.getName() + " successfully completed the survey!\n");
+
             } catch (IOException e) {
                 System.err.println("❌ Error writing file for " + player.getName());
                 e.printStackTrace();
