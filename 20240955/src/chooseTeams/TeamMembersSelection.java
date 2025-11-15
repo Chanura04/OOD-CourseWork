@@ -445,7 +445,7 @@ public class TeamMembersSelection implements TeamSelection {
 
     public void writeFinalTeamsOnCsvFile(){
         int teamNumber=0;
-        try (FileWriter writer = new FileWriter("files/formed_teams.csv")) {
+        try (FileWriter writer = new FileWriter("files/possible_teams.csv")) {
             writer.write("ID,Name,Email,PreferredGame,SkillLevel,PreferredRole,PersonalityScore,PersonalityType,TeamNumber");
             writer.write("\n");
 
@@ -481,7 +481,10 @@ public class TeamMembersSelection implements TeamSelection {
 
         try {
             Files.copy(sourcePath, destinationPath, StandardCopyOption.REPLACE_EXISTING);
-            System.out.println("✅ Teams exported to 'formed_teams.csv'");
+//            System.out.println("✅ Teams exported to 'formed_teams.csv'");
+            System.out.println("✅ Formed teams are successfully saved");
+
+
         } catch (IOException e) {
             System.out.println("⚠️ Error copying file: " + e.getMessage());
         }

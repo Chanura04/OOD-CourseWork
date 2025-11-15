@@ -11,7 +11,7 @@ public class Main {
     static int currentUserStoredRawNumber;
 
 
-
+    static int totalFormedTeams = 0;
     static int playersCount = 0;
     static int rest_thinkers = 0;
     static int rest_leaders = 0;
@@ -134,13 +134,16 @@ public class Main {
                 System.out.println("=".repeat(80));
                 System.out.println("\n 1) Import Participant Data (CSV)");
                 System.out.println(" 2) Generate Teams");
-                System.out.println(" 3) View Team Statistics");
-                System.out.println(" 4) View Remaining Players");
-                System.out.println(" 5) Logout\n");
+                System.out.println(" 3) Select final teams");
+                System.out.println(" 4) Review Formed Teams");
+                System.out.println(" 5) View Team Statistics");
+                System.out.println(" 6) View Remaining Players");
+                System.out.println(" 7) Review Possible Teams");//
+                System.out.println(" 8) Logout\n");
                 System.out.println("=".repeat(80));
                 System.out.println("\n");
 
-                int choice = getValidIntegerInput(input, "Enter your choice: ", 1, 6);
+                int choice = getValidIntegerInput(input, "Enter your choice: ", 1, 8);
 
                 switch (choice) {
                     case 1:
@@ -150,12 +153,21 @@ public class Main {
                         generateTeams(input);
                         break;
                     case 3:
-                        viewTeamStatistics();
+                        finalTeamsSelection(input);
                         break;
                     case 4:
-                        viewRemainingPlayers();
+                        reviewFormedTeams();
                         break;
                     case 5:
+                        viewTeamStatistics();
+                        break;
+                    case 6:
+                        viewRemainingPlayers();
+                        break;
+                    case 7:
+                        reviewPossibleTeams();
+                        break;
+                    case 8:
                         System.out.println("🔓 Logging out...");
                         return;
                 }
@@ -422,7 +434,7 @@ public class Main {
             TeamMembersSelection teamMembersSelection = new TeamMembersSelection(playersCount, uploadCsvFileName);
             teamMembersSelection.categorizeByPersonalityType();
             teamMembersSelection.createTeams();
-            teamMembersSelection.randomizeTeamCombinationAgain();
+//            teamMembersSelection.randomizeTeamCombinationAgain();
             long endTime = System.currentTimeMillis();
 
             avgSkillValue = teamMembersSelection.getAverage();
@@ -431,10 +443,10 @@ public class Main {
             rest_thinkers = teamMembersSelection.getRest_thinkers();
             rest_leaders = teamMembersSelection.getRest_leaders();
             rest_balancers = teamMembersSelection.getRest_balancers();
-            int formedTeamsSize = teamMembersSelection.getFinalTeamCombination();
+            totalFormedTeams = teamMembersSelection.getFinalTeamCombination();
             teamMembersSelection.writeFinalTeamsOnCsvFile();
 
-            File file = new File("files/formed_teams.csv");
+            File file = new File("files/possible_teams.csv");
             if (file.exists()) {
                 ViewTeams vm = new ViewTeams(file);
                 vm.setTeamPlayerCount(playersCount);
@@ -445,12 +457,12 @@ public class Main {
 
             boolean isAcceptingFormedTeams=getValidResponseInput(input,"\nDo you accept these teams? (Y/N):","y","n");
             if(isAcceptingFormedTeams){
-                teamMembersSelection.exportFormedTeams("files/formed_teams.csv");
+                teamMembersSelection.exportFormedTeams("files/possible_teams.csv");
                 teamMembersSelection.writeRemainingPlayerInCsvFile();
-                System.out.println("📊 Total teams formed: " + formedTeamsSize);
+
             }else{
                 System.out.println("❌ Teams were not accepted. Export cancelled.");
-                File file1 = new File("formed_teams.csv");
+                File file1 = new File("possible_teams.csv");
                 if (file1.exists()) {
                     HandleDataCsvFiles handleDataCsvFiles = new HandleDataCsvFiles();
                     handleDataCsvFiles.deleteCsvFile(file1);
@@ -465,33 +477,53 @@ public class Main {
         }
     }
 
-//    private static void reviewFormedTeams() {
-//        if (playersCount == 0) {
-//            System.out.println("⚠️ Please generate teams first.");
-//            return;
-//        }
-//
-//        File file = new File("formed_teams.csv");
-//        if (file.exists()) {
-//            ViewTeams vm = new ViewTeams(file);
-//            vm.setTeamPlayerCount(playersCount);
-//            vm.viewFormedTeams();
-//        } else {
-//            System.out.println("⚠️ No teams file found. Please generate teams first.");
-//        }
-//    }
+    private static void reviewFormedTeams() {
+        if (playersCount == 0) {
+            System.out.println("⚠️ Please generate teams first.");
+            return;
+        }
+
+        File file = new File("formed_teams.csv");
+        if (file.exists()) {
+            FinalTeamSelection finalTeamSelection=new FinalTeamSelection();
+            finalTeamSelection.viewFormedTeams(file);
+        } else {
+            System.out.println("⚠️ Please generate final teams first.");
+        }
+    }
+    private static void reviewPossibleTeams() {
+        if (playersCount == 0) {
+            System.out.println("⚠️ Please generate teams first.");
+            return;
+        }
+        File file_check = new File("files/possible_teams.csv");
+        File file = new File("possible_teams.csv");
+        if (file_check.exists()) {
+            ViewTeams vm = new ViewTeams(file);
+            vm.setTeamPlayerCount(playersCount);
+            vm.viewFormedTeams();
+        } else {
+            System.out.println("⚠️ No teams found. Please generate teams first.");
+        }
+    }
 
     private static void viewTeamStatistics(   ) {
         if (playersCount == 0) {
             System.out.println("⚠️ Please generate teams first.");
             return;
         }
+        File file = new File("files/possible_teams.csv");
+        if (!file.exists()) {
+            System.out.println("⚠️ No teams found. Please generate teams first.");
+
+        }
 
         System.out.println("\n\n" + "=".repeat(80));
         System.out.println("\n                          TEAM STATISTICS");
         System.out.println("=".repeat(80));
-        System.out.printf("\nAverage Skill Value: %.2f\n", avgSkillValue);
-        System.out.printf("Team Skill Range: %.2f - %.2f\n", minAvg, maxAvg);
+        System.out.println("\n📊 Total teams formed: " + totalFormedTeams);
+        System.out.printf("Average Skill Value: %.2f\n", avgSkillValue);
+        System.out.printf("Formed Teams Skill Range: %.2f - %.2f\n", minAvg, maxAvg);
         System.out.println("-".repeat(80));
         System.out.println("Remaining Players by Type:");
         System.out.println("  Leaders: " + rest_leaders);
@@ -500,6 +532,27 @@ public class Main {
         System.out.println();
         System.out.println("=".repeat(80));
         System.out.println("\n");
+    }
+
+    private static void finalTeamsSelection(Scanner input){
+        System.out.println("\n📊 Total teams formed: " + totalFormedTeams);
+        File file = new File("files/possible_teams.csv");
+
+        try{
+            int requiredTeamCount = getValidIntegerInput(input,
+                    "\nEnter required teams count (minimum 4): ", 1, totalFormedTeams);
+
+            FinalTeamSelection finalTeamSelection=new FinalTeamSelection();
+            finalTeamSelection.setRequiredTeamCount(requiredTeamCount);
+            finalTeamSelection.setTotalFormedTeamsCount(totalFormedTeams);
+            finalTeamSelection.setCsvFile(file);
+            finalTeamSelection.finalResult();
+
+
+        }catch (Exception e){
+
+        }
+
     }
 
     private static void viewRemainingPlayers() {

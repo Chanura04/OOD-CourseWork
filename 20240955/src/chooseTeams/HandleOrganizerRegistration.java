@@ -32,10 +32,6 @@ public class HandleOrganizerRegistration {
         }
         return isRegistered;
     }
-
-
-
-
 }
 
 
