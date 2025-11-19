@@ -1,11 +1,11 @@
 package chooseTeams;
 
-public abstract class Person {
+public abstract class User {
 
     protected String name;
     protected String email;
 
-    public Person( String name, String email) {
+    public User(String name, String email) {
 
         this.name = name;
         this.email = email;

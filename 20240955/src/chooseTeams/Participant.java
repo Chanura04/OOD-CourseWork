@@ -3,13 +3,11 @@ package chooseTeams;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 // Process survey data
-public class Player extends Person {
+public class Participant extends User {
     // Each player personal details
     private int totalScore;
     private String preferredRole;
@@ -20,18 +18,18 @@ public class Player extends Person {
     private int playerDataRowNumber;
 
     //Player class constructor
-    public Player( String name, String email) {
+    public Participant(String name, String email) {
         super( name, email);
         setId(newPlayerId());
 
     }
     //Use for store survey data
-    public Player( String name, String email, int playerDataRowNumber) {
-        super( name, email);
-        setId(newPlayerId());
-        this.playerDataRowNumber=playerDataRowNumber;
-
-    }
+//    public Player( String name, String email, int playerDataRowNumber) {
+//        super( name, email);
+//        setId(newPlayerId());
+//        this.playerDataRowNumber=playerDataRowNumber;
+//
+//    }
 
 
     public void setId(String id) {
@@ -102,7 +100,7 @@ public class Player extends Person {
 
     //Store player data into a csv file
     public void storeRegisteredPlayerData(){
-        File playerDataFile = new File("data/students_loop.csv");
+        File playerDataFile = new File("DataBase/students_loop.csv");
         //save to csv file
             try (FileWriter writer = new FileWriter(playerDataFile, true)) {
                 String[] data={
@@ -165,7 +163,7 @@ public class Player extends Person {
 //            e.printStackTrace();
 //        }
 
-        String filePath = "data/students_loop.csv";
+        String filePath = "DataBase/students_loop.csv";
         CountDownLatch latch = new CountDownLatch(1);
 
         // Create and start the thread with our separate task class
@@ -185,8 +183,8 @@ public class Player extends Person {
 
 
     public int getStoredLastId(){
-       PlayerDataLoader playerDataLoader=new PlayerDataLoader();
-       File playerDataFile = new File("data/students_loop.csv");
+       ParticipantDataLoader playerDataLoader=new ParticipantDataLoader();
+       File playerDataFile = new File("DataBase/students_loop.csv");
 
         ArrayList<String> loadPlayerData=playerDataLoader.getPlayerData(playerDataFile);
        if(loadPlayerData.isEmpty()){

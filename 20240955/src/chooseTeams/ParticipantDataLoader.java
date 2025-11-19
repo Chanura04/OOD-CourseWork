@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-public class PlayerDataLoader {
+public class ParticipantDataLoader {
 
     public ArrayList<String> getPlayerData(File csvFilePath){
 //        String filePath = "data/participants_sample.csv";
