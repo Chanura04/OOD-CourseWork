@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 public class SurveyProcessorTask implements Runnable {
-    private final Player player;
+    private final Participant player;
     private final CountDownLatch latch;
     private final String filePath;
 
-    public SurveyProcessorTask(Player player, String filePath, CountDownLatch latch) {
+    public SurveyProcessorTask(Participant player, String filePath, CountDownLatch latch) {
         this.player = player;
         this.filePath = filePath;
         this.latch = latch;

@@ -59,7 +59,7 @@ public class TeamMembersSelection implements TeamSelection {
 
     private double maximumSkillAverage;
     private double minimumSkillAverage;
-    private boolean usingCustomPlayerList = false;
+
     public TeamMembersSelection(int teamPlayerCount,String csvFilePath) {
         this.teamPlayerCount=teamPlayerCount;
         this.csvFilePath=csvFilePath;
@@ -70,12 +70,7 @@ public class TeamMembersSelection implements TeamSelection {
         return finalTeamCombination.size();
     }
 
-    public void setMaximumSkillAverage(double maximumSkillAverage) {
-        this.maximumSkillAverage = maximumSkillAverage;
-    }
-    public void setMinimumSkillAverage(double minimumSkillAverage) {
-        this.minimumSkillAverage = minimumSkillAverage;
-    }
+
     public double getMaximumSkillAverage() {
         return maximumSkillAverage;
     }
@@ -88,9 +83,7 @@ public class TeamMembersSelection implements TeamSelection {
     public double getAverage(){
         return average;
     }
-    public  void setAverage(double average){
-        this.average=average;
-    }
+
 
     public int getRest_leaders(){
         return rest_leaders.size();
@@ -103,26 +96,11 @@ public class TeamMembersSelection implements TeamSelection {
         return rest_thinkers.size();
     }
 
-    // helper methods (needed by TeamFormationTask)
-    public boolean hasEnoughPlayersForTeam(int leaderCount, int balancerCount, int thinkerCount) {
-        return cp_leaders.size() >= leaderCount &&
-                cp_balancers.size() >= balancerCount &&
-                cp_thinkers.size() >= thinkerCount;
-    }
-    public void addTeam(ArrayList<String> team) {
-        unfinalizedTeams.add(team);
-    }
-    public void removeSelectedPlayers(ArrayList<String> leaders,
-                                      ArrayList<String> balancers,
-                                      ArrayList<String> thinkers) {
-        cp_leaders.removeAll(leaders);
-        cp_balancers.removeAll(balancers);
-        cp_thinkers.removeAll(thinkers);
-    }
+
 
 
     public void categorizeByPersonalityType() {
-        PlayerDataLoader playerDataLoader = new PlayerDataLoader();
+        ParticipantDataLoader playerDataLoader = new ParticipantDataLoader();
         ArrayList<String> playerData = playerDataLoader.getPlayerData(csvFilePath);
         categorizeByPersonalityType(playerData);
     }
@@ -248,7 +226,7 @@ public class TeamMembersSelection implements TeamSelection {
                 Math.min(cp_balancers.size() / balancerCount, cp_thinkers.size() / thinkerCount)
         );
 
-        // Determine thread count (based on CPU cores, but max 8)
+        // Determine optimal thread count (based on CPU cores, but max 8)
         int threadCount = Math.min(Runtime.getRuntime().availableProcessors(), maxPossibleTeams);
         threadCount = Math.max(1, Math.min(threadCount, 8));
 
@@ -265,7 +243,7 @@ public class TeamMembersSelection implements TeamSelection {
             );
             thread.setName("TeamFormation-" + (i + 1));
             thread.start();
-            threads.add(thread);
+            threads.add(thread);//use for check the monitor the thread
         }
 
         // Wait for all threads to complete
@@ -294,7 +272,22 @@ public class TeamMembersSelection implements TeamSelection {
 
     }
 
-
+    // helper methods (needed by TeamFormationTask)
+    public boolean hasEnoughPlayersForTeam(int leaderCount, int balancerCount, int thinkerCount) {
+        return cp_leaders.size() >= leaderCount &&
+                cp_balancers.size() >= balancerCount &&
+                cp_thinkers.size() >= thinkerCount;
+    }
+    public void addTeam(ArrayList<String> team) {
+        unfinalizedTeams.add(team);
+    }
+    public void removeSelectedPlayers(ArrayList<String> leaders,
+                                      ArrayList<String> balancers,
+                                      ArrayList<String> thinkers) {
+        cp_leaders.removeAll(leaders);
+        cp_balancers.removeAll(balancers);
+        cp_thinkers.removeAll(thinkers);
+    }
 //Maximum 2 from same game per team
     public boolean isGameCountValid(ArrayList<String> team) {
         HashMap<String, Integer> countMap = new HashMap<>();
@@ -332,7 +325,6 @@ public class TeamMembersSelection implements TeamSelection {
         }
         average = (double) totalSum / teamSize;
 
-        setAverage(average);
 
         for(int i=0;i<unfinalizedTeams.size();i++){
             ArrayList<String> team=unfinalizedTeams.get(i);
@@ -345,12 +337,11 @@ public class TeamMembersSelection implements TeamSelection {
                 teamSkillSum+=skillValue;
             }
 
-            double maxValue=average+3;
-            double minValue=average-3;
-            setMaximumSkillAverage(maxValue);
-            setMinimumSkillAverage(minValue);
+            maximumSkillAverage=average+3;
+            minimumSkillAverage=average-3;
 
-            if( teamSkillSum >= minValue && teamSkillSum <= maxValue){
+
+            if( teamSkillSum >= minimumSkillAverage && teamSkillSum <= maximumSkillAverage){
                 selectedTeamsInFirstFilter.add(team);
             }else{
                 remainingTeams.add(team);
@@ -393,54 +384,7 @@ public class TeamMembersSelection implements TeamSelection {
 //        writeRemainingPlayerInCsvFile();
     }
 
-    public void randomizeTeamCombinationAgain() {
-        System.out.println("\n===================================== Randomizing the formed teams players again and forming new teams =====================================");
 
-        ArrayList<String> convertedList = new ArrayList<>();
-
-        // Flatten all teams into a single list
-        for (ArrayList<String> team : finalTeamCombination) {
-            for (String player : team) {
-                convertedList.add(player);
-            }
-        }
-
-        // Shuffle the players
-        Collections.shuffle(convertedList);
-
-        // Clear previous results
-        unfinalizedTeams.clear();
-        selectedTeamsInFirstFilter.clear();
-        remainingTeams.clear();
-        finalTeamCombination.clear();
-
-        rest_leaders.clear();
-        rest_balancers.clear();
-        rest_thinkers.clear();
-
-        average=0;
-        secondFilterationFormedTeamsCount=0;
-
-        maximumSkillAverage=0;
-        minimumSkillAverage=0;
-
-        all_leaders.clear();
-        all_balancers.clear();
-        all_thinkers.clear();
-
-        cp_leaders.clear();
-        cp_balancers.clear();
-        cp_thinkers.clear();
-
-        selectedLeaders.clear();
-        selectedBalancers.clear();
-        selectedThinkers.clear();
-        // Categorize with shuffled list
-        categorizeByPersonalityType(convertedList);
-
-        // Reuse the same createTeams() method!
-        createTeams();
-    }
 
 
     public void writeFinalTeamsOnCsvFile(){

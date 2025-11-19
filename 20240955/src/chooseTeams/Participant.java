@@ -117,51 +117,6 @@ public class Participant extends User {
     }
 
     public void storeSurveyData(){
-//        List<String> lines = new ArrayList<>();
-//        File playerDataFile = new File("data/students_loop.csv");
-//        if(checkPersonalityType()){
-//            try (BufferedReader br = new BufferedReader(new FileReader(playerDataFile))) {
-//                br.readLine();
-//                String line;
-//                while ((line = br.readLine()) != null) {
-//                    String[] values = line.split(",");
-//
-//                    if (values.length > 2 && name.equals(values[1].trim()) && email.equals(values[2].trim())) {
-//                        String id = values[0];
-//                        // Replace this line with new data
-//                        String[] newData = {
-//                                id, getName(), getEmail(), getInterestSport(),
-//                                String.valueOf(getSkillLevel()), getPreferredRole(),
-//                                String.valueOf(getTotalScore()), getPersonalityType()
-//                        };
-//                        line = String.join(",", newData);
-//                    }
-//
-//                    lines.add(line);
-//                }
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        else{
-//            System.out.println("⚠️ Your Personality Score is very low!!!. Please try again!\n");
-//            return;
-//        }
-//
-//
-//        // Write the updated data back to the file
-//        try (BufferedWriter bw = new BufferedWriter(new FileWriter(playerDataFile))) {
-//            bw.write("ID,Name,Email,PreferredGame,SkillLevel,PreferredRole,PersonalityScore,PersonalityType");
-//            bw.newLine();
-//
-//            for (String l : lines) {
-//                bw.write(l);
-//                bw.newLine();
-//            }
-//            System.out.println("✅ "+getName() + " successfully completed the survey!\n");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
 
         String filePath = "DataBase/students_loop.csv";
         CountDownLatch latch = new CountDownLatch(1);
