@@ -237,13 +237,29 @@ public class TeamMembersSelection implements TeamSelection {
 
         // Create and start threads
         for (int i = 0; i < threadCount; i++) {
-            Thread thread = new Thread(
-                    new TeamFormationTask(this, leaderCount, balancerCount, thinkerCount,
-                            1000, latch, teamLock)
+
+            // Create the task
+            TeamFormationTask task = new TeamFormationTask(
+                    this,// Represent the TeamMemberSelection class object
+                    leaderCount,
+                    balancerCount,
+                    thinkerCount,
+                    1000,
+                    latch,
+                    teamLock
             );
+
+            //  Give the takes to worker
+            Thread thread = new Thread(task);
+
+            // Give the thread a readable name
             thread.setName("TeamFormation-" + (i + 1));
+
+            //  Start the thread
             thread.start();
-            threads.add(thread);//use for check the monitor the thread
+
+            // Store for timeout control
+            threads.add(thread);
         }
 
         // Wait for all threads to complete

@@ -41,7 +41,7 @@ public class HandleRemainingPlayers extends TeamMembersSelection {
 
     }
 
-    // helper methods (needed by RemainingTeamFormationTask)
+
     public void returnPlayersToPool(ArrayList<String> team) {
         for (String player : team) {
             String raw = player.replace("[", "").replace("]", "").trim();
@@ -61,11 +61,12 @@ public class HandleRemainingPlayers extends TeamMembersSelection {
         selectedTeamsInSecondFilter.add(team);
     }
 
-    public boolean hasEnoughPlayersForTeam(int leaderCount, int balancerCount, int thinkerCount) {
-        return remaining_all_leaders.size() >= leaderCount &&
-                remaining_all_balancers.size() >= balancerCount &&
-                remaining_all_thinkers.size() >= thinkerCount;
-    }
+//    @Override
+//    public boolean hasEnoughPlayersForTeam(int leaderCount, int balancerCount, int thinkerCount) {
+//        return remaining_all_leaders.size() >= leaderCount &&
+//                remaining_all_balancers.size() >= balancerCount &&
+//                remaining_all_thinkers.size() >= thinkerCount;
+//    }
 
     public ArrayList<String> getRemaining_all_leaders() {
         return remaining_all_leaders;
@@ -153,10 +154,19 @@ public class HandleRemainingPlayers extends TeamMembersSelection {
 
         // Create and start threads
         for (int i = 0; i < threadCount; i++) {
-            Thread thread = new Thread(
-                    new RemainingTeamFormationTask(this, 1000, minValue, maxValue,
-                            latch, remainingLock)
+
+            RemainingTeamFormationTask task= new RemainingTeamFormationTask(
+                    this,
+                    1000,
+                    minValue,
+                    maxValue,
+                    latch,
+                    remainingLock
             );
+
+
+            Thread thread = new Thread(task);
+
             thread.setName("RemainingTeam-" + (i + 1));
             thread.start();
             threads.add(thread);

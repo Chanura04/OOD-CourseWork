@@ -23,13 +23,7 @@ public class Participant extends User {
         setId(newPlayerId());
 
     }
-    //Use for store survey data
-//    public Player( String name, String email, int playerDataRowNumber) {
-//        super( name, email);
-//        setId(newPlayerId());
-//        this.playerDataRowNumber=playerDataRowNumber;
-//
-//    }
+
 
 
     public void setId(String id) {
@@ -122,7 +116,8 @@ public class Participant extends User {
         CountDownLatch latch = new CountDownLatch(1);
 
         // Create and start the thread with our separate task class
-        Thread surveyThread = new Thread(new SurveyProcessorTask(this, filePath, latch));
+        SurveyProcessorTask surveyProcessorTask = new SurveyProcessorTask(this, filePath, latch);
+        Thread surveyThread = new Thread(surveyProcessorTask);
         surveyThread.setName("Survey-" + getName());
         surveyThread.start();
 

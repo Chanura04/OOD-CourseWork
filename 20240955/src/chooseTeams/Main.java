@@ -85,7 +85,7 @@ public class Main {
             System.out.println("-".repeat(80));
             System.out.println("\n");
 
-            // Use helper method
+
             String organizerName = getStringInputWithExit(input,
                     "Enter Organizer name (or 'q' to return): ");
 
@@ -94,7 +94,7 @@ public class Main {
                 return false;
             }
 
-            // Use helper method for email too
+
             String organizerEmail = getStringInputWithExit(input,
                     "Enter Organizer Email (or 'q' to return): ");
 
@@ -184,21 +184,23 @@ public class Main {
             System.out.println("-".repeat(80));
             System.out.println("\n");
 
-            System.out.print("Enter your name (or 'q' to return): ");
-            currentUserName = input.nextLine().trim();
+            currentUserName = getStringInputWithExit(input,
+                    "Enter the name (or 'q' to return): ");
 
             if (currentUserName.equalsIgnoreCase("q")) {
                 System.out.println("🔙 Returning to main menu...");
                 return false;
             }
 
+
             if (currentUserName.isEmpty()) {
                 System.out.println("⚠️ Name cannot be empty.");
                 return false;
             }
 
-            System.out.print("Enter your email: ");
-            currentUserEmail = input.nextLine().trim();
+
+            currentUserEmail =  getStringInputWithExit(input,
+                    "Enter the email (or 'q' to return): ");
 
             if (currentUserEmail.equalsIgnoreCase("q")) {
                 System.out.println("🔙 Returning to main menu...");

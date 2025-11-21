@@ -71,7 +71,7 @@ public class HandleDataCsvFiles {
         }
 
         //Check if the required fields are included.
-        PlayerDataLoader playerDataLoader=new PlayerDataLoader();
+        ParticipantDataLoader playerDataLoader=new ParticipantDataLoader();
         boolean isValid=playerDataLoader.validatePlayerData(String.valueOf(sourcePath.getFileName()));
 
 

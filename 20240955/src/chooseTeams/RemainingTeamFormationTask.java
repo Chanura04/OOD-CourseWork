@@ -55,7 +55,7 @@ public class RemainingTeamFormationTask implements Runnable {
                 continue;
             }
 
-            // Validate team
+            // Validate team (If formed team is not valid that selected team's players again adding to list)
             if (!remainingHandler.validateTeam(candidateTeam) ||
                     !remainingHandler.isGameCountValid(candidateTeam)) {
                 synchronized (remainingLock) {

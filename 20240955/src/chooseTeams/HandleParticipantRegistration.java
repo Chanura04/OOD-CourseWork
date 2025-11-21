@@ -16,7 +16,7 @@ public class HandleParticipantRegistration {
         String filePath = "DataBase/students_loop.csv";
         File playerDataFile = new File(filePath);
 
-        PlayerDataLoader playerDataLoader = new PlayerDataLoader();
+        ParticipantDataLoader playerDataLoader = new ParticipantDataLoader();
         ArrayList<String> playerData = playerDataLoader.getPlayerData(playerDataFile);
 
         boolean isRegistered = false;
@@ -38,7 +38,7 @@ public class HandleParticipantRegistration {
         String filePath = "DataBase/students_loop.csv";
         File playerDataFile = new File(filePath);
 
-        PlayerDataLoader playerDataLoader = new PlayerDataLoader();
+        ParticipantDataLoader playerDataLoader = new ParticipantDataLoader();
         ArrayList<String> playerData = playerDataLoader.getPlayerData(playerDataFile);
 
 
