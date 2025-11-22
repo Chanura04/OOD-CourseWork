@@ -1,8 +1,9 @@
-package chooseTeams;
+package main;
 
-import java.io.File;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+
 
 public class Main {
     static String currentUserName;

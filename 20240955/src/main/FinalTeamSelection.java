@@ -1,4 +1,4 @@
-package chooseTeams;
+package main;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -13,11 +13,20 @@ public class FinalTeamSelection {
     private int requiredTeamCount;
     private int totalFormedTeamsCount;
     private File csvFile;
-    private int playersCount;
+    private int playersCountPerTeam;
+    double averageSkillLevel;
+    double maximumSkillAverage;
+    double minimumSkillAverage;
+    int remainingLeadersCount;
+    int remainingBalancersCount;
+    int remainingThinkersCount;
 
+    public void setCsvFile(File csvFile) {
+        this.csvFile = csvFile;
+    }
 
-    public void setTeamPlayerCount(int playersCount) {
-        this.playersCount = playersCount;
+    public void setTeamPlayerCount(int playersCountPerTeam) {
+        this.playersCountPerTeam = playersCountPerTeam;
     }
     public void setTotalFormedTeamsCount(int totalFormedTeamsCount) {
         this.totalFormedTeamsCount = totalFormedTeamsCount;
@@ -154,17 +163,17 @@ public class FinalTeamSelection {
     }
 
     public void finalTeamsSelection(Scanner input){
-
+        if(!getPreviousLogData()){
+            System.out.println("⚠️ Please generate teams first.");
+            return;
+        }
+        getPreviousLogData();
         File file_check = new File("possible_teams.csv");
         if (!file_check.exists()) {
             System.out.println("⚠️ No teams found. Please generate teams first.");
             return;
         }
 
-//        if (playersCount == 0) {
-//            System.out.println("⚠️ Please generate teams first.");
-//            return;
-//        }
         System.out.println("\n📊 Total teams formed: " + totalFormedTeamsCount);
         File file = new File("files/possible_teams.csv");
 
@@ -177,6 +186,34 @@ public class FinalTeamSelection {
 
         }
     }
+    public boolean getPreviousLogData() {
+        File logFile = new File("files/log.csv");
+        try (BufferedReader br = new BufferedReader(new FileReader(logFile))) {
+            br.readLine(); // skip header
+            String line, lastLine = null;
+            while ((line = br.readLine()) != null) {
+                lastLine = line;
+            }
+            if (lastLine != null && !lastLine.trim().isEmpty()) {
+                String[] columns = lastLine.split(",");
+                if (columns.length >= 8) { // ensure all expected columns exist
+                    playersCountPerTeam = Integer.parseInt(columns[0]);
+                    totalFormedTeamsCount = Integer.parseInt(columns[1]);
+                    averageSkillLevel = Double.parseDouble(columns[2]);
+                    maximumSkillAverage = Double.parseDouble(columns[3]);
+                    minimumSkillAverage = Double.parseDouble(columns[4]);
+                    remainingLeadersCount = Integer.parseInt(columns[5]);
+                    remainingBalancersCount = Integer.parseInt(columns[6]);
+                    remainingThinkersCount = Integer.parseInt(columns[7]);
+                    return true;
+                }
+            }
+            return false;
+        } catch (IOException | NumberFormatException e) {
+            return false;
+        }
+    }
+
 
 
     public  void reviewRandomlySelectedTeams(Scanner input) {
@@ -206,11 +243,11 @@ public class FinalTeamSelection {
             System.out.println("✅ Final teams exported successfully to: formed_teams.csv");
 
         }else {
-            playersCount = 0;
+            playersCountPerTeam = 0;
             System.out.println("❌ Teams were not accepted. Export cancelled.");
             File file1 = new File("formed_teams.csv");
             if (file1.exists()) {
-                HandleDataCsvFiles handleDataCsvFiles = new HandleDataCsvFiles();
+                HandleUploadedDataCsvFiles handleDataCsvFiles = new HandleUploadedDataCsvFiles();
                 handleDataCsvFiles.deleteCsvFile(file1);
             }
         }
@@ -249,10 +286,11 @@ public class FinalTeamSelection {
             int remainingThinkersCount
     ) {
 
-        if (teamPlayerCount == 0) {
+        if(!getPreviousLogData()){
             System.out.println("⚠️ Please generate teams first.");
             return;
         }
+        getPreviousLogData();
         File file = new File("files/possible_teams.csv");
         if (!file.exists()) {
             System.out.println("⚠️ No teams found. Please generate teams first.");
@@ -262,6 +300,36 @@ public class FinalTeamSelection {
         System.out.println("\n                          TEAM STATISTICS");
         System.out.println("=".repeat(80));
         System.out.println("\n📊 Total teams formed: " + totalTeamsCount);
+        System.out.println("Player Count per Team: " + teamPlayerCount);
+        System.out.printf("Average Skill Value: %.2f\n",averageSkillLevel );
+        System.out.printf("Formed Teams Skill Range: %.2f - %.2f\n", minimumSkillAverage, maximumSkillAverage );
+        System.out.println("-".repeat(80));
+        System.out.println("Remaining Players by Type:");
+        System.out.println("  Leaders: " + remainingLeadersCount);
+        System.out.println("  Balancers: " + remainingBalancersCount);
+        System.out.println("  Thinkers: " + remainingThinkersCount);
+        System.out.println();
+        System.out.println("=".repeat(80));
+        System.out.println("\n");
+    }
+
+    public  void viewFinalTeamsStatistics() {
+
+        if(!getPreviousLogData()){
+            System.out.println("⚠️ Please generate teams first.");
+            return;
+        }
+        getPreviousLogData();
+        File file = new File("files/possible_teams.csv");
+        if (!file.exists()) {
+            System.out.println("⚠️ No teams found. Please generate teams first.");
+        }
+
+        System.out.println("\n\n" + "=".repeat(80));
+        System.out.println("\n                          TEAM STATISTICS");
+        System.out.println("=".repeat(80));
+        System.out.println("\n📊 Total teams formed: " + totalFormedTeamsCount);
+        System.out.println("Player Count per Team: " + playersCountPerTeam);
         System.out.printf("Average Skill Value: %.2f\n",averageSkillLevel );
         System.out.printf("Formed Teams Skill Range: %.2f - %.2f\n", minimumSkillAverage, maximumSkillAverage );
         System.out.println("-".repeat(80));
@@ -290,6 +358,7 @@ public class FinalTeamSelection {
             }
         }
     }
+
 
 
 }

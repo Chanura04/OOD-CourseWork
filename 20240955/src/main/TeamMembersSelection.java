@@ -1,4 +1,4 @@
-package chooseTeams;
+package main;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -78,6 +78,9 @@ public class TeamMembersSelection implements TeamSelection {
     public double getAverage(){
         return average;
     }
+    public int setTeamPlayerCount(int teamPlayerCount){
+        return this.teamPlayerCount=teamPlayerCount;
+    }
 
     public int getRemainingLeadersCount(){
         return rest_leaders.size();
@@ -122,13 +125,14 @@ public class TeamMembersSelection implements TeamSelection {
             if(isAcceptingFormedTeams){
                 exportFormedTeams("files/possible_teams.csv");
                 writeRemainingPlayerInCsvFile();
+                writeTeamGeneratingLog();
 
             }else{
                 teamPlayerCount=0;
                 System.out.println("❌ Teams were not accepted. Export cancelled.");
                 File file1 = new File("possible_teams.csv");
                 if (file1.exists()) {
-                    HandleDataCsvFiles handleDataCsvFiles = new HandleDataCsvFiles();
+                    HandleUploadedDataCsvFiles handleDataCsvFiles = new HandleUploadedDataCsvFiles();
                     handleDataCsvFiles.deleteCsvFile(file1);
                 }
             }
@@ -168,11 +172,12 @@ public class TeamMembersSelection implements TeamSelection {
         cp_leaders = new ArrayList<>(all_leaders);
         cp_balancers = new ArrayList<>(all_balancers);
         cp_thinkers = new ArrayList<>(all_thinkers);
+        int total=cp_leaders.size()+cp_balancers.size()+cp_thinkers.size();
 
         System.out.println("\nLoaded - Leaders: " + cp_leaders.size() +
                 ", Balancers: " + cp_balancers.size() +
                 ", Thinkers: " + cp_thinkers.size());
-        System.out.println("Loaded - Total players: " + playerData.size());
+        System.out.println("Loaded - Total players: " + total);
     }
 
 
@@ -452,6 +457,15 @@ public class TeamMembersSelection implements TeamSelection {
                     writer.write("\n");
                 }
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeTeamGeneratingLog(){
+        try (FileWriter writer = new FileWriter("files/log.csv")) {
+            writer.write("PlayersPerTeam,TotalTeamCount,AverageSkillLevel,MinimumSkillLevel,MaximumSkillLevel,RemainingLeaderCount,RemainingBalancerCount,RemainingThinkerCount");
+            writer.write("\n");
+            writer.write(teamPlayerCount + "," + finalTeamCombination.size()+','+average+','+minimumSkillAverage+','+maximumSkillAverage+','+getRemainingLeadersCount()+','+getRemainingBalancersCount()+','+getRemainingThinkersCount()+ "\n");
         } catch (IOException e) {
             e.printStackTrace();
         }

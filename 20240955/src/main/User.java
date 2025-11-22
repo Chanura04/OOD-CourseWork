@@ -1,4 +1,4 @@
-package chooseTeams;
+package main;
 
 public abstract class User {
 

@@ -1,0 +1,75 @@
+ID,Name,Email,PreferredGame,SkillLevel,PreferredRole,PersonalityScore,PersonalityType
+P062, Participant_62, user62@university.edu, Basketball, 6, Attacker, 85, Balanced
+P017, Participant_17, user17@university.edu, CS:GO, 10, Attacker, 77, Balanced
+P065, Participant_65, user65@university.edu, DOTA 2, 7, Coordinator, 77, Balanced
+P083, Participant_83, user83@university.edu, DOTA 2, 10, Defender, 75, Balanced
+P098, Participant_98, user98@university.edu, CS:GO, 5, Defender, 83, Balanced
+P068, Participant_68, user68@university.edu, Chess, 1, Defender, 80, Balanced
+P029, Participant_29, user29@university.edu, Basketball, 5, Supporter, 77, Balanced
+P038, Participant_38, user38@university.edu, Valorant, 1, Defender, 78, Balanced
+P008, Participant_8, user8@university.edu, Valorant, 10, Defender, 81, Balanced
+P011, Participant_11, user11@university.edu, Basketball, 8, Strategist, 84, Balanced
+P014, Participant_14, user14@university.edu, FIFA, 3, Supporter, 73, Balanced
+P020, Participant_20, user20@university.edu, Valorant, 3, Coordinator, 82, Balanced
+P023, Participant_23, user23@university.edu, CS:GO, 3, Defender, 87, Balanced
+P032, Participant_32, user32@university.edu, DOTA 2, 2, Attacker, 86, Balanced
+P041, Participant_41, user41@university.edu, Basketball, 5, Strategist, 70, Balanced
+P044, Participant_44, user44@university.edu, FIFA, 6, Supporter, 71, Balanced
+P047, Participant_47, user47@university.edu, DOTA 2, 10, Attacker, 78, Balanced
+P050, Participant_50, user50@university.edu, Basketball, 5, Coordinator, 70, Balanced
+P053, Participant_53, user53@university.edu, DOTA 2, 7, Defender, 71, Balanced
+P056, Participant_56, user56@university.edu, Basketball, 4, Strategist, 86, Balanced
+P071, Participant_71, user71@university.edu, Chess, 8, Strategist, 70, Balanced
+P074, Participant_74, user74@university.edu, FIFA, 3, Supporter, 82, Balanced
+P080, Participant_80, user80@university.edu, Basketball, 1, Coordinator, 82, Balanced
+P086, Participant_86, user86@university.edu, FIFA, 9, Strategist, 89, Balanced
+P095, Participant_95, user95@university.edu, CS:GO, 2, Coordinator, 84, Balanced
+P053, Participant_53, user53@university.edu, DOTA 2, 7, Defender, 71, Balanced
+P098, Participant_98, user98@university.edu, CS:GO, 5, Defender, 83, Balanced
+P083, Participant_83, user83@university.edu, DOTA 2, 10, Defender, 75, Balanced
+P053, Participant_53, user53@university.edu, DOTA 2, 7, Defender, 71, Balanced
+P074, Participant_74, user74@university.edu, FIFA, 3, Supporter, 82, Balanced
+P095, Participant_95, user95@university.edu, CS:GO, 2, Coordinator, 84, Balanced
+P017, Participant_17, user17@university.edu, CS:GO, 10, Attacker, 77, Balanced
+P083, Participant_83, user83@university.edu, DOTA 2, 10, Defender, 75, Balanced
+P032, Participant_32, user32@university.edu, DOTA 2, 2, Attacker, 86, Balanced
+P041, Participant_41, user41@university.edu, Basketball, 5, Strategist, 70, Balanced
+P068, Participant_68, user68@university.edu, Chess, 1, Defender, 80, Balanced
+P095, Participant_95, user95@university.edu, CS:GO, 2, Coordinator, 84, Balanced
+P009, Participant_9, user9@university.edu, CS:GO, 6, Supporter, 62, Thinker
+P033, Participant_33, user33@university.edu, FIFA, 7, Defender, 65, Thinker
+P003, Participant_3, user3@university.edu, FIFA, 4, Defender, 66, Thinker
+P036, Participant_36, user36@university.edu, Chess, 9, Strategist, 65, Thinker
+P042, Participant_42, user42@university.edu, DOTA 2, 7, Attacker, 53, Thinker
+P030, Participant_30, user30@university.edu, CS:GO, 4, Coordinator, 54, Thinker
+P084, Participant_84, user84@university.edu, FIFA, 5, Supporter, 63, Thinker
+P045, Participant_45, user45@university.edu, Chess, 2, Coordinator, 68, Thinker
+P015, Participant_15, user15@university.edu, DOTA 2, 8, Coordinator, 66, Thinker
+P018, Participant_18, user18@university.edu, FIFA, 3, Defender, 51, Thinker
+P021, Participant_21, user21@university.edu, FIFA, 4, Strategist, 64, Thinker
+P024, Participant_24, user24@university.edu, DOTA 2, 7, Supporter, 63, Thinker
+P039, Participant_39, user39@university.edu, FIFA, 5, Supporter, 66, Thinker
+P048, Participant_48, user48@university.edu, Valorant, 6, Defender, 65, Thinker
+P051, Participant_51, user51@university.edu, FIFA, 2, Strategist, 57, Thinker
+P057, Participant_57, user57@university.edu, CS:GO, 7, Attacker, 54, Thinker
+P060, Participant_60, user60@university.edu, CS:GO, 4, Coordinator, 57, Thinker
+P063, Participant_63, user63@university.edu, Chess, 8, Defender, 60, Thinker
+P066, Participant_66, user66@university.edu, Chess, 1, Strategist, 67, Thinker
+P069, Participant_69, user69@university.edu, CS:GO, 5, Supporter, 68, Thinker
+P078, Participant_78, user78@university.edu, FIFA, 6, Defender, 51, Thinker
+P087, Participant_87, user87@university.edu, Basketball, 4, Attacker, 51, Thinker
+P090, Participant_90, user90@university.edu, Chess, 5, Coordinator, 62, Thinker
+P093, Participant_93, user93@university.edu, CS:GO, 4, Defender, 51, Thinker
+P096, Participant_96, user96@university.edu, DOTA 2, 8, Strategist, 56, Thinker
+P078, Participant_78, user78@university.edu, FIFA, 6, Defender, 51, Thinker
+P090, Participant_90, user90@university.edu, Chess, 5, Coordinator, 62, Thinker
+P066, Participant_66, user66@university.edu, Chess, 1, Strategist, 67, Thinker
+P090, Participant_90, user90@university.edu, Chess, 5, Coordinator, 62, Thinker
+P039, Participant_39, user39@university.edu, FIFA, 5, Supporter, 66, Thinker
+P078, Participant_78, user78@university.edu, FIFA, 6, Defender, 51, Thinker
+P030, Participant_30, user30@university.edu, CS:GO, 4, Coordinator, 54, Thinker
+P096, Participant_96, user96@university.edu, DOTA 2, 8, Strategist, 56, Thinker
+P021, Participant_21, user21@university.edu, FIFA, 4, Strategist, 64, Thinker
+P078, Participant_78, user78@university.edu, FIFA, 6, Defender, 51, Thinker
+P084, Participant_84, user84@university.edu, FIFA, 5, Supporter, 63, Thinker
+P021, Participant_21, user21@university.edu, FIFA, 4, Strategist, 64, Thinker

@@ -1,6 +1,7 @@
-package chooseTeams;
+package main;
 
 import java.util.Scanner;
+
 
 public class Login {
     private String currentUserName;

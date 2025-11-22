@@ -1,12 +1,13 @@
-package chooseTeams;
+package main;
 
 import java.io.File;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+
 public class Dashboard {
     private int totalFormedTeams = 0;
-    private int playersCount = 0;
+    private int playersCountPerTeam = 0;
     private int remainingThinkersCount = 0;
     private int remainingLeadersCount = 0;
     private int remainingBalancersCount = 0;
@@ -42,10 +43,10 @@ public class Dashboard {
                 System.out.println("\n 1) Import Participant Data (CSV)");
                 System.out.println(" 2) Generate Teams");
                 System.out.println(" 3) Random final teams selection");
-                System.out.println(" 4) Review Randomly Selected Teams");// add this in use case
+                System.out.println(" 4) Review Randomly Selected Teams");
                 System.out.println(" 5) View Team Statistics");
                 System.out.println(" 6) View Remaining Players");
-                System.out.println(" 7) Review Generated all Teams");//
+                System.out.println(" 7) Review Generated all Teams");
                 System.out.println(" 8) Logout\n");
                 System.out.println("=".repeat(80));
                 System.out.println("\n");
@@ -54,14 +55,14 @@ public class Dashboard {
 
                 switch (choice) {
                     case 1:
-                        HandleDataCsvFiles handleDataCsvFiles = new HandleDataCsvFiles();
+                        HandleUploadedDataCsvFiles handleDataCsvFiles = new HandleUploadedDataCsvFiles();
                         handleDataCsvFiles.dataFileImport(input);
                         uploadCsvFileName = handleDataCsvFiles.getUploadCsvFileName();
                         break;
                     case 2:
                         TeamMembersSelection teamMembersSelection = new TeamMembersSelection(uploadCsvFileName);
                         teamMembersSelection.generateTeams(input);
-                        playersCount=teamMembersSelection.getTeamPlayerCount();
+                        playersCountPerTeam=teamMembersSelection.getTeamPlayerCount();
                         totalFormedTeams=teamMembersSelection.getTotalFinalTeamCombination();
                         avgSkillValue = teamMembersSelection.getAverage();
                         minAvg = teamMembersSelection.getMinimumSkillAverage();
@@ -71,24 +72,31 @@ public class Dashboard {
                         remainingThinkersCount=teamMembersSelection.getRemainingThinkersCount();
                         break;
                     case 3:
+                        File fileForFinalTeamSelection=new File("files/possible_teams.csv");
                         FinalTeamSelection finalTeamSelection=new FinalTeamSelection();
-                        finalTeamSelection.setTeamPlayerCount(playersCount);
+                        finalTeamSelection.setCsvFile(fileForFinalTeamSelection);
+                        finalTeamSelection.setTeamPlayerCount(playersCountPerTeam);
                         finalTeamSelection.setTotalFormedTeamsCount(totalFormedTeams);
                         finalTeamSelection.finalTeamsSelection(input);
                         break;
                     case 4:
                         FinalTeamSelection finalTeamSelection_2=new FinalTeamSelection();
-                        finalTeamSelection_2.setTeamPlayerCount(playersCount);
+                        finalTeamSelection_2.setTeamPlayerCount(playersCountPerTeam);
                         finalTeamSelection_2.reviewRandomlySelectedTeams(input);
                         break;
                     case 5:
-                        FinalTeamSelection finalTeamSelection1=new FinalTeamSelection();
-                        finalTeamSelection1.viewFinalTeamsStatistics(playersCount, totalFormedTeams, avgSkillValue, minAvg, maxAvg, remainingLeadersCount, remainingBalancersCount, remainingThinkersCount);
+                        FinalTeamSelection fts = new FinalTeamSelection();
+                        if (playersCountPerTeam> 0) {
+                            fts.viewFinalTeamsStatistics(playersCountPerTeam, totalFormedTeams, avgSkillValue, minAvg, maxAvg, remainingLeadersCount, remainingBalancersCount, remainingThinkersCount);
+                        }else{
+                            fts.viewFinalTeamsStatistics();
+                        }
                         break;
                     case 6:
                         File file_1 = new File("possible_teams.csv");
                         if(!file_1.exists()){
                             System.out.println("⚠️ Please generate teams first.");
+                            break;
                         }
                         ViewRemainingPlayers viewRemainingPlayers = new ViewRemainingPlayers();
                         viewRemainingPlayers.viewPlayersInCsvFile("possible_teams.csv");
@@ -97,18 +105,21 @@ public class Dashboard {
                         File file = new File("possible_teams.csv");
                         if(!file.exists()){
                             System.out.println("⚠️ Please generate teams first.");
-                        }
-                        if (playersCount == 0) {
-                            ReviewGeneratedTeams reviewGeneratedTeams = new ReviewGeneratedTeams(file);
-                            reviewGeneratedTeams.viewFormedTeams();
                             break;
                         }
+//                        if (playersCountPerTeam == 0) {
+//                            ReviewGeneratedTeams reviewGeneratedTeams = new ReviewGeneratedTeams(file);
+//                            reviewGeneratedTeams.viewFormedTeams();
+//                            break;
+//                        }
                         File file_check = new File("files/possible_teams.csv");
 
                         if (file_check.exists()) {
+//                            if(playersCountPerTeam>0){
                             ReviewGeneratedTeams vm = new ReviewGeneratedTeams(file);
-                            vm.setTeamPlayerCount(playersCount);
+                            vm.setTeamPlayerCount(playersCountPerTeam);
                             vm.viewFormedTeams();
+//                            }
                         } else {
                             System.out.println("⚠️ No teams found. Please generate teams first.");
                         }

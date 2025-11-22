@@ -1,0 +1,26 @@
+ID,Name,Email,PreferredGame,SkillLevel,PreferredRole,PersonalityScore,PersonalityType,TeamNumber
+P019, Participant_19, user19@university.edu, FIFA, 9, Supporter, 95, Leader,1
+P038, Participant_38, user38@university.edu, Valorant, 1, Defender, 78, Balanced,1
+P083, Participant_83, user83@university.edu, DOTA 2, 10, Defender, 75, Balanced,1
+P045, Participant_45, user45@university.edu, Chess, 2, Coordinator, 68, Thinker,1
+P030, Participant_30, user30@university.edu, CS:GO, 4, Coordinator, 54, Thinker,1
+P076, Participant_76, user76@university.edu, FIFA, 7, Strategist, 91, Leader,2
+P029, Participant_29, user29@university.edu, Basketball, 5, Supporter, 77, Balanced,2
+P056, Participant_56, user56@university.edu, Basketball, 4, Strategist, 86, Balanced,2
+P069, Participant_69, user69@university.edu, CS:GO, 5, Supporter, 68, Thinker,2
+P018, Participant_18, user18@university.edu, FIFA, 3, Defender, 51, Thinker,2
+P016, Participant_16, user16@university.edu, CS:GO, 6, Strategist, 90, Leader,3
+P083, Participant_83, user83@university.edu, DOTA 2, 10, Defender, 75, Balanced,3
+P020, Participant_20, user20@university.edu, Valorant, 3, Coordinator, 82, Balanced,3
+P045, Participant_45, user45@university.edu, Chess, 2, Coordinator, 68, Thinker,3
+P009, Participant_9, user9@university.edu, CS:GO, 6, Supporter, 62, Thinker,3
+P043, Participant_43, user43@university.edu, DOTA 2, 2, Defender, 100, Leader,4
+P083, Participant_83, user83@university.edu, DOTA 2, 10, Defender, 75, Balanced,4
+P068, Participant_68, user68@university.edu, Chess, 1, Defender, 80, Balanced,4
+P030, Participant_30, user30@university.edu, CS:GO, 4, Coordinator, 54, Thinker,4
+P054, Participant_54, user54@university.edu, Valorant, 8, Supporter, 69, Thinker,4
+P097, Participant_97, user97@university.edu, FIFA, 3, Attacker, 96, Leader,5
+P089, Participant_89, user89@university.edu, Chess, 6, Supporter, 75, Balanced,5
+P077, Participant_77, user77@university.edu, FIFA, 2, Attacker, 89, Balanced,5
+P027, Participant_27, user27@university.edu, Chess, 6, Attacker, 53, Thinker,5
+P075, Participant_75, user75@university.edu, Valorant, 8, Coordinator, 53, Thinker,5

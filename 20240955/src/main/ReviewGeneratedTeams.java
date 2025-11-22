@@ -1,9 +1,9 @@
-package chooseTeams;
+package main;
 
 import java.io.*;
 
 public class ReviewGeneratedTeams {
-    private int teamPlayerCount;
+    private int teamPlayerCount=0;
     private File csvFilePath;
     private String csvFileName;
 
@@ -21,6 +21,11 @@ public class ReviewGeneratedTeams {
     }
 
     public void viewFormedTeams(){
+        if(!getPreviousLogData()){
+            System.out.println("⚠️ Please generate teams first.");
+            return;
+        }
+        getPreviousLogData();
 
         if(teamPlayerCount==0){
             try(BufferedReader br=new BufferedReader((new FileReader(csvFilePath)))) {
@@ -28,7 +33,7 @@ public class ReviewGeneratedTeams {
                 String line;
                 while ((line=br.readLine())!=null){
                     String[] columns = line.split(",");
-                    System.out.printf("%-15s %-18s %-27s %-20s %-15s %-16s %-18s %-19s%n", columns[0], columns[1], columns[2], columns[3],columns[4], columns[5], columns[6], columns[7]);
+                    System.out.printf("%-19s %-22s %-19s %-16s %-15s %-16s %-18s %-19s %-17s%n", columns[0], columns[1], columns[2], columns[3],columns[4], columns[5], columns[6], columns[7], columns[8]);
 
                 }
             } catch (IOException e) {
@@ -85,5 +90,28 @@ public class ReviewGeneratedTeams {
         }
     }
 
+
+
+    public boolean getPreviousLogData() {
+        File logFile = new File("files/log.csv");
+        try (BufferedReader br = new BufferedReader(new FileReader(logFile))) {
+            br.readLine(); // skip header
+            String line, lastLine = null;
+            while ((line = br.readLine()) != null) {
+                lastLine = line;
+            }
+            if (lastLine != null && !lastLine.trim().isEmpty()) {
+                String[] columns = lastLine.split(",");
+                if (columns.length >= 8) { // ensure all expected columns exist
+                    teamPlayerCount = Integer.parseInt(columns[0]);
+                    return true;
+                }
+            }
+            teamPlayerCount=0;
+            return false;
+        } catch (IOException | NumberFormatException e) {
+            return false;
+        }
+    }
 
 }

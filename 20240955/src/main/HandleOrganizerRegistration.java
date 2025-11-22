@@ -1,7 +1,9 @@
-package chooseTeams;
+package main;
 
 import java.io.File;
 import java.util.ArrayList;
+
+
 
 public class HandleOrganizerRegistration {
     private final String name;

@@ -1,4 +1,4 @@
-package chooseTeams;
+package main;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.Scanner;
 
-public class HandleDataCsvFiles {
+public class HandleUploadedDataCsvFiles {
     private String fileName;
     private String uploadCsvFileName;
 
@@ -37,7 +37,7 @@ public class HandleDataCsvFiles {
                 return;
             }
 
-            HandleDataCsvFiles handleDataCsvFiles = new HandleDataCsvFiles();
+            HandleUploadedDataCsvFiles handleDataCsvFiles = new HandleUploadedDataCsvFiles();
             handleDataCsvFiles.createNewCsvFile(filePath);
             uploadCsvFileName = handleDataCsvFiles.getFileName();
 
