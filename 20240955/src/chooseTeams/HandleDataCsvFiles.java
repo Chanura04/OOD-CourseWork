@@ -5,9 +5,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.Scanner;
 
 public class HandleDataCsvFiles {
     private String fileName;
+    private String uploadCsvFileName;
+
 
     public String getFileName(){
         return fileName;
@@ -15,26 +18,34 @@ public class HandleDataCsvFiles {
     public void setFileName(String fileName){
         this.fileName=fileName;
     }
+    public String getUploadCsvFileName(){
+        return uploadCsvFileName;
+    }
 
+    public  void dataFileImport(Scanner input) {
+        try {
+            System.out.println("\n\n" + "-".repeat(80));
+            System.out.println("\n                      IMPORT PARTICIPANT DATA\n");
+            System.out.println("-".repeat(80));
+            System.out.println("\n");
 
-    public void handleDataCsvFiles() {
-            // Example user input (you can replace with Scanner input)
-        String userInput = "participants_sample.csv";
+            String filePath = getStringInputWithExit(input,
+                    "Enter CSV file path (or 'q' to cancel): ");
 
-            // Current working directory
-        Path currentDir = Paths.get("").toAbsolutePath();
-        Path userPath = Paths.get(userInput).toAbsolutePath();
-
-        if (userPath.startsWith(currentDir)) {
-            if (Files.exists(userPath)) {
-                System.out.println("✅ File is inside the current directory and exists.");
-            } else {
-                System.out.println("⚠️ File path is within current directory but file does not exist.");
+            if (filePath == null) {
+                System.out.println("🔙 Import cancelled.");
+                return;
             }
-        } else {
-            System.out.println("❌ File is NOT inside the current directory.");
-        }
 
+            HandleDataCsvFiles handleDataCsvFiles = new HandleDataCsvFiles();
+            handleDataCsvFiles.createNewCsvFile(filePath);
+            uploadCsvFileName = handleDataCsvFiles.getFileName();
+
+            System.out.println("✅ Data imported successfully from: " + uploadCsvFileName);
+
+        } catch (Exception e) {
+            System.out.println("⚠️ Error importing data: " + e.getMessage());
+        }
     }
 
     public void createNewCsvFile(String filePath){
@@ -49,9 +60,9 @@ public class HandleDataCsvFiles {
         //  Get the current working directory
         Path currentDir = Paths.get(System.getProperty("user.dir"));
 
-        //  Set the destination path (same filename in current directory)
+        //  Set the destination path
         Path destinationPath = currentDir.resolve(sourcePath.getFileName());
-        System.out.println(sourcePath.getFileName());
+//        System.out.println(sourcePath.getFileName());
 
         setFileName(String.valueOf(sourcePath.getFileName()));
         //  Copy file
@@ -125,7 +136,28 @@ public class HandleDataCsvFiles {
         }
         return false;
     }
+    private static String getStringInputWithExit(Scanner input, String prompt) {
+        while (true) {
+            try {
+                System.out.print(prompt);
+                String value = input.nextLine().trim();
 
+                if (value.equalsIgnoreCase("q")) {
+                    return null; // Signal to exit
+                }
+
+                if (!value.isEmpty()) {
+                    return value;
+                }
+
+                System.out.println("⚠️ Input cannot be empty. Please try again or enter 'q' to cancel.");
+
+            } catch (Exception e) {
+                System.out.println("⚠️ Error reading input: " + e.getMessage());
+                input.nextLine(); // Clear buffer
+            }
+        }
+    }
 
 
 

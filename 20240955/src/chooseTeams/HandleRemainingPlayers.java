@@ -12,7 +12,6 @@ public class HandleRemainingPlayers extends TeamMembersSelection {
 
     private final Object remainingLock = new Object();
 
-
     //Passed remaining players for the second filtering process
     private final ArrayList<String> remainingPlayers;
 
@@ -32,7 +31,7 @@ public class HandleRemainingPlayers extends TeamMembersSelection {
     public ArrayList<ArrayList<String>> selectedTeamsInSecondFilter = new ArrayList<>();
 
     public HandleRemainingPlayers(int teamPlayerCount,ArrayList<String> remainingPlayers, double avgSkillValue,String file_name) {
-        super(teamPlayerCount,file_name);
+        super(file_name);
         this.teamPlayerCount = teamPlayerCount;
         this.remainingPlayers = remainingPlayers;
         this.file_name=file_name;
@@ -60,13 +59,6 @@ public class HandleRemainingPlayers extends TeamMembersSelection {
     public void addValidTeam(ArrayList<String> team) {
         selectedTeamsInSecondFilter.add(team);
     }
-
-//    @Override
-//    public boolean hasEnoughPlayersForTeam(int leaderCount, int balancerCount, int thinkerCount) {
-//        return remaining_all_leaders.size() >= leaderCount &&
-//                remaining_all_balancers.size() >= balancerCount &&
-//                remaining_all_thinkers.size() >= thinkerCount;
-//    }
 
     public ArrayList<String> getRemaining_all_leaders() {
         return remaining_all_leaders;

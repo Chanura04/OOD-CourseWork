@@ -7,34 +7,21 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.io.*;
 import java.util.*;
-import java.io.*;
-import java.util.*;
-import java.io.*;
-import java.util.*;
+
 
 public class FinalTeamSelection {
     private int requiredTeamCount;
     private int totalFormedTeamsCount;
     private File csvFile;
-    private int teamPlayerCount;
+    private int playersCount;
 
 
-    public void setTeamPlayerCount(int teamPlayerCount) {
-        this.teamPlayerCount = teamPlayerCount;
+    public void setTeamPlayerCount(int playersCount) {
+        this.playersCount = playersCount;
     }
-
-    public void setRequiredTeamCount(int requiredTeamCount) {
-        this.requiredTeamCount = requiredTeamCount;
-    }
-
     public void setTotalFormedTeamsCount(int totalFormedTeamsCount) {
         this.totalFormedTeamsCount = totalFormedTeamsCount;
     }
-
-    public void setCsvFile(File csvFile) {
-        this.csvFile = csvFile;
-    }
-
     public void finalResult() {
         // Generate random team numbers using ArrayList
         ArrayList<ArrayList<String>> allTeams = new ArrayList<>();
@@ -59,7 +46,7 @@ public class FinalTeamSelection {
                 for (String[] columns : allPlayers) {
                     int teamNumber = Integer.parseInt(columns[8]);
                     if (teamNumber == team) {
-                        ArrayList<String> playerData = new ArrayList<>();  // Move inside this loop!
+                        ArrayList<String> playerData = new ArrayList<>();
                         playerData.add(columns[0]);
                         playerData.add(columns[1]);
                         playerData.add(columns[2]);
@@ -163,6 +150,144 @@ public class FinalTeamSelection {
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public void finalTeamsSelection(Scanner input){
+
+        File file_check = new File("possible_teams.csv");
+        if (!file_check.exists()) {
+            System.out.println("⚠️ No teams found. Please generate teams first.");
+            return;
+        }
+
+//        if (playersCount == 0) {
+//            System.out.println("⚠️ Please generate teams first.");
+//            return;
+//        }
+        System.out.println("\n📊 Total teams formed: " + totalFormedTeamsCount);
+        File file = new File("files/possible_teams.csv");
+
+        try{
+            requiredTeamCount = getValidIntegerInput(input,
+                    "\nEnter required teams count (minimum 1): ", 1, totalFormedTeamsCount);
+            finalResult();
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+
+        }
+    }
+
+
+    public  void reviewRandomlySelectedTeams(Scanner input) {
+//        if (playersCount == 0) {
+//            System.out.println("⚠️ Please generate teams first.");
+//            return;
+//        }
+
+        File file = new File("formed_teams.csv");
+        if (file.exists()) {
+            viewFormedTeams(file);
+        } else {
+            System.out.println("⚠️ Please generate final teams first.");
+            return;
+        }
+
+
+        boolean isAcceptingFormedTeams=getValidResponseInput(input,"\nDo you accept these teams? (Y/N):","y","n");
+        if(isAcceptingFormedTeams){
+            System.out.println("✅ Final teams accepted. Exporting...");
+            try {
+                // Sleep for 2 seconds (2000 ms)
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("✅ Final teams exported successfully to: formed_teams.csv");
+
+        }else {
+            playersCount = 0;
+            System.out.println("❌ Teams were not accepted. Export cancelled.");
+            File file1 = new File("formed_teams.csv");
+            if (file1.exists()) {
+                HandleDataCsvFiles handleDataCsvFiles = new HandleDataCsvFiles();
+                handleDataCsvFiles.deleteCsvFile(file1);
+            }
+        }
+
+
+    }
+
+    private static boolean getValidResponseInput(Scanner input, String prompt, String y, String n) {
+        while (true) {
+            try {
+                System.out.print(prompt);
+                String value = input.nextLine().trim().toLowerCase();
+                if (value.equals(y) || value.equals(n)) {
+                    if(value.equals("y")){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                }else {
+                    System.out.printf("Please enter a valid response: %s or %s.\n ", y, n);
+                }
+            } catch (InputMismatchException e) {
+                System.out.print("⚠️ Invalid input. Please enter a valid number: ");
+                input.nextLine();
+            }
+        }
+    }
+    public  void viewFinalTeamsStatistics(
+            int teamPlayerCount,
+            int totalTeamsCount,
+            double averageSkillLevel,
+            double maximumSkillAverage,
+            double minimumSkillAverage,
+            int remainingLeadersCount,
+            int remainingBalancersCount,
+            int remainingThinkersCount
+    ) {
+
+        if (teamPlayerCount == 0) {
+            System.out.println("⚠️ Please generate teams first.");
+            return;
+        }
+        File file = new File("files/possible_teams.csv");
+        if (!file.exists()) {
+            System.out.println("⚠️ No teams found. Please generate teams first.");
+        }
+
+        System.out.println("\n\n" + "=".repeat(80));
+        System.out.println("\n                          TEAM STATISTICS");
+        System.out.println("=".repeat(80));
+        System.out.println("\n📊 Total teams formed: " + totalTeamsCount);
+        System.out.printf("Average Skill Value: %.2f\n",averageSkillLevel );
+        System.out.printf("Formed Teams Skill Range: %.2f - %.2f\n", minimumSkillAverage, maximumSkillAverage );
+        System.out.println("-".repeat(80));
+        System.out.println("Remaining Players by Type:");
+        System.out.println("  Leaders: " + remainingLeadersCount);
+        System.out.println("  Balancers: " + remainingBalancersCount);
+        System.out.println("  Thinkers: " + remainingThinkersCount);
+        System.out.println();
+        System.out.println("=".repeat(80));
+        System.out.println("\n");
+    }
+    private static int getValidIntegerInput(Scanner input, String prompt, int min, int max) {
+        while (true) {
+            try {
+                System.out.print(prompt);
+                int value = input.nextInt();
+                input.nextLine();
+                if (value >= min && value <= max) {
+                    return value;
+                } else {
+                    System.out.printf("Please enter a number between %d and %d.\n", min, max);
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("⚠️ Invalid input. Please enter a valid number.");
+                input.nextLine();
+            }
         }
     }
 

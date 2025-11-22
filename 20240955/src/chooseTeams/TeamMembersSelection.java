@@ -1,5 +1,6 @@
 package chooseTeams;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -14,7 +15,7 @@ import java.util.List;
 
 public class TeamMembersSelection implements TeamSelection {
     private int teamPlayerCount;
-    private final String csvFilePath;
+    private final String uploadCsvFileName;
 
     private final Object teamLock = new Object();
 
@@ -54,22 +55,16 @@ public class TeamMembersSelection implements TeamSelection {
     //Initial team combination for get average skill value
     private final ArrayList<ArrayList<String>> unfinalizedTeams = new ArrayList<>();
 
-    private static final int MAX_ITERATIONS = 10000;
-    private static final long TIMEOUT_MS = 30000; // 30 seconds timeout
-
     private double maximumSkillAverage;
     private double minimumSkillAverage;
 
-    public TeamMembersSelection(int teamPlayerCount,String csvFilePath) {
-        this.teamPlayerCount=teamPlayerCount;
-        this.csvFilePath=csvFilePath;
-
+    public TeamMembersSelection(String uploadCsvFileName) {
+        this.uploadCsvFileName=uploadCsvFileName;
     }
 
-    public int getFinalTeamCombination() {
+    public int getTotalFinalTeamCombination() {
         return finalTeamCombination.size();
     }
-
 
     public double getMaximumSkillAverage() {
         return maximumSkillAverage;
@@ -84,24 +79,70 @@ public class TeamMembersSelection implements TeamSelection {
         return average;
     }
 
-
-    public int getRest_leaders(){
+    public int getRemainingLeadersCount(){
         return rest_leaders.size();
     }
 
-    public int getRest_balancers(){
+    public int getRemainingBalancersCount(){
         return rest_balancers.size();
     }
-    public int getRest_thinkers(){
+    public int getRemainingThinkersCount(){
         return rest_thinkers.size();
     }
 
 
+    public  void generateTeams(Scanner input) {
+        if (uploadCsvFileName == null) {
+            System.out.println("⚠️ Please import participant data first before generating teams.");
+            return;
+        }
+
+        try {
+            teamPlayerCount = getValidIntegerInput(input,
+                    "\nEnter players per team (minimum 4): ", 4);
+
+            System.out.println("\n🔄 Starting team formation with parallel processing...");
+
+            long startTime = System.currentTimeMillis();
+            categorizeByPersonalityType();
+            createTeams();
+            long endTime = System.currentTimeMillis();
+            writeFinalTeamsOnCsvFile();
+
+            File file = new File("files/possible_teams.csv");
+            if (file.exists()) {
+                ReviewGeneratedTeams vm = new ReviewGeneratedTeams(file);
+                vm.setTeamPlayerCount(teamPlayerCount);
+                vm.viewFormedTeams();
+            } else {
+                System.out.println("⚠️ No teams file found. Please generate teams first.");
+            }
+
+            boolean isAcceptingFormedTeams=getValidResponseInput(input,"\nDo you accept these teams? (Y/N):","y","n");
+            if(isAcceptingFormedTeams){
+                exportFormedTeams("files/possible_teams.csv");
+                writeRemainingPlayerInCsvFile();
+
+            }else{
+                teamPlayerCount=0;
+                System.out.println("❌ Teams were not accepted. Export cancelled.");
+                File file1 = new File("possible_teams.csv");
+                if (file1.exists()) {
+                    HandleDataCsvFiles handleDataCsvFiles = new HandleDataCsvFiles();
+                    handleDataCsvFiles.deleteCsvFile(file1);
+                }
+            }
+            System.out.println("\n⏱️ Team formation completed in " + (endTime - startTime) + "ms");
+
+        } catch (Exception e) {
+            System.out.println("⚠️ Error generating teams: " + e.getMessage());
+        }
+    }
 
 
     public void categorizeByPersonalityType() {
         ParticipantDataLoader playerDataLoader = new ParticipantDataLoader();
-        ArrayList<String> playerData = playerDataLoader.getPlayerData(csvFilePath);
+        ArrayList<String> playerData = playerDataLoader.getPlayerData(uploadCsvFileName);
         categorizeByPersonalityType(playerData);
     }
 
@@ -371,7 +412,6 @@ public class TeamMembersSelection implements TeamSelection {
         ArrayList<String> remainingPlayers = new ArrayList<>();
         ArrayList<String> combinedRemainingPlayers = new ArrayList<>();
 
-
         remainingPlayers.addAll(cp_leaders);
         remainingPlayers.addAll(cp_balancers);
         remainingPlayers.addAll(cp_thinkers);
@@ -379,11 +419,10 @@ public class TeamMembersSelection implements TeamSelection {
         for (ArrayList<String> team : remainingTeams) {
             combinedRemainingPlayers.addAll(team);
         }
-
         combinedRemainingPlayers.addAll(remainingPlayers);
 
 
-        HandleRemainingPlayers handleRemainingPlayers=new HandleRemainingPlayers(getTeamPlayerCount(),combinedRemainingPlayers, average,csvFilePath);
+        HandleRemainingPlayers handleRemainingPlayers=new HandleRemainingPlayers(getTeamPlayerCount(),combinedRemainingPlayers, average,uploadCsvFileName);
         System.out.println("\n\n");
         ArrayList<ArrayList<String>> handledRemainingTeams=handleRemainingPlayers.getCreatedTeams();
         secondFilterationFormedTeamsCount=handledRemainingTeams.size();
@@ -395,12 +434,7 @@ public class TeamMembersSelection implements TeamSelection {
         finalTeamCombination.addAll(handledRemainingTeams);
         finalTeamCombination.addAll(selectedTeamsInFirstFilter);
 
-//        printFinalStats();
-//        writeFinalTeamsOnCsvFile();
-//        writeRemainingPlayerInCsvFile();
     }
-
-
 
 
     public void writeFinalTeamsOnCsvFile(){
@@ -437,7 +471,7 @@ public class TeamMembersSelection implements TeamSelection {
 
         //  Set the destination path (same filename in current directory)
         Path destinationPath = currentDir.resolve(sourcePath.getFileName());
-        System.out.println(sourcePath.getFileName());
+//        System.out.println(sourcePath.getFileName());
 
         try {
             Files.copy(sourcePath, destinationPath, StandardCopyOption.REPLACE_EXISTING);
@@ -471,6 +505,46 @@ public class TeamMembersSelection implements TeamSelection {
 
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    private static int getValidIntegerInput(Scanner input, String prompt, int min) {
+        while (true) {
+            try {
+                System.out.print(prompt);
+                int value = input.nextInt();
+                input.nextLine();
+                if (value >= min) {
+                    return value;
+                } else {
+                    System.out.printf("⚠️ Minimum value should be %d.\n", min);
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("⚠️ Invalid input. Please enter a valid number.");
+                input.nextLine(); // Clear invalid input
+            }
+        }
+    }
+
+
+    private static boolean getValidResponseInput(Scanner input, String prompt, String y, String n) {
+        while (true) {
+            try {
+                System.out.print(prompt);
+                String value = input.nextLine().trim().toLowerCase();
+                if (value.equals(y) || value.equals(n)) {
+                    if(value.equals("y")){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                }else {
+                    System.out.printf("Please enter a valid response: %s or %s.\n ", y, n);
+                }
+            } catch (InputMismatchException e) {
+                System.out.print("⚠️ Invalid input. Please enter a valid number: ");
+                input.nextLine();
+            }
         }
     }
 }

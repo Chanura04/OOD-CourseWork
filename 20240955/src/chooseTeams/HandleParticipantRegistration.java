@@ -41,8 +41,6 @@ public class HandleParticipantRegistration {
         ParticipantDataLoader playerDataLoader = new ParticipantDataLoader();
         ArrayList<String> playerData = playerDataLoader.getPlayerData(playerDataFile);
 
-
-
         for (int i = 1; i < playerData.size(); i++) {
             String raw = playerData.get(i).replace("[", "").replace("]", "").trim();
             String[] fields = raw.split(",");

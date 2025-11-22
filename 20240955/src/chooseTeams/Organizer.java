@@ -20,9 +20,6 @@ public class Organizer extends User{
         this.id = id;
     }
 
-
-
-
     public void storeRegisteredOrganizerData(){
         File organizerDataFile = new File("DataBase/organizersData.csv");
         //save to csv file
@@ -33,16 +30,11 @@ public class Organizer extends User{
             writer.append("\n");
             writer.append(String.join(",", data));
             writer.append("\n");
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
-
-
-
 
     public int getStoredLastId(){
         String filePath = "DataBase/organizersData.csv";

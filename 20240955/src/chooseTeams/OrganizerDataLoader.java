@@ -6,15 +6,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 
 public class OrganizerDataLoader {
 
     public ArrayList<String> getOrganizerData(File csvFilePath){
-//        String filePath = "data/participants_sample.csv";
-
         String line;
         String[] player=new String[3];
 
@@ -36,7 +32,5 @@ public class OrganizerDataLoader {
 
         return playerData;
     }
-
-
 
 }

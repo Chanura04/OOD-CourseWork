@@ -10,8 +10,6 @@ import java.util.Set;
 public class ParticipantDataLoader {
 
     public ArrayList<String> getPlayerData(File csvFilePath){
-//        String filePath = "data/participants_sample.csv";
-
         String line;
         String[] player=new String[8];
 
@@ -39,8 +37,6 @@ public class ParticipantDataLoader {
         return playerData;
     }
     public ArrayList<String> getPlayerData(String csvFilePath){
-//        String filePath = "data/participants_sample.csv";
-
         String line;
         String[] player=new String[8];
 
@@ -93,7 +89,6 @@ public class ParticipantDataLoader {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
 
         if(playerData.isEmpty()){
             return false;

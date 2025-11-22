@@ -7,8 +7,8 @@ import java.io.IOException;
 
 public class ViewRemainingPlayers {
 
-    public void viewPlayersInCsvFile(){
-        try(BufferedReader br=new BufferedReader((new FileReader("remaining_players.csv")))) {
+    public void viewPlayersInCsvFile(String filename){
+        try(BufferedReader br=new BufferedReader((new FileReader(filename)))) {
 
             String line;
             while ((line=br.readLine())!=null){
