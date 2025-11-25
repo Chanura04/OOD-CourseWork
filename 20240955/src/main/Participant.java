@@ -19,6 +19,7 @@ public class Participant extends User {
     private String id;
 
 
+
     //Player class constructor
     public Participant(String name, String email) {
         super( name, email);
@@ -60,6 +61,7 @@ public class Participant extends User {
     }
 
     public  void participantSurvey(Scanner input) {
+        InputValidator inputValidator = new InputValidator();
         if(isPlayerSurveyCompleted()){
             System.out.println("⚠️ You have already completed the survey!!!");
             return;
@@ -71,19 +73,20 @@ public class Participant extends User {
             System.out.println("\n");
             System.out.println("Rate each statement from 1 (Strongly Disagree) to 5 (Strongly Agree)\n");
 
-            int q1 = getValidIntegerInput(input,
+
+            int q1 = inputValidator.isValidInterInput(input,
                     "Q1) I enjoy taking the lead and guiding others during group activities.\n    Answer: ", 1, 5);
-            int q2 = getValidIntegerInput(input,
+            int q2 = inputValidator.isValidInterInput(input,
                     "Q2) I prefer analyzing situations and coming up with strategic solutions.\n    Answer: ", 1, 5);
-            int q3 = getValidIntegerInput(input,
+            int q3 = inputValidator.isValidInterInput(input,
                     "Q3) I work well with others and enjoy collaborative teamwork.\n    Answer: ", 1, 5);
-            int q4 = getValidIntegerInput(input,
+            int q4 = inputValidator.isValidInterInput(input,
                     "Q4) I am calm under pressure and can help maintain team morale.\n    Answer: ", 1, 5);
-            int q5 = getValidIntegerInput(input,
+            int q5 = inputValidator.isValidInterInput(input,
                     "Q5) I like making quick decisions and adapting in dynamic situations.\n    Answer: ", 1, 5);
 
 
-            String game = getStringInputWithExit(input,
+            String game = inputValidator.isValidStringInput(input,
                     "\nEnter your game of interest (e.g., Valorant, Dota, FIFA, Basketball) or 'q' to cancel: ");
 
             if (game == null) {
@@ -93,11 +96,11 @@ public class Participant extends User {
 
             interestSport = game.substring(0, 1).toUpperCase() + game.substring(1);
 
-            skillLevel = getValidIntegerInput(input,
+            skillLevel = inputValidator.isValidInterInput(input,
                     "Enter your skill level (1-10): ", 1, 10);
 
             rolesDescription();
-            int roleNumber = getValidIntegerInput(input,
+            int roleNumber = inputValidator.isValidInterInput(input,
                     "Enter the number of your preferred role: ", 1, 5);
 
             preferredRole = switch (roleNumber) {
@@ -114,27 +117,27 @@ public class Participant extends User {
 
 
 
-            boolean isConfirmed=getValidResponseInput(input,"\nConfirm your preferences (interest game, skill level, preferred role) ? (Y/N):","y","n");
+            boolean isConfirmed=inputValidator.getValidResponseInput(input,"\nConfirm your preferences (interest game, skill level, preferred role) ? (Y/N):","y","n");
 
             while(!isConfirmed){
-                int selectChanges = getValidIntegerInput(input,
+                int selectChanges = inputValidator.isValidInterInput(input,
                         "1) Interest game\n2) Skill level\n3) Preferred role\n4) Cancel\nChoice: ",1,4
                 );
                 try{
                     switch (selectChanges){
                         case 1:
-                            interestSport = getStringInputWithExit(input,
+                            interestSport = inputValidator.isValidStringInput(input,
                                     "Enter your game of interest (e.g., Valorant, Dota, FIFA, Basketball) or 'q' to cancel: ");
 
                             break;
                         case 2:
-                            skillLevel = getValidIntegerInput(input,
+                            skillLevel = inputValidator.isValidInterInput(input,
                                     "Enter your skill level (1-10): ", 1, 10);
 
                             break;
                         case 3:
                             rolesDescription();
-                            int roleNumber1 = getValidIntegerInput(input,
+                            int roleNumber1 = inputValidator.isValidInterInput(input,
                                     "Enter the number of your preferred role: ", 1, 5);
                             preferredRole = switch (roleNumber1) {
                                 case 1 -> "Strategist";
@@ -152,7 +155,7 @@ public class Participant extends User {
 
                     }
                     showSurveyResults();
-                    isConfirmed=getValidResponseInput(input,"\nConfirm your preferences (interest game, skill level, preferred role) ? (Y/N):","y","n");
+                    isConfirmed=inputValidator.getValidResponseInput(input,"\nConfirm your preferences (interest game, skill level, preferred role) ? (Y/N):","y","n");
                 }catch (Exception e){
                     System.out.println("⚠️ Error completing survey: " + e.getMessage());
                 }
@@ -187,43 +190,8 @@ public class Participant extends User {
         System.out.println("\n\n" + "=".repeat(80));
     }
 
-    private static boolean getValidResponseInput(Scanner input, String prompt, String y, String n) {
-        while (true) {
-            try {
-                System.out.print(prompt);
-                String value = input.nextLine().trim().toLowerCase();
-                if (value.equals(y) || value.equals(n)) {
-                    if(value.equals("y")){
-                        return true;
-                    }else{
-                        return false;
-                    }
-                }else {
-                    System.out.printf("Please enter a valid response: %s or %s.\n ", y, n);
-                }
-            } catch (InputMismatchException e) {
-                System.out.print("⚠️ Invalid input. Please enter a valid number: ");
-                input.nextLine();
-            }
-        }
-    }
-    private static int getValidIntegerInput(Scanner input, String prompt, int min, int max) {
-        while (true) {
-            try {
-                System.out.print(prompt);
-                int value = input.nextInt();
-                input.nextLine();
-                if (value >= min && value <= max) {
-                    return value;
-                } else {
-                    System.out.printf("Please enter a number between %d and %d.\n", min, max);
-                }
-            } catch (InputMismatchException e) {
-                System.out.println("⚠️ Invalid input. Please enter a valid number.");
-                input.nextLine();
-            }
-        }
-    }
+
+
     private static void rolesDescription() {
         System.out.println("\n" + "=".repeat(80));
         System.out.println("                              GAME ROLES");
@@ -239,34 +207,7 @@ public class Participant extends User {
     }
 
 
-    private static String getStringInputWithExit(Scanner input, String prompt) {
-        while (true) {
-            try {
-                System.out.print(prompt);
-                String value = input.nextLine().trim();
 
-                if (value.equalsIgnoreCase("q")) {
-                    return null; // Signal to exit
-                }
-
-                // Allow only letters and spaces
-                if (!value.matches("[a-zA-Z ]+")) {
-                    System.out.println("⚠️ Error: input must contain only letters!");
-                    return getStringInputWithExit(input, prompt);
-                }
-
-                if (!value.isEmpty()) {
-                    return value;
-                }
-
-                System.out.println("⚠️ Input cannot be empty. Please try again or enter 'q' to cancel.");
-
-            } catch (Exception e) {
-                System.out.println("⚠️ Error reading input: " + e.getMessage());
-                input.nextLine(); // Clear buffer
-            }
-        }
-    }
 
 
     // For get the personality type

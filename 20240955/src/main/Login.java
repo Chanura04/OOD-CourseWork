@@ -20,13 +20,14 @@ public class Login {
 
 
     public boolean participantLogin(Scanner input) {
+        InputValidator inputValidator = new InputValidator();
         try {
             System.out.println("\n\n" + "-".repeat(80));
             System.out.println("                         PARTICIPANT LOGIN");
             System.out.println("-".repeat(80));
             System.out.println("\n");
 
-            currentUserName = getStringInputWithExit(input,
+            currentUserName = inputValidator.isValidStringInput(input,
                     "Enter the name (or 'q' to return): ");
 
             if (currentUserName.equalsIgnoreCase("q")) {
@@ -41,7 +42,7 @@ public class Login {
             }
 
 
-            currentUserEmail = getStringInputWithExit(input,
+            currentUserEmail = inputValidator.isValidStringInput(input,
                     "Enter the email (or 'q' to return): ");
 
             if (currentUserEmail.equalsIgnoreCase("q")) {
@@ -64,13 +65,8 @@ public class Login {
             }
 
             currentUserStoredRawNumber = handleParticipantRegistration.getRegisteredParticipantStoredRawNumber();
-            System.out.println("✅ Login successful! Welcome, " + currentUserName + ".");
-
-//            Dashboard dashboard = new Dashboard();
-//            dashboard.setCurrentUserName(currentUserName);
-//            dashboard.setCurrentUserEmail(currentUserEmail);
-//            dashboard.setCurrentUserStoredRawNumber(currentUserStoredRawNumber);
-
+//            System.out.println();
+            display("✅ Login successful! Welcome, " + currentUserName + ".");
             return true;
 
         } catch (Exception e) {
@@ -80,9 +76,12 @@ public class Login {
 
 
     }
-
+    public void display(String message){
+        System.out.println(message);
+    }
 
     public  boolean organizerLogin(Scanner input) {
+        InputValidator inputValidator = new InputValidator();
         try {
             System.out.println("\n\n" + "-".repeat(80));
             System.out.println("                         ORGANIZER LOGIN");
@@ -90,7 +89,7 @@ public class Login {
             System.out.println("\n");
 
 
-            String organizerName = getStringInputWithExit(input,
+            String organizerName = inputValidator.isValidStringInput(input,
                     "Enter Organizer name (or 'q' to return): ");
 
             if (organizerName == null) {
@@ -99,7 +98,7 @@ public class Login {
             }
 
 
-            String organizerEmail = getStringInputWithExit(input,
+            String organizerEmail = inputValidator.isValidStringInput(input,
                     "Enter Organizer Email (or 'q' to return): ");
 
             if (organizerEmail == null) {
@@ -115,7 +114,7 @@ public class Login {
             HandleOrganizerRegistration handleOrganizerRegistration =
                     new HandleOrganizerRegistration(organizerName, organizerEmail);
 
-            if (!handleOrganizerRegistration.isARegisteredParticipant()) {
+            if (!handleOrganizerRegistration.isARegisteredOrganizer()) {
                 System.out.println("❌ Invalid Organizer credentials. Please try again.");
                 return false;
             }
@@ -128,27 +127,6 @@ public class Login {
         }
     }
 
-    public  String getStringInputWithExit(Scanner input, String prompt) {
-        while (true) {
-            try {
-                System.out.print(prompt);
-                String value = input.nextLine().trim();
 
-                if (value.equalsIgnoreCase("q")) {
-                    return null; // Signal to exit
-                }
-
-                if (!value.isEmpty()) {
-                    return value;
-                }
-
-                System.out.println("⚠️ Input cannot be empty. Please try again or enter 'q' to cancel.");
-
-            } catch (Exception e) {
-                System.out.println("⚠️ Error reading input: " + e.getMessage());
-                input.nextLine(); // Clear buffer
-            }
-        }
-    }
 
 }

@@ -14,7 +14,7 @@ public class HandleOrganizerRegistration {
         this.email = email;
     }
 
-    public boolean isARegisteredParticipant() {
+    public boolean isARegisteredOrganizer() {
         String filePath = "DataBase/organizersData.csv";
         File playerDataFile = new File(filePath);
 

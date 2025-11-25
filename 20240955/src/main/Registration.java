@@ -91,7 +91,7 @@ public class Registration {
             HandleOrganizerRegistration handleOrganizerRegistration =
                     new HandleOrganizerRegistration(name, email);
 
-            if (handleOrganizerRegistration.isARegisteredParticipant()) {
+            if (handleOrganizerRegistration.isARegisteredOrganizer()) {
                 System.out.println("⚠️ This email is already registered.");
                 return;
             }

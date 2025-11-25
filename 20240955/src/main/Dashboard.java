@@ -61,6 +61,7 @@ public class Dashboard {
                         break;
                     case 2:
                         TeamMembersSelection teamMembersSelection = new TeamMembersSelection(uploadCsvFileName);
+                        teamMembersSelection.defineTeamSize(input);
                         teamMembersSelection.generateTeams(input);
                         playersCountPerTeam=teamMembersSelection.getTeamPlayerCount();
                         totalFormedTeams=teamMembersSelection.getTotalFinalTeamCombination();
@@ -143,7 +144,7 @@ public class Dashboard {
                 System.out.println("=".repeat(80));
                 System.out.println("\n Welcome, " + currentUserName + "!");
                 System.out.println("-".repeat(80));
-                System.out.println("\n 1) Complete Personality Survey");
+                System.out.println("\n 1) Complete the Survey");
                 System.out.println(" 2) View My Profile");
                 System.out.println(" 3) Review assigned team");
                 System.out.println(" 4) Logout\n");
