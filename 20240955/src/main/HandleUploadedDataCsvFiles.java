@@ -23,13 +23,14 @@ public class HandleUploadedDataCsvFiles {
     }
 
     public  void dataFileImport(Scanner input) {
+        InputValidator inputValidator = new InputValidator();
         try {
             System.out.println("\n\n" + "-".repeat(80));
             System.out.println("\n                      IMPORT PARTICIPANT DATA\n");
             System.out.println("-".repeat(80));
             System.out.println("\n");
 
-            String filePath = getStringInputWithExit(input,
+            String filePath = inputValidator.isValidStringInput(input,
                     "Enter CSV file path (or 'q' to cancel): ");
 
             if (filePath == null) {
@@ -37,9 +38,9 @@ public class HandleUploadedDataCsvFiles {
                 return;
             }
 
-            HandleUploadedDataCsvFiles handleDataCsvFiles = new HandleUploadedDataCsvFiles();
-            handleDataCsvFiles.createNewCsvFile(filePath);
-            uploadCsvFileName = handleDataCsvFiles.getFileName();
+
+            createNewCsvFile(filePath);
+            uploadCsvFileName =getFileName();
 
             System.out.println("✅ Data imported successfully from: " + uploadCsvFileName);
 
@@ -49,6 +50,7 @@ public class HandleUploadedDataCsvFiles {
     }
 
     public void createNewCsvFile(String filePath){
+        InputValidator inputValidator = new InputValidator();
         Path sourcePath = Paths.get(filePath);
 
         //  Check if the file exists
@@ -68,7 +70,8 @@ public class HandleUploadedDataCsvFiles {
         //  Copy file
         try {
             Files.copy(sourcePath, destinationPath, StandardCopyOption.REPLACE_EXISTING);
-            System.out.println("✅ File is processing...");
+            inputValidator.display("✅ File is processing...");
+
 //            System.out.println(destinationPath.toAbsolutePath());
         } catch (IOException e) {
             System.out.println("⚠️ Error copying file: " + e.getMessage());
@@ -92,7 +95,9 @@ public class HandleUploadedDataCsvFiles {
             System.exit(0);
         }
         if(isCsvFile && isValid){
-            System.out.println("✅ File is accepted and imported successfully!\n");
+//            System.out.println("✅ File is accepted and imported successfully!\n");
+            inputValidator.display("✅ File is accepted and imported successfully!\n");
+
         }
 
     }
@@ -136,29 +141,6 @@ public class HandleUploadedDataCsvFiles {
         }
         return false;
     }
-    private static String getStringInputWithExit(Scanner input, String prompt) {
-        while (true) {
-            try {
-                System.out.print(prompt);
-                String value = input.nextLine().trim();
-
-                if (value.equalsIgnoreCase("q")) {
-                    return null; // Signal to exit
-                }
-
-                if (!value.isEmpty()) {
-                    return value;
-                }
-
-                System.out.println("⚠️ Input cannot be empty. Please try again or enter 'q' to cancel.");
-
-            } catch (Exception e) {
-                System.out.println("⚠️ Error reading input: " + e.getMessage());
-                input.nextLine(); // Clear buffer
-            }
-        }
-    }
-
 
 
 
