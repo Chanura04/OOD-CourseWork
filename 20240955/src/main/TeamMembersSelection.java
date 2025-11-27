@@ -1,8 +1,6 @@
 package main;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -12,6 +10,7 @@ import java.util.*;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.List;
+import java.util.logging.*;
 
 public class TeamMembersSelection implements TeamSelection {
     private int playersCountPerTeam;
@@ -94,31 +93,32 @@ public class TeamMembersSelection implements TeamSelection {
     }
 
     public void defineTeamSize(Scanner input) {
-        InputValidator inputValidator = new InputValidator();
+        InputValidator inputValidator = new InputValidator();  //SQ 2.3 -Define team size
         if (uploadCsvFileName == null) {
             System.out.println("⚠️ Please import participant data first before generating teams.");
             return;
         }
 
         try {
-            playersCountPerTeam = inputValidator.isValidInterInput(input,
+            playersCountPerTeam = inputValidator.isValidInterInput(input,     // SQ 2.4 -Define team size
                     "\nEnter players per team (minimum 4): ", 4);
 
             System.out.println("\n🔄 Starting team formation with parallel processing...");
         }catch (Exception e){
-            System.out.println("");
+            System.out.println(e.getMessage());
         }
     }
 
-
+    //sq 2.2
     public  void generateTeams(Scanner input) {
-        InputValidator inputValidator = new InputValidator();
+        setupLogger(); //sq 2.2.1
+        InputValidator inputValidator = new InputValidator();//sq 2.2.2
         try {
             long startTime = System.currentTimeMillis();
-            categorizeByPersonalityType();
-            createTeams();
+            categorizeByPersonalityType();//sq 2.2.3
+            createTeams();//sq 2.2.6
             long endTime = System.currentTimeMillis();
-            writeFinalTeamsOnCsvFile();
+            writeFinalTeamsOnCsvFile(); // sq 2.2.20
 
             File file = new File("files/possible_teams.csv");
             if (file.exists()) {
@@ -131,17 +131,17 @@ public class TeamMembersSelection implements TeamSelection {
 
             boolean isAcceptingFormedTeams=inputValidator.getValidResponseInput(input,"\nDo you accept these teams? (Y/N):","y","n");
             if(isAcceptingFormedTeams){
-                exportFormedTeams("files/possible_teams.csv");
-                writeRemainingPlayerInCsvFile();
-                writeTeamGeneratingLog();
+                exportFormedTeams("files/possible_teams.csv");//sq 2.2.21.1
+                writeRemainingPlayerInCsvFile();//sq 2.2.21.2
+                writeFormedTeamsStaticDetails();//sq 2.2.21.3
 
             }else{
                 playersCountPerTeam=0;
                 System.out.println("❌ Teams were not accepted. Export cancelled.");
                 File file1 = new File("possible_teams.csv");
                 if (file1.exists()) {
-                    HandleUploadedDataCsvFiles handleDataCsvFiles = new HandleUploadedDataCsvFiles();
-                    handleDataCsvFiles.deleteCsvFile(file1);
+                    HandleDataCsvFiles handleDataCsvFiles = new HandleDataCsvFiles();//sq 2.2.22
+                    handleDataCsvFiles.deleteCsvFile(file1); //sq 2.2.23
                 }
             }
             System.out.println("\n⏱️ Team formation completed in " + (endTime - startTime) + "ms");
@@ -151,16 +151,9 @@ public class TeamMembersSelection implements TeamSelection {
         }
     }
 
-
-//    public void categorizeByPersonalityType() {
-//        ParticipantDataLoader playerDataLoader = new ParticipantDataLoader();
-//        ArrayList<String> playerData = playerDataLoader.getPlayerData(uploadCsvFileName);
-//        categorizeByPersonalityType(playerData);
-//    }
-
     public void categorizeByPersonalityType() {
-        ParticipantDataLoader playerDataLoader = new ParticipantDataLoader();
-        ArrayList<String> playerData = playerDataLoader.getPlayerData(uploadCsvFileName);
+        ParticipantDataLoader playerDataLoader = new ParticipantDataLoader();//sq 2.2.4
+        ArrayList<String> playerData = playerDataLoader.getPlayerData(uploadCsvFileName);//sq 2.2.5
 
         // Clear existing data
         all_leaders.clear();
@@ -191,50 +184,6 @@ public class TeamMembersSelection implements TeamSelection {
     }
 
 
-
-//    public ArrayList<String> selectUniqueLeaders(int count) {
-//        selectedLeaders.clear();
-//        if (cp_leaders.size() >= count) {
-//            Random rand = new Random();
-//            String leader = cp_leaders.get(rand.nextInt(cp_leaders.size()));
-//            selectedLeaders.add(leader);
-//        }
-//        return selectedLeaders;
-//    }
-//
-//    public ArrayList<String> selectUniqueThinkers(int count) {
-//        selectedThinkers.clear();
-//        if (cp_thinkers.size() >= count) {
-//            Random rand = new Random();
-//            // Use a temporary list to avoid modification during selection
-//            ArrayList<String> available = new ArrayList<>(cp_thinkers);
-//
-//            while (selectedThinkers.size() < count && !available.isEmpty()) {
-//                int idx = rand.nextInt(available.size());
-//                String thinker = available.remove(idx);
-//                selectedThinkers.add(thinker);
-//            }
-//        }
-//        return selectedThinkers;
-//    }
-//
-//
-//
-//    public ArrayList<String> selectUniqueBalancers(int count) {
-//        selectedBalancers.clear();
-//        if (cp_balancers.size() >= count) {
-//            Random rand = new Random();
-//            // Use a temporary list to avoid modification during selection
-//            ArrayList<String> available = new ArrayList<>(cp_balancers);
-//
-//            while (selectedBalancers.size() < count && !available.isEmpty()) {
-//                int idx = rand.nextInt(available.size());
-//                String balancer = available.remove(idx);
-//                selectedBalancers.add(balancer);
-//            }
-//        }
-//        return selectedBalancers;
-//    }
 
     public ArrayList<String> selectUniqueLeaders(int count) {
         synchronized (teamLock) {
@@ -341,7 +290,7 @@ public class TeamMembersSelection implements TeamSelection {
     }
 
 
-
+    //sq 2.2.6
     public ArrayList<ArrayList<String>> createTeams() {
         int leaderCount = 1;
         int thinkerCount = 2;
@@ -355,8 +304,8 @@ public class TeamMembersSelection implements TeamSelection {
 
         // Determine optimal thread count (based on CPU cores, but max 8)
         int threadCount = Math.min(Runtime.getRuntime().availableProcessors(), maxPossibleTeams);
-//        threadCount = Math.max(1, Math.min(threadCount, 20));
-        threadCount=10000;
+        threadCount = Math.max(1, Math.min(threadCount, 20));
+//        threadCount=10000;
 
         CountDownLatch latch = new CountDownLatch(threadCount);
         List<Thread> threads = new ArrayList<>();
@@ -367,7 +316,7 @@ public class TeamMembersSelection implements TeamSelection {
         for (int i = 0; i < threadCount; i++) {
 
             // Create the task
-            TeamFormationTask task = new TeamFormationTask(
+            TeamFormationTask task = new TeamFormationTask( //sq 2.2.7
                     this,// Represent the TeamMemberSelection class object
                     leaderCount,
                     balancerCount,
@@ -384,7 +333,7 @@ public class TeamMembersSelection implements TeamSelection {
             thread.setName("TeamFormation-" + (i + 1));
 
             //  Start the thread
-            thread.start();
+            thread.start();   //sq 2.2.8
 
             // Store for timeout control
             threads.add(thread);
@@ -410,7 +359,7 @@ public class TeamMembersSelection implements TeamSelection {
 
         System.out.println("✅ Formed " + unfinalizedTeams.size() + " teams using parallel processing");
 
-        formTeamsBySkillAverageValue();
+        filterTeamsBySkillAverageValue(); //sq 2.2.19
 //        finalTeamsSelection();
         return unfinalizedTeams;
 
@@ -441,7 +390,7 @@ public class TeamMembersSelection implements TeamSelection {
         return true;
     }
 
-    public void formTeamsBySkillAverageValue(){
+    public void filterTeamsBySkillAverageValue(){
         int totalSum =0;
         int teamSize=unfinalizedTeams.size();
         for(int i=0;i<unfinalizedTeams.size();i++){
@@ -554,7 +503,7 @@ public class TeamMembersSelection implements TeamSelection {
             e.printStackTrace();
         }
     }
-    public void writeTeamGeneratingLog(){
+    public void writeFormedTeamsStaticDetails(){
         try (FileWriter writer = new FileWriter("files/log.csv")) {
             writer.write("PlayersPerTeam,TotalTeamCount,AverageSkillLevel,MinimumSkillLevel,MaximumSkillLevel,RemainingLeaderCount,RemainingBalancerCount,RemainingThinkerCount");
             writer.write("\n");
@@ -631,15 +580,15 @@ public class TeamMembersSelection implements TeamSelection {
 //        cp_balancers.addAll(balancers);
 //        cp_thinkers.addAll(thinkers);
 //    }
-public void returnPlayersToPool(ArrayList<String> leaders,
-                                ArrayList<String> balancers,
-                                ArrayList<String> thinkers) {
-    synchronized (teamLock) {
-        cp_leaders.addAll(leaders);
-        cp_balancers.addAll(balancers);
-        cp_thinkers.addAll(thinkers);
+    public void returnPlayersToPool(ArrayList<String> leaders,
+                                    ArrayList<String> balancers,
+                                    ArrayList<String> thinkers) {
+        synchronized (teamLock) {
+            cp_leaders.addAll(leaders);
+            cp_balancers.addAll(balancers);
+            cp_thinkers.addAll(thinkers);
+        }
     }
-}
 
     /**
      * THREAD-SAFE: Check if enough players available
@@ -651,6 +600,32 @@ public void returnPlayersToPool(ArrayList<String> leaders,
                     cp_thinkers.size() >= thinkerCount;
         }
     }
+    public static void setupLogger() {
+        try {
+            // Remove default console handlers
+            Logger rootLogger = Logger.getLogger("");
+            Handler[] handlers = rootLogger.getHandlers();
+            for (Handler handler : handlers) {
+                if (handler instanceof ConsoleHandler) {
+                    rootLogger.removeHandler(handler);
+                }
+            }
+
+            // Create file handler
+            FileHandler fileHandler = new FileHandler("team_formation.log",true); // true = append mode
+            fileHandler.setFormatter(new SimpleFormatter());
+
+            // Add file handler to root logger
+            rootLogger.addHandler(fileHandler);
+
+            // Set log level
+            rootLogger.setLevel(Level.INFO);
+
+        } catch (IOException e) {
+            System.err.println("Failed to setup logger: " + e.getMessage());
+        }
+    }
+
 
 
 }

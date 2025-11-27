@@ -4,12 +4,13 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
+import java.util.logging.Logger;
 
 public class SurveyProcessorTask implements Runnable {
     private final Participant player;
     private final CountDownLatch latch;
     private final String filePath;
-
+    private static final Logger logger = Logger.getLogger(SurveyProcessorTask.class.getName());
     public SurveyProcessorTask(Participant player, String filePath, CountDownLatch latch) {
         this.player = player;
         this.filePath = filePath;
@@ -18,6 +19,8 @@ public class SurveyProcessorTask implements Runnable {
 
     @Override
     public void run() {
+        String thread = Thread.currentThread().getName();
+        logger.info(thread + " started processing survey for " + player.getName());
         try {
             processSurvey();
         } finally {
@@ -28,12 +31,14 @@ public class SurveyProcessorTask implements Runnable {
     }
 
     private void processSurvey() {
+        String thread = Thread.currentThread().getName();
         List<String> lines = new ArrayList<>();
         File playerDataFile = new File(filePath);
 
         if (!player.checkPersonalityType()) {
             System.out.println("⚠️ " + player.getName() + "'s Personality Score is very low! Please try again!\n");
             System.out.println("⚠️ Survey for " + player.getName() + " has been discarded.\n");
+            logger.info(thread+" : Survey for "+player.getName()+" has been discarded.Because Personality Score is very low!");
             return;
         }
 
@@ -56,6 +61,7 @@ public class SurveyProcessorTask implements Runnable {
                     }
                     lines.add(line);
                 }
+                logger.info(thread+" successfully read file for "+player.getName()+" and updated data.");
             } catch (IOException e) {
                 System.err.println("❌ Error reading file for " + player.getName());
                 e.printStackTrace();
@@ -72,7 +78,7 @@ public class SurveyProcessorTask implements Runnable {
                     bw.write(l);
                     bw.newLine();
                 }
-
+                logger.info(thread+" successfully updated file for "+player.getName()+" with new data.");
             } catch (IOException e) {
                 System.err.println("❌ Error writing file for " + player.getName());
                 e.printStackTrace();

@@ -193,17 +193,5 @@ class TeamMembersSelectionTest {
     }
 
 
-    @Test
-    void testRemoveSelectedPlayers() {
-        selector.categorizeByPersonalityType();
 
-        ArrayList<String> leaders = selector.selectUniqueLeaders(1);
-        ArrayList<String> thinkers = selector.selectUniqueThinkers(2);
-        ArrayList<String> balancers = selector.selectUniqueBalancers(1);
-
-        selector.removeSelectedPlayers(leaders, balancers, thinkers);
-
-        // After removal, we should have fewer players available
-        assertNotNull(selector);
-    }
 }

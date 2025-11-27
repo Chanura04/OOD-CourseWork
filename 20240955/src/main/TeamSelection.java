@@ -9,7 +9,7 @@ public interface TeamSelection {
     ArrayList<String> selectUniqueThinkers(int count);
     ArrayList<String> selectUniqueBalancers(int count);
     ArrayList<ArrayList<String>> createTeams();
-    void formTeamsBySkillAverageValue();
+    void filterTeamsBySkillAverageValue();
 //    void finalTeamsSelection();
     boolean isGameCountValid(ArrayList<String> team);
     void writeFinalTeamsOnCsvFile();
