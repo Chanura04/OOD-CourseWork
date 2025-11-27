@@ -33,7 +33,7 @@ public class Dashboard {
 
 
 
-
+    //sq 1.2
     public  void organizerDashboard(Scanner input) {
         while (true) {
             try {
@@ -55,14 +55,14 @@ public class Dashboard {
 
                 switch (choice) {
                     case 1:
-                        HandleUploadedDataCsvFiles handleDataCsvFiles = new HandleUploadedDataCsvFiles();
+                        HandleDataCsvFiles handleDataCsvFiles = new HandleDataCsvFiles();
                         handleDataCsvFiles.dataFileImport(input);
                         uploadCsvFileName = handleDataCsvFiles.getUploadCsvFileName();
                         break;
-                    case 2:
-                        TeamMembersSelection teamMembersSelection = new TeamMembersSelection(uploadCsvFileName);
-                        teamMembersSelection.defineTeamSize(input);
-                        teamMembersSelection.generateTeams(input);
+                    case 2://sq 2-Initiate team formations, define team size
+                        TeamMembersSelection teamMembersSelection = new TeamMembersSelection(uploadCsvFileName);//sq 2.1-Initiate team formations
+                        teamMembersSelection.defineTeamSize(input);//sq 2.2 -Define team size
+                        teamMembersSelection.generateTeams(input);//sq 2.2 -Initiate team formations
                         playersCountPerTeam=teamMembersSelection.getTeamPlayerCount();
                         totalFormedTeams=teamMembersSelection.getTotalFinalTeamCombination();
                         avgSkillValue = teamMembersSelection.getAverage();
@@ -108,19 +108,13 @@ public class Dashboard {
                             System.out.println("⚠️ Please generate teams first.");
                             break;
                         }
-//                        if (playersCountPerTeam == 0) {
-//                            ReviewGeneratedTeams reviewGeneratedTeams = new ReviewGeneratedTeams(file);
-//                            reviewGeneratedTeams.viewFormedTeams();
-//                            break;
-//                        }
+
                         File file_check = new File("files/possible_teams.csv");
 
                         if (file_check.exists()) {
-//                            if(playersCountPerTeam>0){
                             ReviewGeneratedTeams vm = new ReviewGeneratedTeams(file);
                             vm.setTeamPlayerCount(playersCountPerTeam);
                             vm.viewFormedTeams();
-//                            }
                         } else {
                             System.out.println("⚠️ No teams found. Please generate teams first.");
                         }
@@ -135,7 +129,7 @@ public class Dashboard {
             }
         }
     }
-
+    //sq 1.2 complete survey
     public  void participantDashboard(Scanner input) {
         while (true) {
             try {
@@ -155,8 +149,8 @@ public class Dashboard {
 
                 switch (choice) {
                     case 1:
-                        Participant player = new Participant(currentUserName, currentUserEmail);
-                        player.participantSurvey(input);
+                        Participant player = new Participant(currentUserName, currentUserEmail);//sq 2.1 complete survey
+                        player.participantSurvey(input);  //sq 2.2 complete survey
                         break;
                     case 2:
                         System.out.println("\n📋 Your Profile:");

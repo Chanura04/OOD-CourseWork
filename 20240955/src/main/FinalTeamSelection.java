@@ -247,7 +247,7 @@ public class FinalTeamSelection {
             System.out.println("❌ Teams were not accepted. Export cancelled.");
             File file1 = new File("formed_teams.csv");
             if (file1.exists()) {
-                HandleUploadedDataCsvFiles handleDataCsvFiles = new HandleUploadedDataCsvFiles();
+                HandleDataCsvFiles handleDataCsvFiles = new HandleDataCsvFiles();
                 handleDataCsvFiles.deleteCsvFile(file1);
             }
         }

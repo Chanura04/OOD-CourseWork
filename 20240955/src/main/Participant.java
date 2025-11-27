@@ -7,6 +7,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.*;
+import java.util.logging.Logger;
+
 
 // Process survey data
 public class Participant extends User {
@@ -17,16 +20,13 @@ public class Participant extends User {
     private int skillLevel;
     private String interestSport;
     private String id;
-
-
+    private static final Logger logger = Logger.getLogger(Participant.class.getName());
 
     //Player class constructor
     public Participant(String name, String email) {
         super( name, email);
         setId(newPlayerId());
     }
-
-
 
     public void setId(String id) {
         this.id = id;
@@ -61,12 +61,15 @@ public class Participant extends User {
     }
 
     public  void participantSurvey(Scanner input) {
-        InputValidator inputValidator = new InputValidator();
-        if(isPlayerSurveyCompleted()){
+        setupLogger(); //sq 2.3
+        InputValidator inputValidator = new InputValidator();//sq 2.4
+        if(isPlayerSurveyCompleted()){  //2.5
             System.out.println("⚠️ You have already completed the survey!!!");
+            logger.info("⚠️ You have already completed the survey!!!");
             return;
         }
         try {
+            logger.info("Starting survey for " + getName());
             System.out.println("\n\n" + "=".repeat(80));
             System.out.println("                          PERSONALITY SURVEY");
             System.out.println("=".repeat(80));
@@ -75,33 +78,34 @@ public class Participant extends User {
 
 
             int q1 = inputValidator.isValidInterInput(input,
-                    "Q1) I enjoy taking the lead and guiding others during group activities.\n    Answer: ", 1, 5);
+                    "Q1) I enjoy taking the lead and guiding others during group activities.\n    Answer: ", 1, 5);//3
             int q2 = inputValidator.isValidInterInput(input,
-                    "Q2) I prefer analyzing situations and coming up with strategic solutions.\n    Answer: ", 1, 5);
+                    "Q2) I prefer analyzing situations and coming up with strategic solutions.\n    Answer: ", 1, 5);//3.2
             int q3 = inputValidator.isValidInterInput(input,
-                    "Q3) I work well with others and enjoy collaborative teamwork.\n    Answer: ", 1, 5);
+                    "Q3) I work well with others and enjoy collaborative teamwork.\n    Answer: ", 1, 5);//4.2
             int q4 = inputValidator.isValidInterInput(input,
-                    "Q4) I am calm under pressure and can help maintain team morale.\n    Answer: ", 1, 5);
+                    "Q4) I am calm under pressure and can help maintain team morale.\n    Answer: ", 1, 5);//5.2
             int q5 = inputValidator.isValidInterInput(input,
-                    "Q5) I like making quick decisions and adapting in dynamic situations.\n    Answer: ", 1, 5);
+                    "Q5) I like making quick decisions and adapting in dynamic situations.\n    Answer: ", 1, 5);//6.2
 
-
+           logger.info("Player " + getName() + " completed the personality survey");
             String game = inputValidator.isValidStringInput(input,
-                    "\nEnter your game of interest (e.g., Valorant, Dota, FIFA, Basketball) or 'q' to cancel: ");
+                    "\nEnter your game of interest (e.g., Valorant, Dota, FIFA, Basketball) or 'q' to cancel: ");//7.2
 
             if (game == null) {
                 System.out.println("🔙 Survey cancelled.");
                 return;
             }
+            logger.info("Player " + getName() + " entered game of interest: " + game);
 
             interestSport = game.substring(0, 1).toUpperCase() + game.substring(1);
 
             skillLevel = inputValidator.isValidInterInput(input,
-                    "Enter your skill level (1-10): ", 1, 10);
-
-            rolesDescription();
+                    "Enter your skill level (1-10): ", 1, 10);//8.2
+            logger.info("Player " + getName() + " entered skill level: " + skillLevel);
+            rolesDescription();//9.2
             int roleNumber = inputValidator.isValidInterInput(input,
-                    "Enter the number of your preferred role: ", 1, 5);
+                    "Enter the number of your preferred role: ", 1, 5);//9.3
 
             preferredRole = switch (roleNumber) {
                 case 1 -> "Strategist";
@@ -111,26 +115,35 @@ public class Participant extends User {
                 case 5 -> "Coordinator";
                 default -> "Unknown";
             };
+            logger.info("Player " + getName() + " entered preferred role: " + preferredRole);
 
-            calculateTotalScore(q1, q2, q3, q4, q5);
-            boolean isSurveyValid = checkPersonalityType();
+            calculateTotalScore(q1, q2, q3, q4, q5);//10.2
+            logger.info("Player " + getName() + " completed the survey and calculated total score: " + getTotalScore());
+            boolean isSurveyValid = checkPersonalityType();//10.3
+
+            if(!isSurveyValid){
+                logger.info("⚠️ Player " + getName() + " survey is invalid. Total score: " + getTotalScore());
+            }
 
 
 
+            //10.4
             boolean isConfirmed=inputValidator.getValidResponseInput(input,"\nConfirm your preferences (interest game, skill level, preferred role) ? (Y/N):","y","n");
 
             while(!isConfirmed){
+                logger.info("Player " + getName() + " wants to change his/her preferences. Showing survey results.");
                 int selectChanges = inputValidator.isValidInterInput(input,
                         "1) Interest game\n2) Skill level\n3) Preferred role\n4) Cancel\nChoice: ",1,4
-                );
+                );//11.2
+                logger.info("Player " + getName() + " selected option: " + selectChanges);
                 try{
                     switch (selectChanges){
-                        case 1:
+                        case 1://12.1
                             interestSport = inputValidator.isValidStringInput(input,
                                     "Enter your game of interest (e.g., Valorant, Dota, FIFA, Basketball) or 'q' to cancel: ");
 
                             break;
-                        case 2:
+                        case 2://13.1
                             skillLevel = inputValidator.isValidInterInput(input,
                                     "Enter your skill level (1-10): ", 1, 10);
 
@@ -154,17 +167,14 @@ public class Participant extends User {
 
 
                     }
-                    showSurveyResults();
+                    showSurveyResults();//15
                     isConfirmed=inputValidator.getValidResponseInput(input,"\nConfirm your preferences (interest game, skill level, preferred role) ? (Y/N):","y","n");
                 }catch (Exception e){
                     System.out.println("⚠️ Error completing survey: " + e.getMessage());
                 }
             }
-
-
-
             storeSurveyData();
-
+            logger.info("Player " + getName() + " completed the survey and stored data.");
 
             if (isSurveyValid) {
                 System.out.println("\n✅ Survey completed successfully!");
@@ -313,6 +323,31 @@ public class Participant extends User {
         }
         setId("P"+(previousId + 1));
         return "P"+(previousId + 1);
+    }
+    public static void setupLogger() {
+        try {
+            // Remove default console handlers
+            Logger rootLogger = Logger.getLogger("");
+            Handler[] handlers = rootLogger.getHandlers();
+            for (Handler handler : handlers) {
+                if (handler instanceof ConsoleHandler) {
+                    rootLogger.removeHandler(handler);
+                }
+            }
+
+            // Create file handler
+            FileHandler fileHandler = new FileHandler("team_formation.log",true); // true = append mode
+            fileHandler.setFormatter(new SimpleFormatter());
+
+            // Add file handler to root logger
+            rootLogger.addHandler(fileHandler);
+
+            // Set log level
+            rootLogger.setLevel(Level.INFO);
+
+        } catch (IOException e) {
+            System.err.println("Failed to setup logger: " + e.getMessage());
+        }
     }
 
 

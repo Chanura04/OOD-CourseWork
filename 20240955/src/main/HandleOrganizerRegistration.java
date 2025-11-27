@@ -18,8 +18,8 @@ public class HandleOrganizerRegistration {
         String filePath = "DataBase/organizersData.csv";
         File playerDataFile = new File(filePath);
 
-        OrganizerDataLoader organizerDataLoader = new OrganizerDataLoader();
-        ArrayList<String> playerData = organizerDataLoader.getOrganizerData(playerDataFile);
+        OrganizerDataLoader organizerDataLoader = new OrganizerDataLoader();//5.1.1
+        ArrayList<String> playerData = organizerDataLoader.getOrganizerData(playerDataFile);//5.1.2
 
         boolean isRegistered = false;
 

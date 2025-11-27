@@ -57,11 +57,11 @@ public class Main {
                         currentUserStoredRawNumber=participantLogin.getCurrentUserStoredRawNumber();
 
                         if (isLogged) {
-                            Dashboard dashboard=new Dashboard();
-                            dashboard.setCurrentUserName(currentUserName);
-                            dashboard.setCurrentUserEmail(currentUserEmail);
-                            dashboard.setCurrentUserStoredRawNumber(currentUserStoredRawNumber);
-                            dashboard.participantDashboard(input);
+                            Dashboard dashboard=new Dashboard();//6
+                            dashboard.setCurrentUserName(currentUserName);//6.1
+                            dashboard.setCurrentUserEmail(currentUserEmail);//6.2
+                            dashboard.setCurrentUserStoredRawNumber(currentUserStoredRawNumber);//6.3
+                            dashboard.participantDashboard(input);//6.4
                         }
                         break;
                     case 3:

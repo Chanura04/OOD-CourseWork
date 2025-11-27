@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.Scanner;
 
-public class HandleUploadedDataCsvFiles {
+public class HandleDataCsvFiles {
     private String fileName;
     private String uploadCsvFileName;
 
