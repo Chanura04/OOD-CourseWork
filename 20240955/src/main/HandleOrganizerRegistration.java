@@ -15,7 +15,7 @@ public class HandleOrganizerRegistration {
     }
 
     public boolean isARegisteredOrganizer() {
-        String filePath = "DataBase/organizersData.csv";
+        String filePath = "C:\\Github Projects\\OOD-CourseWork\\20240955\\DataBase\\organizersData.csv";
         File playerDataFile = new File(filePath);
 
         OrganizerDataLoader organizerDataLoader = new OrganizerDataLoader();//5.1.1

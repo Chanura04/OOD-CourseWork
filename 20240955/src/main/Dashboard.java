@@ -51,12 +51,12 @@ public class Dashboard {
                 System.out.println("=".repeat(80));
                 System.out.println("\n");
 
-                int choice = getValidIntegerInput(input, "Enter your choice: ", 1, 8);
+                int choice = getValidIntegerInput(input, "Enter your choice: ", 1, 8);//2.1
 
                 switch (choice) {
                     case 1:
-                        HandleDataCsvFiles handleDataCsvFiles = new HandleDataCsvFiles();
-                        handleDataCsvFiles.dataFileImport(input);
+                        HandleDataCsvFiles handleDataCsvFiles = new HandleDataCsvFiles();//2.1
+                        handleDataCsvFiles.dataFileImport(input);//2.2
                         uploadCsvFileName = handleDataCsvFiles.getUploadCsvFileName();
                         break;
                     case 2://sq 2-Initiate team formations, define team size
@@ -73,17 +73,22 @@ public class Dashboard {
                         remainingThinkersCount=teamMembersSelection.getRemainingThinkersCount();
                         break;
                     case 3:
-                        File fileForFinalTeamSelection=new File("files/possible_teams.csv");
-                        FinalTeamSelection finalTeamSelection=new FinalTeamSelection();
-                        finalTeamSelection.setCsvFile(fileForFinalTeamSelection);
-                        finalTeamSelection.setTeamPlayerCount(playersCountPerTeam);
-                        finalTeamSelection.setTotalFormedTeamsCount(totalFormedTeams);
-                        finalTeamSelection.finalTeamsSelection(input);
+                        File fileForFinalTeamSelection=new File("possible_teams.csv");
+                        FinalTeamSelection finalTeamSelection=new FinalTeamSelection();//2.1
+                        finalTeamSelection.setCsvFile(fileForFinalTeamSelection);//2.2
+                        finalTeamSelection.setTeamPlayerCount(playersCountPerTeam);//2.3
+                        finalTeamSelection.setTotalFormedTeamsCount(totalFormedTeams);//2.4
+                        finalTeamSelection.finalTeamsSelection(input);//2.5
                         break;
                     case 4:
-                        FinalTeamSelection finalTeamSelection_2=new FinalTeamSelection();
-                        finalTeamSelection_2.setTeamPlayerCount(playersCountPerTeam);
-                        finalTeamSelection_2.reviewRandomlySelectedTeams(input);
+                        File f = new File("formed_teams.csv");
+                        if(!f.exists()){//2.2
+                            System.out.println("⚠️ Please generate final teams first.");
+                            break;//2.2.1
+                        }
+                        FinalTeamSelection finalTeamSelection_2=new FinalTeamSelection();//2.3
+                        finalTeamSelection_2.setTeamPlayerCount(playersCountPerTeam);//2.4
+                        finalTeamSelection_2.reviewRandomlySelectedTeams(input);//2.5
                         break;
                     case 5:
                         FinalTeamSelection fts = new FinalTeamSelection();
@@ -99,25 +104,21 @@ public class Dashboard {
                             System.out.println("⚠️ Please generate teams first.");
                             break;
                         }
-                        ViewRemainingPlayers viewRemainingPlayers = new ViewRemainingPlayers();
-                        viewRemainingPlayers.viewPlayersInCsvFile("possible_teams.csv");
+                        ReviewGeneratedTeams rgt = new ReviewGeneratedTeams("remaining_players.csv");
+                        rgt.viewPlayersInCsvFile();
+//                        ViewRemainingPlayers viewRemainingPlayers = new ViewRemainingPlayers();
+//                        viewRemainingPlayers.viewPlayersInCsvFile("remaining_players.csv");
                         break;
                     case 7:
                         File file = new File("possible_teams.csv");
-                        if(!file.exists()){
-                            System.out.println("⚠️ Please generate teams first.");
+                        if(!file.exists()){//2.2
+                            System.out.println("⚠️ No teams found. Please generate teams first.");
                             break;
                         }
+                         ReviewGeneratedTeams vm = new ReviewGeneratedTeams(file);//2.3
+                         vm.setTeamPlayerCount(playersCountPerTeam);//2.4
+                         vm.viewFormedTeams();//2.5
 
-                        File file_check = new File("files/possible_teams.csv");
-
-                        if (file_check.exists()) {
-                            ReviewGeneratedTeams vm = new ReviewGeneratedTeams(file);
-                            vm.setTeamPlayerCount(playersCountPerTeam);
-                            vm.viewFormedTeams();
-                        } else {
-                            System.out.println("⚠️ No teams found. Please generate teams first.");
-                        }
                         break;
                     case 8:
                         System.out.println("🔓 Logging out...");
@@ -159,9 +160,15 @@ public class Dashboard {
                         break;
 
                     case 3:
+                        File file = new File("formed_teams.csv");
+
+                        if(!file.exists()){//2.2
+                            System.out.println("⚠️ Please generate teams first.");
+                            break;
+                        }
                         String csvFileName="formed_teams.csv";
-                        ReviewGeneratedTeams reviewGeneratedTeams=new ReviewGeneratedTeams(csvFileName);
-                        reviewGeneratedTeams.reviewParticipantAssignedTeam();
+                        ReviewGeneratedTeams reviewGeneratedTeams=new ReviewGeneratedTeams(csvFileName);//2.3
+                        reviewGeneratedTeams.reviewParticipantAssignedTeam();//2.4
                         break;
                     case 4:
                         System.out.println("🔓 Logging out...");
@@ -179,7 +186,7 @@ public class Dashboard {
 
 
 
-    private static int getValidIntegerInput(Scanner input, String prompt, int min, int max) {
+    private  int getValidIntegerInput(Scanner input, String prompt, int min, int max) {
         while (true) {
             try {
                 System.out.print(prompt);

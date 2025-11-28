@@ -120,7 +120,7 @@ public class TeamMembersSelection implements TeamSelection {
             long endTime = System.currentTimeMillis();
             writeFinalTeamsOnCsvFile(); // sq 2.2.20
 
-            File file = new File("files/possible_teams.csv");
+            File file = new File("C:\\Github Projects\\OOD-CourseWork\\20240955\\files\\possible_teams.csv");
             if (file.exists()) {
                 ReviewGeneratedTeams vm = new ReviewGeneratedTeams(file);
                 vm.setTeamPlayerCount(playersCountPerTeam);
@@ -131,7 +131,7 @@ public class TeamMembersSelection implements TeamSelection {
 
             boolean isAcceptingFormedTeams=inputValidator.getValidResponseInput(input,"\nDo you accept these teams? (Y/N):","y","n");
             if(isAcceptingFormedTeams){
-                exportFormedTeams("files/possible_teams.csv");//sq 2.2.21.1
+                exportFormedTeams("C:\\Github Projects\\OOD-CourseWork\\20240955\\files\\possible_teams.csv");//sq 2.2.21.1
                 writeRemainingPlayerInCsvFile();//sq 2.2.21.2
                 writeFormedTeamsStaticDetails();//sq 2.2.21.3
 
@@ -159,6 +159,9 @@ public class TeamMembersSelection implements TeamSelection {
         all_leaders.clear();
         all_balancers.clear();
         all_thinkers.clear();
+        cp_leaders.clear();
+        cp_balancers.clear();
+        cp_thinkers.clear();
 
         for (int i = 1; i < playerData.size(); i++) {
             String raw = playerData.get(i).replace("[", "").replace("]", "").trim();
@@ -304,8 +307,8 @@ public class TeamMembersSelection implements TeamSelection {
 
         // Determine optimal thread count (based on CPU cores, but max 8)
         int threadCount = Math.min(Runtime.getRuntime().availableProcessors(), maxPossibleTeams);
-        threadCount = Math.max(1, Math.min(threadCount, 20));
-//        threadCount=10000;
+        threadCount = Math.max(1, Math.max(threadCount, 20));
+
 
         CountDownLatch latch = new CountDownLatch(threadCount);
         List<Thread> threads = new ArrayList<>();
@@ -449,44 +452,12 @@ public class TeamMembersSelection implements TeamSelection {
         }
     }
   
-//    public void finalTeamsSelection(){
-//        System.out.println("remaining leaders: "+cp_leaders.size()+"remaining balancers: "+cp_balancers.size()+"remaining thinkers: "+cp_thinkers.size()+"\n\n");
-//
-//        ArrayList<String> remainingPlayers = new ArrayList<>();
-//        ArrayList<String> combinedRemainingPlayers = new ArrayList<>();
-//
-//        remainingPlayers.addAll(cp_leaders);
-//        remainingPlayers.addAll(cp_balancers);
-//        remainingPlayers.addAll(cp_thinkers);
-//
-//        if(!remainingPlayers.isEmpty()){
-//            for (ArrayList<String> team : remainingTeams) {
-//                combinedRemainingPlayers.addAll(team);
-//            }
-//        }
-//
-//        combinedRemainingPlayers.addAll(remainingPlayers);
-//
-//
-//        HandleRemainingPlayers handleRemainingPlayers=new HandleRemainingPlayers(getTeamPlayerCount(),combinedRemainingPlayers, average,uploadCsvFileName);
-//        System.out.println("\n\n");
-//        ArrayList<ArrayList<String>> handledRemainingTeams=handleRemainingPlayers.getCreatedTeams();
-//        secondFilterationFormedTeamsCount=handledRemainingTeams.size();
-//        rest_leaders=handleRemainingPlayers.getRemaining_all_leaders();
-//        rest_balancers=handleRemainingPlayers.getRemaining_all_balancers();
-//        rest_thinkers=handleRemainingPlayers.getRemaining_all_thinkers();
-////        System.out.println("remaining leaders: "+rest_leaders.size()+"remaining balancers: "+rest_balancers.size()+"remaining thinkers: "+rest_thinkers.size()+"\n\n");
-//
-//        finalTeamCombination.clear();
-//        finalTeamCombination.addAll(handledRemainingTeams);
-//        finalTeamCombination.addAll(selectedTeamsInFirstFilter);
-//
-//    }
+
 
 
     public void writeFinalTeamsOnCsvFile(){
         int teamNumber=0;
-        try (FileWriter writer = new FileWriter("files/possible_teams.csv")) {
+        try (FileWriter writer = new FileWriter("C:\\Github Projects\\OOD-CourseWork\\20240955\\files\\possible_teams.csv")) {
             writer.write("ID,Name,Email,PreferredGame,SkillLevel,PreferredRole,PersonalityScore,PersonalityType,TeamNumber");
             writer.write("\n");
 
@@ -504,7 +475,7 @@ public class TeamMembersSelection implements TeamSelection {
         }
     }
     public void writeFormedTeamsStaticDetails(){
-        try (FileWriter writer = new FileWriter("files/log.csv")) {
+        try (FileWriter writer = new FileWriter("C:\\Github Projects\\OOD-CourseWork\\20240955\\files\\staticData.csv")) {
             writer.write("PlayersPerTeam,TotalTeamCount,AverageSkillLevel,MinimumSkillLevel,MaximumSkillLevel,RemainingLeaderCount,RemainingBalancerCount,RemainingThinkerCount");
             writer.write("\n");
             writer.write(playersCountPerTeam + "," + selectedTeamsInFirstFilter.size()+','+average+','+minimumSkillAverage+','+maximumSkillAverage+','+getRemainingLeadersCount()+','+getRemainingBalancersCount()+','+getRemainingThinkersCount()+ "\n");
@@ -545,9 +516,9 @@ public class TeamMembersSelection implements TeamSelection {
         ArrayList<String> restRemainingPlayers = new ArrayList<>();
 
         // Combine all remaining players
-        restRemainingPlayers.addAll(rest_leaders);
-        restRemainingPlayers.addAll(rest_balancers);
-        restRemainingPlayers.addAll(rest_thinkers);
+        restRemainingPlayers.addAll(cp_balancers);
+        restRemainingPlayers.addAll(cp_leaders);
+        restRemainingPlayers.addAll(cp_thinkers);
 
         try (FileWriter writer = new FileWriter("remaining_players.csv")) {
             writer.write("ID,Name,Email,PreferredGame,SkillLevel,PreferredRole,PersonalityScore,PersonalityType\n");
@@ -563,23 +534,7 @@ public class TeamMembersSelection implements TeamSelection {
             e.printStackTrace();
         }
     }
-//    public boolean playersStillAvailable(
-//            ArrayList<String> leaders,
-//            ArrayList<String> balancers,
-//            ArrayList<String> thinkers) {
-//
-//        return cp_leaders.containsAll(leaders) &&
-//                cp_balancers.containsAll(balancers) &&
-//                cp_thinkers.containsAll(thinkers);
-//    }
 
-//    public void returnPlayersToPool(ArrayList<String> leaders,
-//                                    ArrayList<String> balancers,
-//                                    ArrayList<String> thinkers) {
-//        cp_leaders.addAll(leaders);
-//        cp_balancers.addAll(balancers);
-//        cp_thinkers.addAll(thinkers);
-//    }
     public void returnPlayersToPool(ArrayList<String> leaders,
                                     ArrayList<String> balancers,
                                     ArrayList<String> thinkers) {
@@ -612,7 +567,7 @@ public class TeamMembersSelection implements TeamSelection {
             }
 
             // Create file handler
-            FileHandler fileHandler = new FileHandler("team_formation.log",true); // true = append mode
+            FileHandler fileHandler = new FileHandler("system.log",true); // true = append mode
             fileHandler.setFormatter(new SimpleFormatter());
 
             // Add file handler to root logger

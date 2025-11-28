@@ -42,7 +42,8 @@ public class Login {
 
 
             if (currentUserName.isEmpty()) {
-                System.out.println("⚠️ Name cannot be empty.");
+                System.out.println("⚠️ Name cannot be empty.Please try again.");
+                logger.warning("⚠️ Name cannot be empty.");
                 return false;
             }
 
@@ -57,22 +58,21 @@ public class Login {
 
             if (currentUserEmail.isEmpty() || !currentUserEmail.contains("@")) {
                 System.out.println("⚠️ Invalid email format.");
-                logger.info("⚠️ Invalid email format for " + currentUserName);
+                logger.warning("⚠️ Invalid email format for " + currentUserName);
                 return false;
             }
 
 
             HandleParticipantRegistration handleParticipantRegistration =
                     new HandleParticipantRegistration(currentUserName, currentUserEmail);//5
-
-            if (!handleParticipantRegistration.isARegisteredParticipant()) {//5.1
+//5.1
+            if (!handleParticipantRegistration.isARegisteredParticipant()) {
                 System.out.println("❌ You are not registered. Please register first.");
-                logger.info(currentUserName + " is not registered. Please register first.");
+                logger.warning(currentUserName + " is not registered. Please register first.");
                 return false;
             }
 
             currentUserStoredRawNumber = handleParticipantRegistration.getRegisteredParticipantStoredRawNumber();
-//            System.out.println();
             display("✅ Login successful! Welcome, " + currentUserName + ".");
             logger.info("Login successful for " + currentUserName);
             return true;
@@ -118,15 +118,16 @@ public class Login {
 
             if (!organizerEmail.contains("@")) {
                 System.out.println("⚠️ Invalid email format.");
+                logger.warning("⚠️ Invalid email format.");
                 return false;
             }
 
             HandleOrganizerRegistration handleOrganizerRegistration =
                     new HandleOrganizerRegistration(organizerName, organizerEmail);//5
-
-            if (!handleOrganizerRegistration.isARegisteredOrganizer()) {//5.1
+            //5.1
+            if (!handleOrganizerRegistration.isARegisteredOrganizer()) {
                 System.out.println("❌ Invalid Organizer credentials. Please try again.");
-                logger.info("Invalid Organizer credentials for " + organizerName);
+                logger.warning("Invalid Organizer credentials for " + organizerName);
                 return false;
             }
             System.out.println("✅ Login successful! Welcome, Organizer.");
@@ -150,7 +151,7 @@ public class Login {
             }
 
             // Create file handler
-            FileHandler fileHandler = new FileHandler("team_formation.log",true); // true = append mode
+            FileHandler fileHandler = new FileHandler("system.log",true); // true = append mode
             fileHandler.setFormatter(new SimpleFormatter());
 
             // Add file handler to root logger

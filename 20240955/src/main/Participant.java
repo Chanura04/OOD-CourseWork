@@ -65,7 +65,7 @@ public class Participant extends User {
         InputValidator inputValidator = new InputValidator();//sq 2.4
         if(isPlayerSurveyCompleted()){  //2.5
             System.out.println("⚠️ You have already completed the survey!!!");
-            logger.info("⚠️ You have already completed the survey!!!");
+            logger.warning("⚠️ You have already completed the survey!!!");
             return;
         }
         try {
@@ -78,7 +78,7 @@ public class Participant extends User {
 
 
             int q1 = inputValidator.isValidInterInput(input,
-                    "Q1) I enjoy taking the lead and guiding others during group activities.\n    Answer: ", 1, 5);//3
+                    "Q1) I enjoy taking the lead and guiding others during group activities.\n    Answer: ", 1, 5);//2.6
             int q2 = inputValidator.isValidInterInput(input,
                     "Q2) I prefer analyzing situations and coming up with strategic solutions.\n    Answer: ", 1, 5);//3.2
             int q3 = inputValidator.isValidInterInput(input,
@@ -122,7 +122,7 @@ public class Participant extends User {
             boolean isSurveyValid = checkPersonalityType();//10.3
 
             if(!isSurveyValid){
-                logger.info("⚠️ Player " + getName() + " survey is invalid. Total score: " + getTotalScore());
+                logger.warning("⚠️ Player " + getName() + " survey is invalid. Total score: " + getTotalScore());
             }
 
 
@@ -143,16 +143,16 @@ public class Participant extends User {
                                     "Enter your game of interest (e.g., Valorant, Dota, FIFA, Basketball) or 'q' to cancel: ");
 
                             break;
-                        case 2://13.1
+                        case 2://12.2
                             skillLevel = inputValidator.isValidInterInput(input,
                                     "Enter your skill level (1-10): ", 1, 10);
 
                             break;
                         case 3:
-                            rolesDescription();
-                            int roleNumber1 = inputValidator.isValidInterInput(input,
-                                    "Enter the number of your preferred role: ", 1, 5);
-                            preferredRole = switch (roleNumber1) {
+                            rolesDescription();//12.7
+                            int newRoleNumber = inputValidator.isValidInterInput(input,
+                                    "Enter the number of your preferred role: ", 1, 5);//12.8
+                            preferredRole = switch (newRoleNumber) {
                                 case 1 -> "Strategist";
                                 case 2 -> "Attacker";
                                 case 3 -> "Defender";
@@ -167,13 +167,13 @@ public class Participant extends User {
 
 
                     }
-                    showSurveyResults();//15
+                    showSurveyResults();//13
                     isConfirmed=inputValidator.getValidResponseInput(input,"\nConfirm your preferences (interest game, skill level, preferred role) ? (Y/N):","y","n");
                 }catch (Exception e){
                     System.out.println("⚠️ Error completing survey: " + e.getMessage());
                 }
             }
-            storeSurveyData();
+            storeSurveyData();//14
             logger.info("Player " + getName() + " completed the survey and stored data.");
 
             if (isSurveyValid) {
@@ -245,7 +245,7 @@ public class Participant extends User {
 
     //Store player data into a csv file
     public void storeRegisteredPlayerData(){
-        File playerDataFile = new File("DataBase/students_loop.csv");
+        File playerDataFile = new File("C:\\Github Projects\\OOD-CourseWork\\20240955\\DataBase\\students_loop.csv");
         //save to csv file
             try (FileWriter writer = new FileWriter(playerDataFile, true)) {
                 String[] data={
@@ -259,7 +259,7 @@ public class Participant extends User {
     }
     private Participant player;
     private boolean isPlayerSurveyCompleted(){
-        String filePath = "DataBase/students_loop.csv";
+        String filePath = "C:\\Github Projects\\OOD-CourseWork\\20240955\\DataBase\\students_loop.csv";
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             br.readLine(); // Skip header
             String line;
@@ -281,11 +281,11 @@ public class Participant extends User {
     }
 
     public void storeSurveyData(){
-        String filePath = "DataBase/students_loop.csv";
+        String filePath = "C:\\Github Projects\\OOD-CourseWork\\20240955\\DataBase\\students_loop.csv";
         CountDownLatch latch = new CountDownLatch(1);
 
         // Create and start the thread with our separate task class
-        SurveyProcessorTask surveyProcessorTask = new SurveyProcessorTask(this, filePath, latch);
+        SurveyProcessorTask surveyProcessorTask = new SurveyProcessorTask(this, filePath, latch);//15
         Thread surveyThread = new Thread(surveyProcessorTask);
         surveyThread.setName("Survey-" + getName());
         surveyThread.start();
@@ -302,7 +302,7 @@ public class Participant extends User {
 
     public int getStoredLastId(){
        ParticipantDataLoader playerDataLoader=new ParticipantDataLoader();
-       File playerDataFile = new File("DataBase/students_loop.csv");
+       File playerDataFile = new File("C:\\Github Projects\\OOD-CourseWork\\20240955\\DataBase\\students_loop.csv");
 
         ArrayList<String> loadPlayerData=playerDataLoader.getPlayerData(playerDataFile);
        if(loadPlayerData.isEmpty()){
@@ -336,7 +336,7 @@ public class Participant extends User {
             }
 
             // Create file handler
-            FileHandler fileHandler = new FileHandler("team_formation.log",true); // true = append mode
+            FileHandler fileHandler = new FileHandler("system.log",true); // true = append mode
             fileHandler.setFormatter(new SimpleFormatter());
 
             // Add file handler to root logger

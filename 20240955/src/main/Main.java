@@ -65,12 +65,12 @@ public class Main {
                         }
                         break;
                     case 3:
-                        Registration registration=new Registration();
-                        registration.registerNewParticipant(input);
+                        Registration registration=new Registration();//2.1
+                        registration.registerNewParticipant(input);//2.2
                         break;
                     case 4:
-                        Registration registration1=new Registration();
-                        registration1.registerNewOrganizer(input);
+                        Registration registration1=new Registration();//2.1
+                        registration1.registerNewOrganizer(input);//2.2
                         break;
                     case 5:
                         System.out.println("\n✅ Thank you for using the Team Formation System. Goodbye!");

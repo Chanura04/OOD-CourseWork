@@ -82,36 +82,32 @@ public class ReviewGeneratedTeams {
     }
     public  void reviewParticipantAssignedTeam() {
         File file = new File(csvFileName);
-        if (file.exists()) {
-            ViewRemainingPlayers viewRemainingPlayers = new ViewRemainingPlayers();
-            viewRemainingPlayers.viewPlayersInCsvFile(file);
-        } else {
-            System.out.println("⚠️ No teams found. Please generate teams first.");
+        try(BufferedReader br=new BufferedReader((new FileReader(file)))) {
+
+            String line;
+            while ((line=br.readLine())!=null){
+                String[] columns = line.split(",");
+                System.out.printf("%-15s %-18s %-27s %-20s %-15s %-16s %-18s %-19s %-17s%n", columns[0], columns[1], columns[2], columns[3],columns[4], columns[5], columns[6], columns[7],columns[8]);
+
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
+    public void viewPlayersInCsvFile(){
+        try(BufferedReader br=new BufferedReader((new FileReader(csvFileName)))) {
 
+            String line;
+            while ((line=br.readLine())!=null){
+                String[] columns = line.split(",");
+                System.out.printf("%-15s %-18s %-27s %-20s %-15s %-16s %-18s %-19s%n", columns[0], columns[1], columns[2], columns[3],columns[4], columns[5], columns[6], columns[7]);
 
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
-//    public boolean getPreviousLogData() {
-//        File logFile = new File("files/log.csv");
-//        try (BufferedReader br = new BufferedReader(new FileReader(logFile))) {
-//            br.readLine(); // skip header
-//            String line, lastLine = null;
-//            while ((line = br.readLine()) != null) {
-//                lastLine = line;
-//            }
-//            if (lastLine != null && !lastLine.trim().isEmpty()) {
-//                String[] columns = lastLine.split(",");
-//                if (columns.length >= 8) { // ensure all expected columns exist
-//                    teamPlayerCount = Integer.parseInt(columns[0]);
-//                    return true;
-//                }
-//            }
-//            teamPlayerCount=0;
-//            return false;
-//        } catch (IOException | NumberFormatException e) {
-//            return false;
-//        }
-//    }
+    }
+
 
 }

@@ -21,7 +21,7 @@ public class Organizer extends User{
     }
 
     public void storeRegisteredOrganizerData(){
-        File organizerDataFile = new File("DataBase/organizersData.csv");
+        File organizerDataFile = new File("C:\\Github Projects\\OOD-CourseWork\\20240955\\DataBase\\organizersData.csv");
         //save to csv file
         try (FileWriter writer = new FileWriter(organizerDataFile, true)) {
             String[] data={
@@ -29,7 +29,6 @@ public class Organizer extends User{
             };
             writer.append("\n");
             writer.append(String.join(",", data));
-            writer.append("\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -37,7 +36,7 @@ public class Organizer extends User{
     }
 
     public int getStoredLastId(){
-        String filePath = "DataBase/organizersData.csv";
+        String filePath = "C:\\Github Projects\\OOD-CourseWork\\20240955\\DataBase\\organizersData.csv";
         File playerDataFile = new File(filePath);
 
         OrganizerDataLoader organizerDataLoader = new OrganizerDataLoader();

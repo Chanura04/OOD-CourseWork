@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.io.*;
 import java.util.*;
+import java.util.logging.*;
 
 
 public class FinalTeamSelection {
@@ -20,6 +21,7 @@ public class FinalTeamSelection {
     int remainingLeadersCount;
     int remainingBalancersCount;
     int remainingThinkersCount;
+    private static final Logger logger = Logger.getLogger(FinalTeamSelection.class.getName());
 
     public void setCsvFile(File csvFile) {
         this.csvFile = csvFile;
@@ -32,10 +34,12 @@ public class FinalTeamSelection {
         this.totalFormedTeamsCount = totalFormedTeamsCount;
     }
     public void finalResult() {
+        setupLogger();
         // Generate random team numbers using ArrayList
         ArrayList<ArrayList<String>> allTeams = new ArrayList<>();
         ArrayList<Integer> selectedTeamsNumbers = getRandomTeams(requiredTeamCount, totalFormedTeamsCount);
         System.out.println("Selected Teams: " + selectedTeamsNumbers);
+        logger.info("Selected Final Teams: " + selectedTeamsNumbers);
 
         ArrayList<String[]> allPlayers = new ArrayList<>();
 
@@ -163,31 +167,32 @@ public class FinalTeamSelection {
     }
 
     public void finalTeamsSelection(Scanner input){
-        if(!getPreviousLogData()){
+        //2.6
+        if(!getPreviousStaticData()){
             System.out.println("⚠️ Please generate teams first.");
             return;
         }
-        getPreviousLogData();
+        getPreviousStaticData();//2.7
         File file_check = new File("possible_teams.csv");
+        //2.8
         if (!file_check.exists()) {
             System.out.println("⚠️ No teams found. Please generate teams first.");
             return;
         }
 
         System.out.println("\n📊 Total teams formed: " + totalFormedTeamsCount);
-        File file = new File("files/possible_teams.csv");
 
-        try{
+        try{//2.9
             requiredTeamCount = getValidIntegerInput(input,
                     "\nEnter required teams count (minimum 1): ", 1, totalFormedTeamsCount);
-            finalResult();
+            finalResult();//3.2
         }catch (Exception e){
             System.out.println(e.getMessage());
 
         }
     }
-    public boolean getPreviousLogData() {
-        File logFile = new File("files/log.csv");
+    public boolean getPreviousStaticData() {
+        File logFile = new File("C:\\Github Projects\\OOD-CourseWork\\20240955\\files\\staticData.csv");
         try (BufferedReader br = new BufferedReader(new FileReader(logFile))) {
             br.readLine(); // skip header
             String line, lastLine = null;
@@ -217,20 +222,11 @@ public class FinalTeamSelection {
 
 
     public  void reviewRandomlySelectedTeams(Scanner input) {
-//        if (playersCount == 0) {
-//            System.out.println("⚠️ Please generate teams first.");
-//            return;
-//        }
 
         File file = new File("formed_teams.csv");
-        if (file.exists()) {
-            viewFormedTeams(file);
-        } else {
-            System.out.println("⚠️ Please generate final teams first.");
-            return;
-        }
+        viewFormedTeams(file);//2.6
 
-
+        //3
         boolean isAcceptingFormedTeams=getValidResponseInput(input,"\nDo you accept these teams? (Y/N):","y","n");
         if(isAcceptingFormedTeams){
             System.out.println("✅ Final teams accepted. Exporting...");
@@ -247,8 +243,8 @@ public class FinalTeamSelection {
             System.out.println("❌ Teams were not accepted. Export cancelled.");
             File file1 = new File("formed_teams.csv");
             if (file1.exists()) {
-                HandleDataCsvFiles handleDataCsvFiles = new HandleDataCsvFiles();
-                handleDataCsvFiles.deleteCsvFile(file1);
+                HandleDataCsvFiles handleDataCsvFiles = new HandleDataCsvFiles();//2.9
+                handleDataCsvFiles.deleteCsvFile(file1);//2.10
             }
         }
 
@@ -286,12 +282,12 @@ public class FinalTeamSelection {
             int remainingThinkersCount
     ) {
 
-        if(!getPreviousLogData()){
+        if(!getPreviousStaticData()){
             System.out.println("⚠️ Please generate teams first.");
             return;
         }
-        getPreviousLogData();
-        File file = new File("files/possible_teams.csv");
+        getPreviousStaticData();
+        File file = new File("possible_teams.csv");
         if (!file.exists()) {
             System.out.println("⚠️ No teams found. Please generate teams first.");
         }
@@ -315,11 +311,11 @@ public class FinalTeamSelection {
 
     public  void viewFinalTeamsStatistics() {
 
-        if(!getPreviousLogData()){
+        if(!getPreviousStaticData()){
             System.out.println("⚠️ Please generate teams first.");
             return;
         }
-        getPreviousLogData();
+        getPreviousStaticData();
         File file = new File("files/possible_teams.csv");
         if (!file.exists()) {
             System.out.println("⚠️ No teams found. Please generate teams first.");
@@ -358,7 +354,31 @@ public class FinalTeamSelection {
             }
         }
     }
+    public static void setupLogger() {
+        try {
+            // Remove default console handlers
+            Logger rootLogger = Logger.getLogger("");
+            Handler[] handlers = rootLogger.getHandlers();
+            for (Handler handler : handlers) {
+                if (handler instanceof ConsoleHandler) {
+                    rootLogger.removeHandler(handler);
+                }
+            }
 
+            // Create file handler
+            FileHandler fileHandler = new FileHandler("system.log",true); // true = append mode
+            fileHandler.setFormatter(new SimpleFormatter());
+
+            // Add file handler to root logger
+            rootLogger.addHandler(fileHandler);
+
+            // Set log level
+            rootLogger.setLevel(Level.INFO);
+
+        } catch (IOException e) {
+            System.err.println("Failed to setup logger: " + e.getMessage());
+        }
+    }
 
 
 }

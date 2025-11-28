@@ -1,15 +1,19 @@
 package main;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.util.Scanner;
+import java.util.*;
+import java.util.logging.*;
 
 public class HandleDataCsvFiles {
     private String fileName;
     private String uploadCsvFileName;
+    private static final Logger logger = Logger.getLogger(HandleDataCsvFiles.class.getName());
 
 
     public String getFileName(){
@@ -23,7 +27,7 @@ public class HandleDataCsvFiles {
     }
 
     public  void dataFileImport(Scanner input) {
-        InputValidator inputValidator = new InputValidator();
+        InputValidator inputValidator = new InputValidator();//2.2.1
         try {
             System.out.println("\n\n" + "-".repeat(80));
             System.out.println("\n                      IMPORT PARTICIPANT DATA\n");
@@ -31,18 +35,16 @@ public class HandleDataCsvFiles {
             System.out.println("\n");
 
             String filePath = inputValidator.isValidStringInput(input,
-                    "Enter CSV file path (or 'q' to cancel): ");
+                    "Enter CSV file path (or 'q' to cancel): ");//2.2.2
 
             if (filePath == null) {
                 System.out.println("🔙 Import cancelled.");
                 return;
             }
-
-
-            createNewCsvFile(filePath);
+            createNewCsvFile(filePath);//3.2
             uploadCsvFileName =getFileName();
 
-            System.out.println("✅ Data imported successfully from: " + uploadCsvFileName);
+//            System.out.println("✅ Data imported successfully from: " + uploadCsvFileName);
 
         } catch (Exception e) {
             System.out.println("⚠️ Error importing data: " + e.getMessage());
@@ -50,12 +52,13 @@ public class HandleDataCsvFiles {
     }
 
     public void createNewCsvFile(String filePath){
+        setupLogger();//3.2.1
         InputValidator inputValidator = new InputValidator();
         Path sourcePath = Paths.get(filePath);
 
         //  Check if the file exists
         if (!Files.exists(sourcePath)) {
-            System.out.println("❌ The file does not exist at: " + sourcePath);
+            System.out.println("❌ The file does not exist!!");
             return;
         }
 
@@ -64,7 +67,6 @@ public class HandleDataCsvFiles {
 
         //  Set the destination path
         Path destinationPath = currentDir.resolve(sourcePath.getFileName());
-//        System.out.println(sourcePath.getFileName());
 
         setFileName(String.valueOf(sourcePath.getFileName()));
         //  Copy file
@@ -72,7 +74,6 @@ public class HandleDataCsvFiles {
             Files.copy(sourcePath, destinationPath, StandardCopyOption.REPLACE_EXISTING);
             inputValidator.display("✅ File is processing...");
 
-//            System.out.println(destinationPath.toAbsolutePath());
         } catch (IOException e) {
             System.out.println("⚠️ Error copying file: " + e.getMessage());
         }
@@ -85,21 +86,67 @@ public class HandleDataCsvFiles {
         }
 
         //Check if the required fields are included.
-        ParticipantDataLoader playerDataLoader=new ParticipantDataLoader();
-        boolean isValid=playerDataLoader.validatePlayerData(String.valueOf(sourcePath.getFileName()));
+        boolean isCSVFileValid=validateUploadedCSVFile(String.valueOf(sourcePath.getFileName()));//3.4
 
 
-        if(!isValid){
+        if(!isCSVFileValid){
             System.out.println("⚠️ CSV upload failed: Required fields are missing.Please try again!");
             deleteCsvFile();
-            System.exit(0);
+            return;
         }
-        if(isCsvFile && isValid){
-//            System.out.println("✅ File is accepted and imported successfully!\n");
-            inputValidator.display("✅ File is accepted and imported successfully!\n");
+        if(isCsvFile && isCSVFileValid){
+            inputValidator.display("✅ File is accepted and imported successfully!\n");//3.6
+            logger.info("✅ File is accepted and imported successfully!");
 
         }
 
+    }
+    public boolean validateUploadedCSVFile(String csvFilePath) {
+        ArrayList<String> playerData = new ArrayList<>();
+        String[] column=new String[8];
+
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+            String line = br.readLine(); // Read the first line only
+
+            if (line != null) {
+                String[] values = line.split(",");
+
+                column[0] = values[0];
+                column[1] = values[1];
+                column[2] = values[2];
+                column[3] = values[3];
+                column[4] = values[4];
+                column[5] = values[5];
+                column[6] = values[6];
+                column[7] = values[7];
+
+                playerData.add(Arrays.toString(column));
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        if(playerData.isEmpty()){
+            return false;
+        }
+        String[] requiredColumns={"ID","Name","Email","PreferredGame","SkillLevel","PreferredRole","PersonalityScore","PersonalityType"};
+        int i=0;
+        String raw=playerData.get(i).replace("[", "").replace("]", "");
+        String[] cleanedRaw=raw.split(",");
+        for (int j = 0; j < cleanedRaw.length; j++) {
+            cleanedRaw[j] = cleanedRaw[j].trim(); // remove extra spaces
+        }
+
+        Set<String> cleanedRawSet=new HashSet<>(Arrays.asList(cleanedRaw));
+
+        boolean allPresent = true;
+        for (String col : requiredColumns) {
+            if (!cleanedRawSet.contains(col)) {
+                System.out.println("Missing column: " + col);
+                allPresent = false;
+            }
+        }
+        return allPresent;
     }
 
     public void deleteCsvFile(){
@@ -134,14 +181,38 @@ public class HandleDataCsvFiles {
 
     }
 
-    private boolean isCsvFile(String filePath){
+    public  boolean isCsvFile(String filePath){
         File file = new File(filePath);
         if(file.isFile() && file.getName().endsWith(".csv")){
             return true;
         }
         return false;
     }
+    public static void setupLogger() {
+        try {
+            // Remove default console handlers
+            Logger rootLogger = Logger.getLogger("");
+            Handler[] handlers = rootLogger.getHandlers();
+            for (Handler handler : handlers) {
+                if (handler instanceof ConsoleHandler) {
+                    rootLogger.removeHandler(handler);
+                }
+            }
 
+            // Create file handler
+            FileHandler fileHandler = new FileHandler("system.log",true); // true = append mode
+            fileHandler.setFormatter(new SimpleFormatter());
+
+            // Add file handler to root logger
+            rootLogger.addHandler(fileHandler);
+
+            // Set log level
+            rootLogger.setLevel(Level.INFO);
+
+        } catch (IOException e) {
+            System.err.println("Failed to setup logger: " + e.getMessage());
+        }
+    }
 
 
 
