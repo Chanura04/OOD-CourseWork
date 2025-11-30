@@ -10,19 +10,17 @@ public class Main {
     static String currentUserEmail;
     static int currentUserStoredRawNumber;
 
-
-
     public static void main(String[] args) {
+        LoggerSetup.initialize();
+
         Scanner input = new Scanner(System.in);
         System.out.println("=".repeat(80));
         System.out.println("\n      Intelligent Team Formation System for University Gaming Club\n");
         System.out.println("=".repeat(80));
         System.out.println("\n");
-
         mainMenu(input);
         input.close();
     }
-
 
     private static void mainMenu(Scanner input) {
         while (true) {
@@ -43,34 +41,34 @@ public class Main {
                 switch (choice) {
                     case 1:
                         Login organizerLogin = new Login();
-                        boolean isOrganizerLogged=organizerLogin.organizerLogin(input);
+                        boolean isOrganizerLogged = organizerLogin.organizerLogin(input);
                         if (isOrganizerLogged) {
-                            Dashboard dashboard=new Dashboard();
-                            dashboard.organizerDashboard(input);
+                            Dashboard dashboard = new Dashboard();//2.2
+                            dashboard.organizerDashboard(input);//2.3
                         }
                         break;
                     case 2:
-                        Login participantLogin = new Login();
-                        boolean isLogged=participantLogin.participantLogin(input);
-                        currentUserName=participantLogin.getCurrentUserName();
-                        currentUserEmail=participantLogin.getCurrentUserEmail();
-                        currentUserStoredRawNumber=participantLogin.getCurrentUserStoredRawNumber();
+                        Login participantLogin = new Login();//7.2
+                        boolean isLogged = participantLogin.participantLogin(input);//7.3
+                        currentUserName = participantLogin.getCurrentUserName();//11
+                        currentUserEmail = participantLogin.getCurrentUserEmail();//11.1
+                        currentUserStoredRawNumber = participantLogin.getCurrentUserStoredRawNumber();//11.2
 
                         if (isLogged) {
-                            Dashboard dashboard=new Dashboard();//6
-                            dashboard.setCurrentUserName(currentUserName);//6.1
-                            dashboard.setCurrentUserEmail(currentUserEmail);//6.2
-                            dashboard.setCurrentUserStoredRawNumber(currentUserStoredRawNumber);//6.3
-                            dashboard.participantDashboard(input);//6.4
+                            Dashboard dashboard = new Dashboard();//12
+                            dashboard.setCurrentUserName(currentUserName);//12.1
+                            dashboard.setCurrentUserEmail(currentUserEmail);//12.2
+                            dashboard.setCurrentUserStoredRawNumber(currentUserStoredRawNumber);//12.3
+                            dashboard.participantDashboard(input);//12.4
                         }
                         break;
                     case 3:
-                        Registration registration=new Registration();//2.1
-                        registration.registerNewParticipant(input);//2.2
+                        Registration participantRegistration = new Registration();//5.3
+                        participantRegistration.registerNewParticipant(input);//5.4
                         break;
                     case 4:
-                        Registration registration1=new Registration();//2.1
-                        registration1.registerNewOrganizer(input);//2.2
+                        Registration organizerRegistration = new Registration();//2.2
+                        organizerRegistration.registerNewOrganizer(input);//2.3
                         break;
                     case 5:
                         System.out.println("\n✅ Thank you for using the Team Formation System. Goodbye!");

@@ -19,12 +19,12 @@ public class HandleOrganizerRegistration {
         File playerDataFile = new File(filePath);
 
         OrganizerDataLoader organizerDataLoader = new OrganizerDataLoader();//5.1.1
-        ArrayList<String> playerData = organizerDataLoader.getOrganizerData(playerDataFile);//5.1.2
+        ArrayList<String> organizerData = organizerDataLoader.getOrganizerData(playerDataFile);//5.1.2
 
         boolean isRegistered = false;
 
-        for (int i = 1; i < playerData.size(); i++) {
-            String raw = playerData.get(i).replace("[", "").replace("]", "").trim();
+        for (int i = 1; i < organizerData.size(); i++) {
+            String raw = organizerData.get(i).replace("[", "").replace("]", "").trim();
             String[] fields = raw.split(",");
 
             if (name.equals(fields[1].trim()) && email.equals(fields[2].trim()) ) {

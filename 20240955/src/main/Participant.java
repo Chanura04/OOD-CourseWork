@@ -3,7 +3,6 @@ package main;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
@@ -21,7 +20,7 @@ public class Participant extends User {
     private String interestSport;
     private String id;
     private static final Logger logger = Logger.getLogger(Participant.class.getName());
-
+    private Participant player;
     //Player class constructor
     public Participant(String name, String email) {
         super( name, email);
@@ -61,7 +60,6 @@ public class Participant extends User {
     }
 
     public  void participantSurvey(Scanner input) {
-        setupLogger(); //sq 2.3
         InputValidator inputValidator = new InputValidator();//sq 2.4
         if(isPlayerSurveyCompleted()){  //2.5
             System.out.println("⚠️ You have already completed the survey!!!");
@@ -125,8 +123,6 @@ public class Participant extends User {
                 logger.warning("⚠️ Player " + getName() + " survey is invalid. Total score: " + getTotalScore());
             }
 
-
-
             //10.4
             boolean isConfirmed=inputValidator.getValidResponseInput(input,"\nConfirm your preferences (interest game, skill level, preferred role) ? (Y/N):","y","n");
 
@@ -141,12 +137,10 @@ public class Participant extends User {
                         case 1://12.1
                             interestSport = inputValidator.isValidStringInput(input,
                                     "Enter your game of interest (e.g., Valorant, Dota, FIFA, Basketball) or 'q' to cancel: ");
-
                             break;
                         case 2://12.2
                             skillLevel = inputValidator.isValidInterInput(input,
                                     "Enter your skill level (1-10): ", 1, 10);
-
                             break;
                         case 3:
                             rolesDescription();//12.7
@@ -160,12 +154,9 @@ public class Participant extends User {
                                 case 5 -> "Coordinator";
                                 default -> "Unknown";
                             };
-
                             break;
                         case 4:
                             System.out.println("⚠️ Changes cancelled.");
-
-
                     }
                     showSurveyResults();//13
                     isConfirmed=inputValidator.getValidResponseInput(input,"\nConfirm your preferences (interest game, skill level, preferred role) ? (Y/N):","y","n");
@@ -180,7 +171,6 @@ public class Participant extends User {
                 System.out.println("\n✅ Survey completed successfully!");
                 System.out.println("📊 Your personality type has been determined based on your responses.");
             }
-
         } catch (Exception e) {
             System.out.println("⚠️ Error completing survey: " + e.getMessage());
         }
@@ -200,9 +190,7 @@ public class Participant extends User {
         System.out.println("\n\n" + "=".repeat(80));
     }
 
-
-
-    private static void rolesDescription() {
+    private  void rolesDescription() {
         System.out.println("\n" + "=".repeat(80));
         System.out.println("                              GAME ROLES");
         System.out.println("=".repeat(80));
@@ -215,9 +203,6 @@ public class Participant extends User {
         System.out.println("5) Coordinator| Communication lead. Keeps the team informed and organized.\n");
         System.out.println("=".repeat(80) + "\n");
     }
-
-
-
 
 
     // For get the personality type
@@ -257,7 +242,7 @@ public class Participant extends User {
                 e.printStackTrace();
             }
     }
-    private Participant player;
+
     private boolean isPlayerSurveyCompleted(){
         String filePath = "C:\\Github Projects\\OOD-CourseWork\\20240955\\DataBase\\students_loop.csv";
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
@@ -269,15 +254,12 @@ public class Participant extends User {
                         && email.equals(values[2].trim()) && !values[3].equals("null")) {
                         return true;
                 }
-
             }
         } catch (IOException e) {
             System.err.println("❌ Error reading file for " + player.getName());
             e.printStackTrace();
-
         }
         return false;
-
     }
 
     public void storeSurveyData(){
@@ -297,7 +279,6 @@ public class Participant extends User {
             System.err.println("Survey processing interrupted for " + getName());
             Thread.currentThread().interrupt();
         }
-
     }
 
     public int getStoredLastId(){
@@ -312,7 +293,6 @@ public class Participant extends User {
        String[] playerData=lastPlayer.split(",");
        String id=playerData[0];
        String idValue=id.split("P")[1];
-//       System.out.println("Last"+idValue);
        return Integer.parseInt(idValue);
     }
 
@@ -323,31 +303,6 @@ public class Participant extends User {
         }
         setId("P"+(previousId + 1));
         return "P"+(previousId + 1);
-    }
-    public static void setupLogger() {
-        try {
-            // Remove default console handlers
-            Logger rootLogger = Logger.getLogger("");
-            Handler[] handlers = rootLogger.getHandlers();
-            for (Handler handler : handlers) {
-                if (handler instanceof ConsoleHandler) {
-                    rootLogger.removeHandler(handler);
-                }
-            }
-
-            // Create file handler
-            FileHandler fileHandler = new FileHandler("system.log",true); // true = append mode
-            fileHandler.setFormatter(new SimpleFormatter());
-
-            // Add file handler to root logger
-            rootLogger.addHandler(fileHandler);
-
-            // Set log level
-            rootLogger.setLevel(Level.INFO);
-
-        } catch (IOException e) {
-            System.err.println("Failed to setup logger: " + e.getMessage());
-        }
     }
 
 

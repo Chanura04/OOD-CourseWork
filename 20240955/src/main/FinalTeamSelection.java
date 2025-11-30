@@ -34,7 +34,6 @@ public class FinalTeamSelection {
         this.totalFormedTeamsCount = totalFormedTeamsCount;
     }
     public void finalResult() {
-        setupLogger();
         // Generate random team numbers using ArrayList
         ArrayList<ArrayList<String>> allTeams = new ArrayList<>();
         ArrayList<Integer> selectedTeamsNumbers = getRandomTeams(requiredTeamCount, totalFormedTeamsCount);
@@ -126,7 +125,6 @@ public class FinalTeamSelection {
             String line;
             int lineNum=0;
 
-
             line = br.readLine();
             if (line != null) {
                 String[] firstColumns = line.split(",");
@@ -157,7 +155,6 @@ public class FinalTeamSelection {
                         System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------\n");
                         System.out.printf("%-19s %-22s %-19s %-16s %-15s %-16s %-18s %-19s %-17s%n", "ID","Name","Email","PreferredGame","SkillLevel","PreferredRole","PersonalityScore","PersonalityType","TeamNumber");
                     }
-
                     System.out.printf("%-15s %-18s %-27s %-20s %-15s %-16s %-18s %-19s %-17s%n", columns[0], columns[1], columns[2], columns[3],columns[4], columns[5], columns[6], columns[7],columns[8]);
                 }
             }
@@ -188,7 +185,6 @@ public class FinalTeamSelection {
             finalResult();//3.2
         }catch (Exception e){
             System.out.println(e.getMessage());
-
         }
     }
     public boolean getPreviousStaticData() {
@@ -226,7 +222,7 @@ public class FinalTeamSelection {
         File file = new File("formed_teams.csv");
         viewFormedTeams(file);//2.6
 
-        //3
+        //2.7
         boolean isAcceptingFormedTeams=getValidResponseInput(input,"\nDo you accept these teams? (Y/N):","y","n");
         if(isAcceptingFormedTeams){
             System.out.println("✅ Final teams accepted. Exporting...");
@@ -247,11 +243,9 @@ public class FinalTeamSelection {
                 handleDataCsvFiles.deleteCsvFile(file1);//2.10
             }
         }
-
-
     }
 
-    private static boolean getValidResponseInput(Scanner input, String prompt, String y, String n) {
+    private  boolean getValidResponseInput(Scanner input, String prompt, String y, String n) {
         while (true) {
             try {
                 System.out.print(prompt);
@@ -352,31 +346,6 @@ public class FinalTeamSelection {
                 System.out.println("⚠️ Invalid input. Please enter a valid number.");
                 input.nextLine();
             }
-        }
-    }
-    public static void setupLogger() {
-        try {
-            // Remove default console handlers
-            Logger rootLogger = Logger.getLogger("");
-            Handler[] handlers = rootLogger.getHandlers();
-            for (Handler handler : handlers) {
-                if (handler instanceof ConsoleHandler) {
-                    rootLogger.removeHandler(handler);
-                }
-            }
-
-            // Create file handler
-            FileHandler fileHandler = new FileHandler("system.log",true); // true = append mode
-            fileHandler.setFormatter(new SimpleFormatter());
-
-            // Add file handler to root logger
-            rootLogger.addHandler(fileHandler);
-
-            // Set log level
-            rootLogger.setLevel(Level.INFO);
-
-        } catch (IOException e) {
-            System.err.println("Failed to setup logger: " + e.getMessage());
         }
     }
 

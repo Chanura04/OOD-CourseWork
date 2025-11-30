@@ -24,12 +24,10 @@ public class OrganizerDataLoader {
                 player[2]=values[2];
 
                 playerData.add(Arrays.toString(player));
-
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-
         return playerData;
     }
 

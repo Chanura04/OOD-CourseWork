@@ -17,8 +17,8 @@ public class HandleParticipantRegistration {
         String filePath = "C:\\Github Projects\\OOD-CourseWork\\20240955\\DataBase\\students_loop.csv";
         File playerDataFile = new File(filePath);
 
-        ParticipantDataLoader playerDataLoader = new ParticipantDataLoader();//5.1.1
-        ArrayList<String> playerData = playerDataLoader.getPlayerData(playerDataFile);//5.1.2
+        ParticipantDataLoader playerDataLoader = new ParticipantDataLoader();//10.1.1
+        ArrayList<String> playerData = playerDataLoader.getPlayerData(playerDataFile);//10.1.2
 
         boolean isRegistered = false;
 

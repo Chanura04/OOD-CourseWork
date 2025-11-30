@@ -43,16 +43,12 @@ public class HandleDataCsvFiles {
             }
             createNewCsvFile(filePath);//3.2
             uploadCsvFileName =getFileName();
-
-//            System.out.println("✅ Data imported successfully from: " + uploadCsvFileName);
-
         } catch (Exception e) {
             System.out.println("⚠️ Error importing data: " + e.getMessage());
         }
     }
 
     public void createNewCsvFile(String filePath){
-        setupLogger();//3.2.1
         InputValidator inputValidator = new InputValidator();
         Path sourcePath = Paths.get(filePath);
 
@@ -97,7 +93,6 @@ public class HandleDataCsvFiles {
         if(isCsvFile && isCSVFileValid){
             inputValidator.display("✅ File is accepted and imported successfully!\n");//3.6
             logger.info("✅ File is accepted and imported successfully!");
-
         }
 
     }
@@ -188,34 +183,6 @@ public class HandleDataCsvFiles {
         }
         return false;
     }
-    public static void setupLogger() {
-        try {
-            // Remove default console handlers
-            Logger rootLogger = Logger.getLogger("");
-            Handler[] handlers = rootLogger.getHandlers();
-            for (Handler handler : handlers) {
-                if (handler instanceof ConsoleHandler) {
-                    rootLogger.removeHandler(handler);
-                }
-            }
-
-            // Create file handler
-            FileHandler fileHandler = new FileHandler("system.log",true); // true = append mode
-            fileHandler.setFormatter(new SimpleFormatter());
-
-            // Add file handler to root logger
-            rootLogger.addHandler(fileHandler);
-
-            // Set log level
-            rootLogger.setLevel(Level.INFO);
-
-        } catch (IOException e) {
-            System.err.println("Failed to setup logger: " + e.getMessage());
-        }
-    }
-
-
-
 
 }
 

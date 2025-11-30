@@ -33,7 +33,6 @@ public class ParticipantDataLoader {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-
         return playerData;
     }
     public ArrayList<String> getPlayerData(String csvFilePath){
@@ -55,12 +54,10 @@ public class ParticipantDataLoader {
                 player[7]=values[7];
 
                 playerData.add(Arrays.toString(player));
-
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-
         return playerData;
     }
 

@@ -23,9 +23,8 @@ public class Login {
 
 
     public boolean participantLogin(Scanner input) {
-        setupLogger();//2.3
         logger.info("Starting login for participant");
-        InputValidator inputValidator = new InputValidator();//2.4
+        InputValidator inputValidator = new InputValidator();//7.4
         try {
             System.out.println("\n\n" + "-".repeat(80));
             System.out.println("                         PARTICIPANT LOGIN");
@@ -33,7 +32,7 @@ public class Login {
             System.out.println("\n");
 
             currentUserName = inputValidator.isValidStringInput(input,
-                    "Enter the name (or 'q' to return): ");//2.5
+                    "Enter the name (or 'q' to return): ");//7.5
 
             if (currentUserName.equalsIgnoreCase("q")) {
                 System.out.println("🔙 Returning to main menu...");
@@ -47,9 +46,8 @@ public class Login {
                 return false;
             }
 
-
             currentUserEmail = inputValidator.isValidStringInput(input,
-                    "Enter the email (or 'q' to return): ");//3.3
+                    "Enter the email (or 'q' to return): ");//8.3
 
             if (currentUserEmail.equalsIgnoreCase("q")) {
                 System.out.println("🔙 Returning to main menu...");
@@ -64,8 +62,8 @@ public class Login {
 
 
             HandleParticipantRegistration handleParticipantRegistration =
-                    new HandleParticipantRegistration(currentUserName, currentUserEmail);//5
-//5.1
+                    new HandleParticipantRegistration(currentUserName, currentUserEmail);//10
+//10.1
             if (!handleParticipantRegistration.isARegisteredParticipant()) {
                 System.out.println("❌ You are not registered. Please register first.");
                 logger.warning(currentUserName + " is not registered. Please register first.");
@@ -81,15 +79,12 @@ public class Login {
             System.out.println("⚠️ Error during login: " + e.getMessage());
             return false;
         }
-
-
     }
     public void display(String message){
         System.out.println(message);
     }
 
     public  boolean organizerLogin(Scanner input) {
-        setupLogger();//2.3
         logger.info("Starting login for organizer");
         InputValidator inputValidator = new InputValidator();//2.4
         try {
@@ -98,7 +93,6 @@ public class Login {
             System.out.println("-".repeat(80));
             System.out.println("\n");
 
-
             String organizerName = inputValidator.isValidStringInput(input,
                     "Enter Organizer name (or 'q' to return): ");//2.5
 
@@ -106,8 +100,6 @@ public class Login {
                 System.out.println("🔙 Returning to main menu...");
                 return false;
             }
-
-
             String organizerEmail = inputValidator.isValidStringInput(input,
                     "Enter Organizer Email (or 'q' to return): ");//3.3
 
@@ -137,31 +129,6 @@ public class Login {
         } catch (Exception e) {
             System.out.println("⚠️ Error during login: " + e.getMessage());
             return false;
-        }
-    }
-    public static void setupLogger() {
-        try {
-            // Remove default console handlers
-            Logger rootLogger = Logger.getLogger("");
-            Handler[] handlers = rootLogger.getHandlers();
-            for (Handler handler : handlers) {
-                if (handler instanceof ConsoleHandler) {
-                    rootLogger.removeHandler(handler);
-                }
-            }
-
-            // Create file handler
-            FileHandler fileHandler = new FileHandler("system.log",true); // true = append mode
-            fileHandler.setFormatter(new SimpleFormatter());
-
-            // Add file handler to root logger
-            rootLogger.addHandler(fileHandler);
-
-            // Set log level
-            rootLogger.setLevel(Level.INFO);
-
-        } catch (IOException e) {
-            System.err.println("Failed to setup logger: " + e.getMessage());
         }
     }
 

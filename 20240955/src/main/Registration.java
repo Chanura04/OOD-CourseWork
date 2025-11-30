@@ -7,9 +7,7 @@ import java.util.logging.*;
 public class Registration {
     private static final Logger logger = Logger.getLogger(TeamFormationTask.class.getName());
 
-
     public void registerNewParticipant(Scanner input) {
-        setupLogger();//2.3
         logger.info("Starting registration for new participant");
         try {
             System.out.println("\n\n" + "-".repeat(80));
@@ -17,43 +15,43 @@ public class Registration {
             System.out.println("-".repeat(80));
             System.out.println("\n");
 
-            System.out.print("Enter your name (or 'q' to cancel): ");//2.4
+            System.out.print("Enter your name (or 'q' to cancel): ");//5.5
             String name = input.nextLine().trim();
 
             if (name.equalsIgnoreCase("q")) {
-                System.out.println("🔙 Registration cancelled.");//3.1
-                return;//3.2
+                System.out.println("🔙 Registration cancelled.");//6.1
+                return;//6.2
             }
 
             if (name.isEmpty()) {
-                System.out.println("⚠️ Name cannot be empty.");//3.3
-                return;//3.4
+                System.out.println("⚠️ Name cannot be empty.");//6.3
+                return;//6.4
             }
 
-            System.out.print("Enter your email: ");//4
+            System.out.print("Enter your email: ");//7
             String email = input.nextLine().trim();
 
-            if (email.equalsIgnoreCase("q")) {//4.1
+            if (email.equalsIgnoreCase("q")) {//7.1
                 System.out.println("🔙 Registration cancelled.");
-                return;//4.2
+                return;//7.2
             }
 
-            if (email.isEmpty() || !email.contains("@")) {//4.3
+            if (email.isEmpty() || !email.contains("@")) {//7.3
                 System.out.println("⚠️ Invalid email format.");
-                return;//4.4
+                return;//7.4
             }
 
             HandleParticipantRegistration handleParticipantRegistration =
-                    new HandleParticipantRegistration(name, email);//4.5
+                    new HandleParticipantRegistration(name, email);//7.5
 
-            if (handleParticipantRegistration.isARegisteredParticipant()) {//4.6
+            if (handleParticipantRegistration.isARegisteredParticipant()) {//7.6
                 System.out.println("⚠️ This email is already registered.");
                 logger.info(email + " is already registered.");
-                return;
+                return;//7.6.2
             }
 
-            Participant player = new Participant(name, email);//4.7
-            player.storeRegisteredPlayerData();
+            Participant player = new Participant(name, email);//7.7
+            player.storeRegisteredPlayerData();//7.8
             System.out.println("✅ Registration successful! You can now login as a participant.\n");
             logger.info("✅ New participant registered: " + name);
         } catch (Exception e) {
@@ -62,7 +60,7 @@ public class Registration {
     }
 
     public void registerNewOrganizer(Scanner input) {
-        setupLogger();//2.3
+//        setupLogger();//2.3
         logger.info("Starting registration for new organizer");
         try {
             System.out.println("\n\n" + "-".repeat(80));
@@ -114,31 +112,7 @@ public class Registration {
         }
     }
 
-    public static void setupLogger() {
-        try {
-            // Remove default console handlers
-            Logger rootLogger = Logger.getLogger("");
-            Handler[] handlers = rootLogger.getHandlers();
-            for (Handler handler : handlers) {
-                if (handler instanceof ConsoleHandler) {
-                    rootLogger.removeHandler(handler);
-                }
-            }
 
-            // Create file handler
-            FileHandler fileHandler = new FileHandler("system.log",true); // true = append mode
-            fileHandler.setFormatter(new SimpleFormatter());
-
-            // Add file handler to root logger
-            rootLogger.addHandler(fileHandler);
-
-            // Set log level
-            rootLogger.setLevel(Level.INFO);
-
-        } catch (IOException e) {
-            System.err.println("Failed to setup logger: " + e.getMessage());
-        }
-    }
 
 
 }

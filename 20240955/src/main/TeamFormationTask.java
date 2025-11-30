@@ -67,7 +67,7 @@ public class TeamFormationTask implements Runnable {
             // If selection failed (not enough players), stop
             if (leaders.isEmpty() || balancers.isEmpty() || thinkers.isEmpty()) {  //sq 2.2.13
                 // Return any that were selected
-                teamSelector.returnPlayersToPool(leaders, balancers, thinkers); //sq 2.2.13.3
+                teamSelector.returnPlayersToPool(leaders, balancers, thinkers); //sq 2.2.13.2
                 logger.info(thread + " : Selection failed after forming "
                         + teamsFormedByThisThread + " teams. Stopping.");
                 break;
@@ -81,17 +81,17 @@ public class TeamFormationTask implements Runnable {
 
             // VALIDATION (outside lock)
             if (!teamSelector.checkPlayerCount(team.size())) {  //sq 2.2.15
-                teamSelector.returnPlayersToPool(leaders, balancers, thinkers);
+                teamSelector.returnPlayersToPool(leaders, balancers, thinkers);//2.2.15.1
                 continue;
             }
 
             if (!teamSelector.validateTeam(team)) {//sq 2.2.16
-                teamSelector.returnPlayersToPool(leaders, balancers, thinkers);
+                teamSelector.returnPlayersToPool(leaders, balancers, thinkers);//2.2.16.1
                 continue;
             }
 
             if (!teamSelector.isGameCountValid(team)) {//sq 2.2.17
-                teamSelector.returnPlayersToPool(leaders, balancers, thinkers);
+                teamSelector.returnPlayersToPool(leaders, balancers, thinkers);//2.2.17.1
                 continue;
             }
 
@@ -101,7 +101,6 @@ public class TeamFormationTask implements Runnable {
             logger.info(thread + " : 🔥 Successfully formed team #" + teamsFormedByThisThread);
 
         }
-
         logger.info(thread + " : Finished. Formed " + teamsFormedByThisThread + " teams total.");
     }
 }

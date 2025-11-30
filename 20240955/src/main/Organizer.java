@@ -49,8 +49,6 @@ public class Organizer extends User{
         String[] playerData=lastPlayer.split(",");
         String id=playerData[0];
         String idValue=id.split("R")[1];
-//       System.out.println("Last"+idValue);
-
         return Integer.parseInt(idValue);
     }
 
@@ -59,7 +57,6 @@ public class Organizer extends User{
         if(previousId==-1){
             setId("R1");
         }
-
         setId("R"+(previousId + 1));
         return "R"+(previousId + 1);
     }

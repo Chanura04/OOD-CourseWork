@@ -18,7 +18,6 @@ public class TeamMembersSelection implements TeamSelection {
 
     private final Object teamLock = new Object();
 
-    private int secondFilterationFormedTeamsCount=0;
     //Loaded player data categorized by personality type and saved arraylists
     private final ArrayList<String> all_leaders=new ArrayList<>();
     private final ArrayList<String> all_balancers=new ArrayList<>();
@@ -29,27 +28,10 @@ public class TeamMembersSelection implements TeamSelection {
     private ArrayList<String> cp_balancers;
     private ArrayList<String> cp_thinkers;
 
-    //Store selected players for a team
-    private final ArrayList<String> selectedBalancers=new ArrayList<>();
-    private final ArrayList<String> selectedThinkers=new ArrayList<>();
-    private final ArrayList<String> selectedLeaders=new ArrayList<>();
 
     //Store first filtered teams which team is satisfy the conditions
     private final ArrayList<ArrayList<String>> selectedTeamsInFirstFilter=new ArrayList<>();
-
-    //Stored first filtered teams which team does not satisfy the conditions
-    private final ArrayList<ArrayList<String>> remainingTeams=new ArrayList<>();
-
-    //Concatenate first filtered teams and second filtered teams
-//    private final ArrayList<ArrayList<String>> finalTeamCombination=new ArrayList<>();
-
     private double average;
-
-
-    //Store the rest of the players after formed all teams
-    private ArrayList<String> rest_leaders=new ArrayList<>();
-    private ArrayList<String> rest_balancers=new ArrayList<>();
-    private ArrayList<String> rest_thinkers=new ArrayList<>();
 
     //Initial team combination for get average skill value
     private final ArrayList<ArrayList<String>> unfinalizedTeams = new ArrayList<>();
@@ -111,7 +93,6 @@ public class TeamMembersSelection implements TeamSelection {
 
     //sq 2.2
     public  void generateTeams(Scanner input) {
-        setupLogger(); //sq 2.2.1
         InputValidator inputValidator = new InputValidator();//sq 2.2.2
         try {
             long startTime = System.currentTimeMillis();
@@ -159,9 +140,6 @@ public class TeamMembersSelection implements TeamSelection {
         all_leaders.clear();
         all_balancers.clear();
         all_thinkers.clear();
-        cp_leaders.clear();
-        cp_balancers.clear();
-        cp_thinkers.clear();
 
         for (int i = 1; i < playerData.size(); i++) {
             String raw = playerData.get(i).replace("[", "").replace("]", "").trim();
@@ -195,7 +173,6 @@ public class TeamMembersSelection implements TeamSelection {
             if (cp_leaders.size() < count) {
                 return selected;
             }
-
             Random rand = new Random();
             for (int i = 0; i < count; i++) {
                 if (cp_leaders.isEmpty()) break;
@@ -204,14 +181,12 @@ public class TeamMembersSelection implements TeamSelection {
                 String leader = cp_leaders.remove(idx);
                 selected.add(leader);
             }
-
             return selected;
         }
     }
 
-    /**
-     * THREAD-SAFE: Select and REMOVE thinkers atomically
-     */
+
+      //THREAD-SAFE: Select and REMOVE thinkers atomically
     public ArrayList<String> selectUniqueThinkers(int count) {
         synchronized (teamLock) {
             ArrayList<String> selected = new ArrayList<>();
@@ -219,7 +194,6 @@ public class TeamMembersSelection implements TeamSelection {
             if (cp_thinkers.size() < count) {
                 return selected;
             }
-
             Random rand = new Random();
             for (int i = 0; i < count; i++) {
                 if (cp_thinkers.isEmpty()) break;
@@ -228,14 +202,12 @@ public class TeamMembersSelection implements TeamSelection {
                 String thinker = cp_thinkers.remove(idx);
                 selected.add(thinker);
             }
-
             return selected;
         }
     }
 
-    /**
-     * THREAD-SAFE: Select and REMOVE balancers atomically
-     */
+
+    // THREAD-SAFE: Select and REMOVE balancers atomically
     public ArrayList<String> selectUniqueBalancers(int count) {
         synchronized (teamLock) {
             ArrayList<String> selected = new ArrayList<>();
@@ -243,7 +215,6 @@ public class TeamMembersSelection implements TeamSelection {
             if (cp_balancers.size() < count) {
                 return selected;
             }
-
             Random rand = new Random();
             for (int i = 0; i < count; i++) {
                 if (cp_balancers.isEmpty()) break;
@@ -252,11 +223,9 @@ public class TeamMembersSelection implements TeamSelection {
                 String balancer = cp_balancers.remove(idx);
                 selected.add(balancer);
             }
-
             return selected;
         }
     }
-
 
 
     //Check if the formed team include mandatory personality types
@@ -285,7 +254,6 @@ public class TeamMembersSelection implements TeamSelection {
                 case "Thinker" -> ++thinkerCount;
             }
         }
-
         if(leaderCount==1 && thinkerCount>=2 && balancerCount>=1 && uniqueRoles.size()>=3){
             isTeamValid=true;
         }
@@ -305,9 +273,10 @@ public class TeamMembersSelection implements TeamSelection {
                 Math.min(cp_balancers.size() / balancerCount, cp_thinkers.size() / thinkerCount)
         );
 
-        // Determine optimal thread count (based on CPU cores, but max 8)
+        // Determine optimal thread count (based on CPU cores, but max 20)
         int threadCount = Math.min(Runtime.getRuntime().availableProcessors(), maxPossibleTeams);
-        threadCount = Math.max(1, Math.max(threadCount, 20));
+//        threadCount = Math.max(threadCount, 20);
+        threadCount=500;
 
 
         CountDownLatch latch = new CountDownLatch(threadCount);
@@ -363,7 +332,6 @@ public class TeamMembersSelection implements TeamSelection {
         System.out.println("✅ Formed " + unfinalizedTeams.size() + " teams using parallel processing");
 
         filterTeamsBySkillAverageValue(); //sq 2.2.19
-//        finalTeamsSelection();
         return unfinalizedTeams;
 
     }
@@ -407,7 +375,6 @@ public class TeamMembersSelection implements TeamSelection {
                 teamSkillSum+=skillValue;
             }
             totalSum +=teamSkillSum;
-
         }
         average = (double) totalSum / teamSize;
 
@@ -422,20 +389,16 @@ public class TeamMembersSelection implements TeamSelection {
                 int skillValue=Integer.parseInt(getSkillValue);
                 teamSkillSum+=skillValue;
             }
-
             maximumSkillAverage=average+6;
             minimumSkillAverage=average-6;
-
 
             if( teamSkillSum >= minimumSkillAverage && teamSkillSum <= maximumSkillAverage){
                 selectedTeamsInFirstFilter.add(team);
             }else{
                 returnPlayersToPool(team);
-//                remainingTeams.add(team);
             }
         }
         System.out.println("✅ Formed " + selectedTeamsInFirstFilter.size() + " teams after applying the filtering process.");
-
     }
     public void returnPlayersToPool(ArrayList<String> team) {
         for (String player : team) {
@@ -451,9 +414,6 @@ public class TeamMembersSelection implements TeamSelection {
             }
         }
     }
-  
-
-
 
     public void writeFinalTeamsOnCsvFile(){
         int teamNumber=0;
@@ -492,27 +452,21 @@ public class TeamMembersSelection implements TeamSelection {
             System.out.println("❌ The file does not exist at: " + sourcePath);
             return;
         }
-
         //  Get the current working directory
         Path currentDir = Paths.get(System.getProperty("user.dir"));
 
         //  Set the destination path (same filename in current directory)
         Path destinationPath = currentDir.resolve(sourcePath.getFileName());
-//        System.out.println(sourcePath.getFileName());
-
         try {
             Files.copy(sourcePath, destinationPath, StandardCopyOption.REPLACE_EXISTING);
 //            System.out.println("✅ Teams exported to 'formed_teams.csv'");
             System.out.println("✅ Formed teams are successfully saved");
-
-
         } catch (IOException e) {
             System.out.println("⚠️ Error copying file: " + e.getMessage());
         }
     }
 
     public void writeRemainingPlayerInCsvFile(){
-
         ArrayList<String> restRemainingPlayers = new ArrayList<>();
 
         // Combine all remaining players
@@ -545,9 +499,8 @@ public class TeamMembersSelection implements TeamSelection {
         }
     }
 
-    /**
-     * THREAD-SAFE: Check if enough players available
-     */
+
+      // THREAD-SAFE: Check if enough players available
     public boolean hasEnoughPlayersForTeam(int leaderCount, int balancerCount, int thinkerCount) {
         synchronized (teamLock) {
             return cp_leaders.size() >= leaderCount &&
@@ -555,32 +508,5 @@ public class TeamMembersSelection implements TeamSelection {
                     cp_thinkers.size() >= thinkerCount;
         }
     }
-    public static void setupLogger() {
-        try {
-            // Remove default console handlers
-            Logger rootLogger = Logger.getLogger("");
-            Handler[] handlers = rootLogger.getHandlers();
-            for (Handler handler : handlers) {
-                if (handler instanceof ConsoleHandler) {
-                    rootLogger.removeHandler(handler);
-                }
-            }
-
-            // Create file handler
-            FileHandler fileHandler = new FileHandler("system.log",true); // true = append mode
-            fileHandler.setFormatter(new SimpleFormatter());
-
-            // Add file handler to root logger
-            rootLogger.addHandler(fileHandler);
-
-            // Set log level
-            rootLogger.setLevel(Level.INFO);
-
-        } catch (IOException e) {
-            System.err.println("Failed to setup logger: " + e.getMessage());
-        }
-    }
-
-
 
 }

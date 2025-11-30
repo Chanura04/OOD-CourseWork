@@ -63,14 +63,14 @@ public class Dashboard {
                         TeamMembersSelection teamMembersSelection = new TeamMembersSelection(uploadCsvFileName);//sq 2.1-Initiate team formations
                         teamMembersSelection.defineTeamSize(input);//sq 2.2 -Define team size
                         teamMembersSelection.generateTeams(input);//sq 2.2 -Initiate team formations
-                        playersCountPerTeam=teamMembersSelection.getTeamPlayerCount();
-                        totalFormedTeams=teamMembersSelection.getTotalFinalTeamCombination();
-                        avgSkillValue = teamMembersSelection.getAverage();
-                        minAvg = teamMembersSelection.getMinimumSkillAverage();
-                        maxAvg = teamMembersSelection.getMaximumSkillAverage();
-                        remainingBalancersCount=teamMembersSelection.getRemainingBalancersCount();
-                        remainingLeadersCount=teamMembersSelection.getRemainingLeadersCount();
-                        remainingThinkersCount=teamMembersSelection.getRemainingThinkersCount();
+                        playersCountPerTeam=teamMembersSelection.getTeamPlayerCount();//2.3
+                        totalFormedTeams=teamMembersSelection.getTotalFinalTeamCombination();//2.4
+                        avgSkillValue = teamMembersSelection.getAverage();//2.5
+                        minAvg = teamMembersSelection.getMinimumSkillAverage();//2.6
+                        maxAvg = teamMembersSelection.getMaximumSkillAverage();//2.7
+                        remainingBalancersCount=teamMembersSelection.getRemainingBalancersCount();//2.8
+                        remainingLeadersCount=teamMembersSelection.getRemainingLeadersCount();//2.9
+                        remainingThinkersCount=teamMembersSelection.getRemainingThinkersCount();//2.10
                         break;
                     case 3:
                         File fileForFinalTeamSelection=new File("possible_teams.csv");
@@ -106,8 +106,6 @@ public class Dashboard {
                         }
                         ReviewGeneratedTeams rgt = new ReviewGeneratedTeams("remaining_players.csv");
                         rgt.viewPlayersInCsvFile();
-//                        ViewRemainingPlayers viewRemainingPlayers = new ViewRemainingPlayers();
-//                        viewRemainingPlayers.viewPlayersInCsvFile("remaining_players.csv");
                         break;
                     case 7:
                         File file = new File("possible_teams.csv");
@@ -118,7 +116,6 @@ public class Dashboard {
                          ReviewGeneratedTeams vm = new ReviewGeneratedTeams(file);//2.3
                          vm.setTeamPlayerCount(playersCountPerTeam);//2.4
                          vm.viewFormedTeams();//2.5
-
                         break;
                     case 8:
                         System.out.println("🔓 Logging out...");
@@ -150,8 +147,8 @@ public class Dashboard {
 
                 switch (choice) {
                     case 1:
-                        Participant player = new Participant(currentUserName, currentUserEmail);//sq 2.1 complete survey
-                        player.participantSurvey(input);  //sq 2.2 complete survey
+                        Participant player = new Participant(currentUserName, currentUserEmail);//sq 2.2 complete survey
+                        player.participantSurvey(input);  //sq 2.3 complete survey
                         break;
                     case 2:
                         System.out.println("\n📋 Your Profile:");
