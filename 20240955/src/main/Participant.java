@@ -230,7 +230,7 @@ public class Participant extends User {
 
     //Store player data into a csv file
     public void storeRegisteredPlayerData(){
-        File playerDataFile = new File("C:\\Github Projects\\OOD-CourseWork\\20240955\\DataBase\\students_loop.csv");
+        File playerDataFile = new File("20240955\\DataBase\\students_loop.csv");
         //save to csv file
             try (FileWriter writer = new FileWriter(playerDataFile, true)) {
                 String[] data={
@@ -244,7 +244,7 @@ public class Participant extends User {
     }
 
     private boolean isPlayerSurveyCompleted(){
-        String filePath = "C:\\Github Projects\\OOD-CourseWork\\20240955\\DataBase\\students_loop.csv";
+        String filePath = "20240955\\DataBase\\students_loop.csv";
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             br.readLine(); // Skip header
             String line;
@@ -263,7 +263,7 @@ public class Participant extends User {
     }
 
     public void storeSurveyData(){
-        String filePath = "C:\\Github Projects\\OOD-CourseWork\\20240955\\DataBase\\students_loop.csv";
+        String filePath = "20240955\\DataBase\\students_loop.csv";
         CountDownLatch latch = new CountDownLatch(1);
 
         // Create and start the thread with our separate task class
@@ -283,7 +283,7 @@ public class Participant extends User {
 
     public int getStoredLastId(){
        ParticipantDataLoader playerDataLoader=new ParticipantDataLoader();
-       File playerDataFile = new File("C:\\Github Projects\\OOD-CourseWork\\20240955\\DataBase\\students_loop.csv");
+       File playerDataFile = new File("20240955\\DataBase\\students_loop.csv");
 
         ArrayList<String> loadPlayerData=playerDataLoader.getPlayerData(playerDataFile);
        if(loadPlayerData.isEmpty()){

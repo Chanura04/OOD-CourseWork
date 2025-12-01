@@ -11,7 +11,7 @@ public class Main {
     static int currentUserStoredRawNumber;
 
     public static void main(String[] args) {
-        LoggerSetup.initialize();
+        LoggerSetup.initialize();//1.1
 
         Scanner input = new Scanner(System.in);
         System.out.println("=".repeat(80));

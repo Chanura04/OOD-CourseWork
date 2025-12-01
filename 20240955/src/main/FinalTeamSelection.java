@@ -188,7 +188,7 @@ public class FinalTeamSelection {
         }
     }
     public boolean getPreviousStaticData() {
-        File logFile = new File("C:\\Github Projects\\OOD-CourseWork\\20240955\\files\\staticData.csv");
+        File logFile = new File("20240955\\files\\staticData.csv");
         try (BufferedReader br = new BufferedReader(new FileReader(logFile))) {
             br.readLine(); // skip header
             String line, lastLine = null;

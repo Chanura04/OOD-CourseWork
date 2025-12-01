@@ -1,0 +1,17 @@
+ID,Name,Email,PreferredGame,SkillLevel,PreferredRole,PersonalityScore,PersonalityType
+P001,Leader1,leader1@test.com,Valorant,8,Strategist,92,Leader
+P002,Leader2,leader2@test.com,Dota,6,Attacker,92,Leader
+P003,Leader3,leader3@test.com,Valorant,8,Strategist,92,Leader
+P004,Analyzer1,analyzer1@test.com,Chess,9,Defender,95,Leader
+P005,Thinker1,thinker1@test.com,Dota,7,Attacker,55,Thinker
+P006,Thinker2,thinker2@test.com,FIFA,6,Defender,58,Thinker
+P007,Thinker3,thinker3@test.com,Valorant,7,Supporter,52,Thinker
+P008,Supporter1,supporter1@test.com,Overwatch,6,Supporter,69,Thinker
+P009,Balancer1,balancer1@test.com,Basketball,8,Coordinator,75,Balanced
+P010,Balancer2,balancer2@test.com,Dota,6,Strategist,72,Balanced
+P011,Balancer3,balancer3@test.com,FIFA,7,Attacker,78,Balanced
+P012,Balancer4,balancer4@test.com,Valorant,9,Supporter,78,Balanced
+P013,Balancer5,balancer5@test.com,Valorant,9,Supporter,78,Balanced
+P014,Innovator1,innovator1@test.com,CSGO,7,Strategist,81,Balanced
+P015,Challenger1,challenger1@test.com,LeagueOfLegends,8,Attacker,88,Balanced
+P016,Explorer1,explorer1@test.com,Minecraft,5,Coordinator,73,Balanced

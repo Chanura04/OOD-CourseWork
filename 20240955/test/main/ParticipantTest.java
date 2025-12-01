@@ -8,26 +8,7 @@ import java.util.Scanner;
 
 public class ParticipantTest {
 
-    private final String testCsvPath = "DataBase/test_students_loop.csv";
-
-    @BeforeEach
-    void setUp() {
-        // Create test CSV file with header
-        try (FileWriter writer = new FileWriter(testCsvPath)) {
-            writer.write("ID,Name,Email,PreferredGame,SkillLevel,PreferredRole,PersonalityScore,PersonalityType\n");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @AfterEach
-    void tearDown() {
-        // Clean up test file
-        File testFile = new File(testCsvPath);
-        if (testFile.exists()) {
-            testFile.delete();
-        }
-    }
+    private final String testCsvPath = "20240955\\DataBase\\test_students_loop.csv";
 
     @Test
     void testParticipantSurveyAssignsLeader() {

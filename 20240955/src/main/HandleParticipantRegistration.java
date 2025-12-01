@@ -14,7 +14,7 @@ public class HandleParticipantRegistration {
     }
 
     public boolean isARegisteredParticipant() {
-        String filePath = "C:\\Github Projects\\OOD-CourseWork\\20240955\\DataBase\\students_loop.csv";
+        String filePath = "20240955\\DataBase\\students_loop.csv";
         File playerDataFile = new File(filePath);
 
         ParticipantDataLoader playerDataLoader = new ParticipantDataLoader();//10.1.1
@@ -36,7 +36,7 @@ public class HandleParticipantRegistration {
 
     public int getRegisteredParticipantStoredRawNumber() {
         int rawNumber = 0;
-        String filePath = "C:\\Github Projects\\OOD-CourseWork\\20240955\\DataBase\\students_loop.csv";
+        String filePath = "20240955\\DataBase\\students_loop.csv";
         File playerDataFile = new File(filePath);
 
         ParticipantDataLoader playerDataLoader = new ParticipantDataLoader();

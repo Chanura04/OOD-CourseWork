@@ -101,7 +101,7 @@ public class TeamMembersSelection implements TeamSelection {
             long endTime = System.currentTimeMillis();
             writeFinalTeamsOnCsvFile(); // sq 2.2.20
 
-            File file = new File("C:\\Github Projects\\OOD-CourseWork\\20240955\\files\\possible_teams.csv");
+            File file = new File("20240955\\files\\possible_teams.csv");
             if (file.exists()) {
                 ReviewGeneratedTeams vm = new ReviewGeneratedTeams(file);
                 vm.setTeamPlayerCount(playersCountPerTeam);
@@ -112,17 +112,17 @@ public class TeamMembersSelection implements TeamSelection {
 
             boolean isAcceptingFormedTeams=inputValidator.getValidResponseInput(input,"\nDo you accept these teams? (Y/N):","y","n");
             if(isAcceptingFormedTeams){
-                exportFormedTeams("C:\\Github Projects\\OOD-CourseWork\\20240955\\files\\possible_teams.csv");//sq 2.2.21.1
-                writeRemainingPlayerInCsvFile();//sq 2.2.21.2
-                writeFormedTeamsStaticDetails();//sq 2.2.21.3
+                exportFormedTeams("20240955\\files\\possible_teams.csv");//sq 2.2.22.1
+                writeRemainingPlayerInCsvFile();//sq 2.2.22.2
+                writeFormedTeamsStaticDetails();//sq 2.2.22.3
 
             }else{
                 playersCountPerTeam=0;
                 System.out.println("❌ Teams were not accepted. Export cancelled.");
                 File file1 = new File("possible_teams.csv");
                 if (file1.exists()) {
-                    HandleDataCsvFiles handleDataCsvFiles = new HandleDataCsvFiles();//sq 2.2.22
-                    handleDataCsvFiles.deleteCsvFile(file1); //sq 2.2.23
+                    HandleDataCsvFiles handleDataCsvFiles = new HandleDataCsvFiles();//sq 2.2.23
+                    handleDataCsvFiles.deleteCsvFile(file1); //sq 2.2.24
                 }
             }
             System.out.println("\n⏱️ Team formation completed in " + (endTime - startTime) + "ms");
@@ -275,9 +275,7 @@ public class TeamMembersSelection implements TeamSelection {
 
         // Determine optimal thread count (based on CPU cores, but max 20)
         int threadCount = Math.min(Runtime.getRuntime().availableProcessors(), maxPossibleTeams);
-//        threadCount = Math.max(threadCount, 20);
-        threadCount=500;
-
+        threadCount = Math.max(threadCount, 500);
 
         CountDownLatch latch = new CountDownLatch(threadCount);
         List<Thread> threads = new ArrayList<>();
@@ -417,7 +415,7 @@ public class TeamMembersSelection implements TeamSelection {
 
     public void writeFinalTeamsOnCsvFile(){
         int teamNumber=0;
-        try (FileWriter writer = new FileWriter("C:\\Github Projects\\OOD-CourseWork\\20240955\\files\\possible_teams.csv")) {
+        try (FileWriter writer = new FileWriter("20240955\\files\\possible_teams.csv")) {
             writer.write("ID,Name,Email,PreferredGame,SkillLevel,PreferredRole,PersonalityScore,PersonalityType,TeamNumber");
             writer.write("\n");
 
@@ -435,7 +433,7 @@ public class TeamMembersSelection implements TeamSelection {
         }
     }
     public void writeFormedTeamsStaticDetails(){
-        try (FileWriter writer = new FileWriter("C:\\Github Projects\\OOD-CourseWork\\20240955\\files\\staticData.csv")) {
+        try (FileWriter writer = new FileWriter("20240955\\files\\staticData.csv")) {
             writer.write("PlayersPerTeam,TotalTeamCount,AverageSkillLevel,MinimumSkillLevel,MaximumSkillLevel,RemainingLeaderCount,RemainingBalancerCount,RemainingThinkerCount");
             writer.write("\n");
             writer.write(playersCountPerTeam + "," + selectedTeamsInFirstFilter.size()+','+average+','+minimumSkillAverage+','+maximumSkillAverage+','+getRemainingLeadersCount()+','+getRemainingBalancersCount()+','+getRemainingThinkersCount()+ "\n");

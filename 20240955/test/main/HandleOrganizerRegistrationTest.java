@@ -7,18 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 class HandleOrganizerRegistrationTest {
 
-    private final String filePath =
-            "C:\\Github Projects\\OOD-CourseWork\\20240955\\DataBase\\organizersData.csv";
 
-    @BeforeEach
-    void setUp() throws IOException {
-        // Ensure directory exists
-        File dir = new File("C:\\Github Projects\\OOD-CourseWork\\20240955\\DataBase");
-        if (!dir.exists()) {
-            dir.mkdirs();
-        }
-
-    }
 
 
     @Test
