@@ -107,7 +107,6 @@ public class HandleDataCsvFiles {
                 String[] values = line.split(",");
 
                 if (values.length < 8) {
-                    System.out.println("❌ Invalid CSV file: Expected 8 columns but found only " + values.length);
                     return false;
                 }
 
