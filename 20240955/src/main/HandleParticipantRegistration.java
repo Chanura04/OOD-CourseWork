@@ -14,8 +14,9 @@ public class HandleParticipantRegistration {
     }
 
     public boolean isARegisteredParticipant() {
-        String filePath = "20240955\\DataBase\\students_loop.csv";
-        File playerDataFile = new File(filePath);
+
+        String basePath = System.getProperty("user.dir");
+        String playerDataFile = basePath + File.separator + "DataBase" + File.separator + "ParticipantDatabase.csv";
 
         ParticipantDataLoader playerDataLoader = new ParticipantDataLoader();//10.1.1
         ArrayList<String> playerData = playerDataLoader.getPlayerData(playerDataFile);//10.1.2
@@ -36,8 +37,9 @@ public class HandleParticipantRegistration {
 
     public int getRegisteredParticipantStoredRawNumber() {
         int rawNumber = 0;
-        String filePath = "20240955\\DataBase\\students_loop.csv";
-        File playerDataFile = new File(filePath);
+
+        String basePath = System.getProperty("user.dir");
+        String playerDataFile = basePath + File.separator + "DataBase" + File.separator + "ParticipantDatabase.csv";
 
         ParticipantDataLoader playerDataLoader = new ParticipantDataLoader();
         ArrayList<String> playerData = playerDataLoader.getPlayerData(playerDataFile);

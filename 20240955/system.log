@@ -1,0 +1,3128 @@
+Dec 03, 2025 5:49:15 PM main.LoggerSetup initialize
+INFO: System started. Logging initialized.
+Dec 03, 2025 5:56:04 PM main.Login organizerLogin
+INFO: Starting login for organizer
+Dec 03, 2025 5:56:19 PM main.Login organizerLogin
+INFO: Starting login for organizer
+Dec 03, 2025 5:56:25 PM main.Login organizerLogin
+WARNING: Invalid Organizer credentials for yy
+Dec 03, 2025 5:56:27 PM main.Login organizerLogin
+INFO: Starting login for organizer
+Dec 03, 2025 5:56:31 PM main.Login organizerLogin
+INFO: Login successful for Organizer abc
+Dec 03, 2025 5:57:36 PM main.HandleDataCsvFiles createNewCsvFile
+INFO: ✅ File is accepted and imported successfully!
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-1 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-3 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-2 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-4 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-5 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-6 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-51 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-7 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-57 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-8 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-10 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-63 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-48 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-71 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-9 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-11 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-14 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-16 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-87 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-10 : 🔥 Successfully formed team #1
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-6 : 🔥 Successfully formed team #1
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-6 : Not enough players left. Stopping after forming 1 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-12 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-101 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-107 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-110 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-13 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-13 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-23 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-23 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-23 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-127 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-25 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-25 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-137 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-18 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-18 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-19 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-30 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-33 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-22 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-37 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-166 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-168 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-24 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-17 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-177 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-27 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-44 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-29 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-194 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-200 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-204 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-28 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-31 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-20 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-54 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-34 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-21 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-237 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-35 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-15 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-248 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-248 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-248 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-61 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-38 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-264 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-39 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-41 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-40 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-294 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-42 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-43 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-47 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-310 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-315 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-26 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-45 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-45 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-335 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-67 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-69 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-46 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-50 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-52 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-52 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-52 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-56 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-365 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-365 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-365 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-55 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-374 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-379 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-382 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-386 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-53 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-32 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-58 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-59 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-60 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-36 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-62 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-64 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-428 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-65 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-435 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-439 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-66 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-446 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-68 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-455 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-459 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-482 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-49 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-475 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-475 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-475 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-70 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-72 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-492 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-497 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-73 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-74 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-74 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-74 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-75 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-77 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-76 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-76 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-76 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-78 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-79 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-80 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-81 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-81 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-82 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-83 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-83 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-85 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-86 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-84 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-84 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-63 : 🔥 Successfully formed team #1
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-63 : Not enough players left. Stopping after forming 1 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-3 : 🔥 Successfully formed team #1
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-3 : Not enough players left. Stopping after forming 1 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-3 : Finished. Formed 1 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-8 : 🔥 Successfully formed team #1
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-51 : 🔥 Successfully formed team #1
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-57 : 🔥 Successfully formed team #1
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-57 : Not enough players left. Stopping after forming 1 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-57 : Finished. Formed 1 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-2 : 🔥 Successfully formed team #1
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-2 : Not enough players left. Stopping after forming 1 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-88 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-88 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-88 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-48 : 🔥 Successfully formed team #1
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-11 : 🔥 Successfully formed team #1
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-11 : Not enough players left. Stopping after forming 1 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-11 : Finished. Formed 1 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-16 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-16 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-90 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-89 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-89 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-1 : 🔥 Successfully formed team #1
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-7 : 🔥 Successfully formed team #1
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-7 : Not enough players left. Stopping after forming 1 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-7 : Finished. Formed 1 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-91 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-87 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-87 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-9 : 🔥 Successfully formed team #1
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-71 : 🔥 Successfully formed team #1
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-71 : Not enough players left. Stopping after forming 1 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-71 : Finished. Formed 1 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-5 : 🔥 Successfully formed team #1
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-4 : 🔥 Successfully formed team #1
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-4 : Not enough players left. Stopping after forming 1 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-4 : Finished. Formed 1 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-14 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-10 : Not enough players left. Stopping after forming 1 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-92 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-92 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-92 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-93 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-95 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-95 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-95 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-94 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-6 : Finished. Formed 1 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-99 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-99 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-99 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-98 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-96 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-96 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-12 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-12 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-102 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-102 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-100 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-104 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-104 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-103 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-103 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-101 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-101 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-105 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-105 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-105 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-106 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-97 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-97 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-112 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-107 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-109 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-108 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-108 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-111 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-110 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-118 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-118 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-114 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-114 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-114 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-115 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-116 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-116 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-116 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-117 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-117 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-117 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-113 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-113 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-113 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-124 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-124 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-124 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-125 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-13 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-122 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-122 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-122 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-126 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-126 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-123 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-120 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-120 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-120 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-130 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-130 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-130 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-121 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-128 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-129 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-119 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-127 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-127 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-131 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-132 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-132 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-132 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-133 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-134 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-136 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-135 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-135 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-25 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-138 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-138 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-138 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-137 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-137 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-139 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-139 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-139 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-140 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-141 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-142 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-142 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-142 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-146 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-18 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-147 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-145 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-145 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-145 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-150 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-19 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-19 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-144 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-148 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-149 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-149 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-143 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-30 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-30 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-151 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-151 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-151 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-152 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-153 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-161 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-161 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-161 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-155 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-155 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-162 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-157 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-157 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-157 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-33 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-33 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-158 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-159 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-159 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-159 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-160 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-22 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-22 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-154 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-156 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-156 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-156 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-163 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-37 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-37 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-165 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-164 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-164 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-167 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-167 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-166 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-166 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-169 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-170 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-170 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-170 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-172 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-168 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-168 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-171 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-173 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-174 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-174 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-174 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-24 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-175 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-175 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-175 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-176 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-17 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-178 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-178 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-178 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-179 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-179 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-179 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-177 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-177 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-180 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-180 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-181 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-181 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-181 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-182 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-182 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-182 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-183 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-184 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-184 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-184 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-27 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-27 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-185 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-185 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-186 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-186 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-186 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-187 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-187 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-187 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-188 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-189 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-189 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-189 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-44 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-44 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-190 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-191 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-192 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-192 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-193 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-193 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-193 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-29 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-29 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-195 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-195 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-195 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-196 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-197 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-197 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-197 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-198 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-199 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-199 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-199 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-194 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-194 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-201 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-201 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-201 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-202 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-203 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-203 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-203 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-200 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-200 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-205 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-205 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-206 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-206 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-206 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-207 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-207 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-207 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-208 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-204 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-204 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-209 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-210 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-210 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-210 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-211 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-212 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-212 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-212 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-213 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-213 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-213 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-28 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-28 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-214 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-214 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-214 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-215 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-215 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-215 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-216 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-216 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-216 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-217 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-217 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-217 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-218 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-218 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-218 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-31 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-31 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-219 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-220 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-220 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-220 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-221 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-221 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-222 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-222 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-222 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-223 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-224 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-20 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-20 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-225 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-226 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-227 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-227 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-227 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-228 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-229 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-229 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-229 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-54 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-54 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-230 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-230 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-230 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-234 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-34 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-34 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-231 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-231 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-231 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-232 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-233 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-235 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-235 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-235 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-236 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-21 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-21 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-238 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-238 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-238 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-239 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-241 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-241 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-241 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-240 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-240 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-240 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-242 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-237 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-237 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-243 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-243 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-243 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-244 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-245 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-245 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-246 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-246 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-246 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-35 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-35 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-247 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-247 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-247 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-15 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-15 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-249 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-249 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-249 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-250 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-250 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-251 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-251 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-251 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-252 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-252 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-253 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-253 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-253 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-254 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-255 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-255 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-256 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-256 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-256 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-61 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-257 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-257 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-257 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-261 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-261 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-261 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-259 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-259 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-259 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-266 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-266 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-266 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-268 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-268 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-268 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-262 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-262 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-262 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-263 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-263 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-263 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-38 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-38 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-265 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-265 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-265 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-260 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-267 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-267 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-267 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-258 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-258 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-269 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-269 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-269 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-264 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-264 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-270 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-270 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-270 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-271 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-272 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-272 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-272 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-273 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-273 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-273 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-274 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-274 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-274 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-275 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-275 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-275 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-39 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-276 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-276 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-276 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-287 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-287 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-278 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-278 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-278 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-279 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-279 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-279 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-289 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-289 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-281 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-281 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-281 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-282 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-282 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-282 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-41 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-41 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-291 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-291 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-291 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-284 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-284 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-284 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-285 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-286 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-286 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-286 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-277 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-277 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-277 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-40 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-280 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-280 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-280 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-290 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-290 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-290 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-283 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-283 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-283 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-292 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-292 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-292 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-294 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-294 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-293 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-293 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-293 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-288 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-288 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-288 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-295 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-295 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-295 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-301 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-301 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-301 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-303 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-303 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-303 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-298 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-298 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-298 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-42 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-299 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-299 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-299 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-300 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-300 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-300 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-296 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-296 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-296 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-302 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-302 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-302 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-297 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-297 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-297 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-43 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-304 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-304 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-304 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-305 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-311 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-311 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-311 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-307 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-307 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-307 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-308 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-308 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-308 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-309 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-309 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-309 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-47 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-47 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-306 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-306 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-306 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-317 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-317 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-317 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-313 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-313 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-313 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-314 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-314 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-314 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-310 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-310 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-316 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-316 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-316 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-312 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-312 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-312 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-322 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-322 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-322 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-319 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-319 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-319 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-324 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-324 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-324 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-315 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-315 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-321 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-321 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-321 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-318 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-318 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-318 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-323 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-323 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-323 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-320 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-320 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-320 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-328 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-328 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-328 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-26 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-326 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-326 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-326 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-327 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-327 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-327 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-330 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-330 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-330 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-329 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-329 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-329 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-325 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-325 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-325 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-331 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-331 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-331 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-332 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-332 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-332 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-333 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-333 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-333 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-334 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-334 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-334 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-45 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-336 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-336 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-336 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-337 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-337 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-337 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-338 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-338 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-338 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-339 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-339 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-339 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-340 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-340 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-340 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-335 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-341 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-341 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-341 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-342 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-342 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-342 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-343 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-343 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-343 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-67 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-67 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-344 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-344 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-344 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-345 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-345 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-345 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-346 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-346 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-346 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-347 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-347 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-347 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-69 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-348 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-348 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-348 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-349 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-349 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-349 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-350 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-350 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-350 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-351 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-351 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-351 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-46 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-46 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-352 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-352 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-352 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-353 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-353 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-353 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-354 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-354 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-354 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-355 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-355 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-355 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-50 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-50 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-356 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-356 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-356 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-357 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-357 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-357 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-358 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-358 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-358 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-359 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-359 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-359 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-360 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-360 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-360 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-361 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-361 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-361 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-362 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-362 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-362 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-364 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-364 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-364 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-363 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-363 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-363 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-56 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-56 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-368 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-368 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-368 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-369 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-369 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-369 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-366 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-366 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-366 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-367 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-367 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-367 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-370 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-370 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-370 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-371 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-371 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-371 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-372 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-372 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-372 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-373 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-373 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-373 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-55 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-375 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-375 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-375 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-377 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-377 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-377 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-376 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-376 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-376 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-378 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-374 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-374 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-380 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-380 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-380 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-381 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-381 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-381 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-379 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-383 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-383 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-383 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-384 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-384 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-384 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-385 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-385 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-385 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-382 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-382 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-387 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-387 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-387 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-388 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-388 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-388 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-390 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-390 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-390 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-386 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-389 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-389 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-389 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-391 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-391 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-391 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-392 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-392 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-392 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-393 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-393 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-393 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-53 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-53 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-394 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-394 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-394 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-403 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-403 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-403 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-396 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-396 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-396 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-397 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-397 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-397 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-398 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-398 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-398 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-32 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-32 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-399 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-399 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-399 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-400 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-400 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-400 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-401 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-401 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-401 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-402 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-402 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-402 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-395 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-395 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-395 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-58 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-58 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-411 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-411 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-411 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-405 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-405 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-405 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-406 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-406 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-406 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-407 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-407 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-407 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-408 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-408 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-408 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-59 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-59 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-415 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-415 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-415 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-410 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-410 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-410 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-404 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-404 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-412 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-412 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-412 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-413 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-413 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-413 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-60 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-60 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-414 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-409 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-409 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-409 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-416 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-416 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-416 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-417 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-417 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-417 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-418 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-418 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-418 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-36 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-419 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-419 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-419 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-420 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-420 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-420 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-421 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-421 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-421 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-422 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-422 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-422 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-423 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-423 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-423 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-62 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-424 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-424 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-424 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-425 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-425 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-425 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-426 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-426 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-426 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-427 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-427 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-427 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-64 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-64 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-429 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-429 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-429 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-430 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-430 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-430 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-431 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-431 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-431 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-432 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-432 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-432 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-428 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-428 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-433 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-433 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-433 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-434 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-434 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-434 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-65 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-65 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-436 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-436 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-436 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-437 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-437 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-437 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-438 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-438 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-438 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-435 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-435 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-440 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-440 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-440 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-441 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-441 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-441 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-442 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-442 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-442 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-439 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-439 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-443 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-443 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-443 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-444 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-444 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-444 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-445 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-445 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-445 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-66 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-66 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-447 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-447 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-447 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-454 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-449 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-449 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-449 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-450 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-450 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-450 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-446 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-446 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-460 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-460 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-460 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-462 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-462 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-462 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-453 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-453 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-453 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-448 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-448 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-448 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-68 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-68 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-456 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-456 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-456 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-457 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-457 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-457 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-458 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-458 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-458 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-455 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-455 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-477 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-477 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-477 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-461 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-461 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-461 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-480 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-480 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-480 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-459 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-459 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-484 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-484 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-484 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-465 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-465 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-465 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-466 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-467 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-467 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-467 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-468 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-468 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-468 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-469 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-470 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-470 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-470 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-482 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-471 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-471 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-471 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-472 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-472 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-472 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-473 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-473 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-473 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-474 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-474 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-474 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-49 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-49 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-476 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-476 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-476 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-498 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-498 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-498 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-478 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-478 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-478 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-479 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-479 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-479 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-452 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-452 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-452 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-481 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-481 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-481 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-463 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-463 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-463 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-483 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-483 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-483 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-464 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-464 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-464 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-485 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-485 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-485 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-486 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-486 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-486 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-487 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-487 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-487 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-488 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-488 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-488 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-489 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-489 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-489 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-70 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-70 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-490 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-490 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-490 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-491 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-491 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-491 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-72 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-72 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-493 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-493 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-493 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-494 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-494 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-494 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-495 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-495 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-495 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-496 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-492 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-492 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-451 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-451 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-451 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-499 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-499 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-499 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask run
+INFO: TeamFormation-500 started team formation.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-500 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-500 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-497 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-497 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-73 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-73 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-75 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-75 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-77 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-77 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-78 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-78 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-79 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-79 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-80 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-80 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-81 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-82 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-82 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-83 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-85 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-85 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-86 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-86 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-84 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-63 : Finished. Formed 1 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-8 : Not enough players left. Stopping after forming 1 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-8 : Finished. Formed 1 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-51 : Not enough players left. Stopping after forming 1 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-51 : Finished. Formed 1 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-2 : Finished. Formed 1 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-48 : Not enough players left. Stopping after forming 1 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-48 : Finished. Formed 1 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-90 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-90 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-89 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-1 : Not enough players left. Stopping after forming 1 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-1 : Finished. Formed 1 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-91 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-91 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-9 : Not enough players left. Stopping after forming 1 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-9 : Finished. Formed 1 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-5 : Not enough players left. Stopping after forming 1 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-14 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-10 : Finished. Formed 1 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-93 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-94 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-94 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-98 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-98 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-96 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-102 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-100 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-104 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-103 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-106 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-106 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-97 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-112 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-112 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-107 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-109 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-109 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-108 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-111 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-110 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-118 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-115 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-115 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-125 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-125 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-126 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-123 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-123 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-121 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-121 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-128 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-128 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-129 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-129 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-119 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-119 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-131 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-131 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-133 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-133 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-134 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-134 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-136 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-136 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-135 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-140 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-140 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-141 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-141 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-146 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-146 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-147 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-147 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-150 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-150 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-144 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-144 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-148 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-148 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-149 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-143 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-143 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-152 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-152 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-153 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-153 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-155 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-162 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-162 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-158 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-158 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-160 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-160 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-154 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-154 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-163 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-163 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-165 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-165 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-164 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-167 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-169 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-169 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-172 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-172 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-171 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-171 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-173 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-173 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-24 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-176 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-176 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-17 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-180 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-183 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-185 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-188 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-188 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-190 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-190 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-191 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-191 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-192 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-196 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-196 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-198 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-198 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-202 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-202 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-205 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-208 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-208 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-209 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-209 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-211 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-219 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-219 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-221 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-223 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-223 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-224 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-224 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-225 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-225 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-226 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-226 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-228 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-228 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-234 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-232 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-233 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-233 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-236 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-236 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-239 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-242 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-242 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-244 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-244 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-245 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-250 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-252 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-254 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-254 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-255 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-61 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-260 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-260 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-258 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-271 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-271 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-39 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-287 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-289 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-285 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-285 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-40 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-42 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-43 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-305 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-305 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-26 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-335 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-69 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-55 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-378 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-378 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-379 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-386 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-404 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-414 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-414 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-36 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-62 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-454 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-454 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-466 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-466 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-469 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-469 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-482 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-496 : Not enough players left. Stopping after forming 0 teams.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-496 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-5 : Finished. Formed 1 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-93 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-100 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-111 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-183 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-211 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-234 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-232 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:57:40 PM main.TeamFormationTask formTeams
+INFO: TeamFormation-239 : Finished. Formed 0 teams total.
+Dec 03, 2025 5:59:01 PM main.FinalTeamSelection finalResult
+INFO: Selected Final Teams: [9, 2]
+Dec 03, 2025 5:59:31 PM main.Registration registerNewOrganizer
+INFO: Starting registration for new organizer
+Dec 03, 2025 5:59:46 PM main.Registration registerNewOrganizer
+INFO: ✅ Registration successful! You can now login as a organizer.
+Dec 03, 2025 5:59:49 PM main.Login organizerLogin
+INFO: Starting login for organizer
+Dec 03, 2025 5:59:54 PM main.Login organizerLogin
+WARNING: Invalid Organizer credentials for or2
+Dec 03, 2025 6:00:09 PM main.Login organizerLogin
+INFO: Starting login for organizer
+Dec 03, 2025 6:00:16 PM main.Login organizerLogin
+INFO: Login successful for Organizer or2
+Dec 03, 2025 6:00:25 PM main.Login participantLogin
+INFO: Starting login for participant
+Dec 03, 2025 6:00:29 PM main.Login participantLogin
+WARNING: frwed is not registered. Please register first.
+Dec 03, 2025 6:00:35 PM main.Login participantLogin
+INFO: Starting login for participant
+Dec 03, 2025 6:00:52 PM main.Login participantLogin
+INFO: Login successful for chanura
+Dec 03, 2025 6:00:58 PM main.Participant participantSurvey
+WARNING: ⚠️ You have already completed the survey!!!
+Dec 03, 2025 6:01:19 PM main.Registration registerNewParticipant
+INFO: Starting registration for new participant
+Dec 03, 2025 6:02:39 PM main.Registration registerNewParticipant
+INFO: cc@ is already registered.
+Dec 03, 2025 6:02:48 PM main.Registration registerNewParticipant
+INFO: Starting registration for new participant
+Dec 03, 2025 6:02:55 PM main.Registration registerNewParticipant
+INFO: ✅ New participant registered: c
+Dec 03, 2025 6:03:02 PM main.Login participantLogin
+INFO: Starting login for participant
+Dec 03, 2025 6:03:07 PM main.Login participantLogin
+INFO: Login successful for c
+Dec 03, 2025 6:03:17 PM main.Participant participantSurvey
+INFO: Starting survey for c
+Dec 03, 2025 6:03:30 PM main.Participant participantSurvey
+INFO: Player c completed the personality survey
+Dec 03, 2025 6:03:44 PM main.Participant participantSurvey
+INFO: Player c entered game of interest: Valorant
+Dec 03, 2025 6:03:47 PM main.Participant participantSurvey
+INFO: Player c entered skill level: 3
+Dec 03, 2025 6:03:48 PM main.Participant participantSurvey
+INFO: Player c entered preferred role: Defender
+Dec 03, 2025 6:03:48 PM main.Participant participantSurvey
+INFO: Player c completed the survey and calculated total score: 28
+Dec 03, 2025 6:03:48 PM main.Participant participantSurvey
+WARNING: ⚠️ Player c survey is invalid. Total score: 28
+Dec 03, 2025 6:03:52 PM main.SurveyProcessorTask run
+INFO: Survey-c started processing survey for c
+Dec 03, 2025 6:03:52 PM main.SurveyProcessorTask processSurvey
+INFO: Survey-c : Survey for c has been discarded.Because Personality Score is very low!
+Dec 03, 2025 6:03:52 PM main.Participant participantSurvey
+INFO: Player c completed the survey and stored data.
+Dec 03, 2025 6:04:07 PM main.Participant participantSurvey
+INFO: Starting survey for c
+Dec 03, 2025 6:05:20 PM main.Participant participantSurvey
+INFO: Player c completed the personality survey
+Dec 03, 2025 6:05:35 PM main.Participant participantSurvey
+INFO: Player c entered game of interest: Valorant
+Dec 03, 2025 6:05:46 PM main.Participant participantSurvey
+INFO: Player c entered skill level: 7
+Dec 03, 2025 6:06:03 PM main.Participant participantSurvey
+INFO: Player c entered preferred role: Coordinator
+Dec 03, 2025 6:06:03 PM main.Participant participantSurvey
+INFO: Player c completed the survey and calculated total score: 96
+Dec 03, 2025 6:06:07 PM main.Participant participantSurvey
+INFO: Player c wants to change his/her preferences. Showing survey results.
+Dec 03, 2025 6:06:20 PM main.Participant participantSurvey
+INFO: Player c selected option: 3
+Dec 03, 2025 6:06:36 PM main.SurveyProcessorTask run
+INFO: Survey-c started processing survey for c
+Dec 03, 2025 6:06:36 PM main.SurveyProcessorTask processSurvey
+INFO: Survey-c successfully read file for c and updated data.
+Dec 03, 2025 6:06:36 PM main.SurveyProcessorTask processSurvey
+INFO: Survey-c successfully updated file for c with new data.
+Dec 03, 2025 6:06:36 PM main.Participant participantSurvey
+INFO: Player c completed the survey and stored data.
+Dec 03, 2025 6:06:39 PM main.Participant participantSurvey
+WARNING: ⚠️ You have already completed the survey!!!

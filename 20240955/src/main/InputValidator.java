@@ -8,7 +8,6 @@ public class InputValidator {
     public int isValidInterInput(Scanner input, String prompt, int min, int max) {
         while (true) {
             try {
-//                System.out.print(prompt);
                 display(prompt);
                 int value = input.nextInt();
                 input.nextLine();
@@ -36,7 +35,6 @@ public class InputValidator {
                     }
                 }else {
                     display("Please enter a valid response: y or n.\n ", y, n);
-
                 }
             } catch (InputMismatchException e) {
                 display("⚠️ Invalid input. Please enter a valid number: ");
@@ -55,7 +53,6 @@ public class InputValidator {
                     return null;
                 }
 
-                // Allow only letters and spaces AND NUMBERS
                 if (!value.matches("[a-zA-Z0-9 @._\\\\:-]+")) {
                     display("⚠️ Error: input must contain only letters!");
                     return isValidStringInput(input, prompt);
@@ -65,8 +62,6 @@ public class InputValidator {
                     return value;
                 }
                 display("⚠️ Input cannot be empty. Please try again or enter 'q' to cancel.");
-
-
             } catch (Exception e) {
                 System.out.println("⚠️ Error reading input: " + e.getMessage());
                 input.nextLine(); // Clear buffer
@@ -76,7 +71,6 @@ public class InputValidator {
     public  int isValidInterInput(Scanner input, String prompt, int min) {
         while (true) {
             try {
-//                System.out.print(prompt);
                 display(prompt);
                 int value = input.nextInt();
                 input.nextLine();

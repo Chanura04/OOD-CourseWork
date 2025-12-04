@@ -60,7 +60,6 @@ public class Registration {
     }
 
     public void registerNewOrganizer(Scanner input) {
-//        setupLogger();//2.3
         logger.info("Starting registration for new organizer");
         try {
             System.out.println("\n\n" + "-".repeat(80));

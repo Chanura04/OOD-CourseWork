@@ -49,7 +49,7 @@ public class Login {
             currentUserEmail = inputValidator.isValidStringInput(input,
                     "Enter the email (or 'q' to return): ");//8.3
 
-            if (currentUserEmail.equalsIgnoreCase("q")) {
+            if (currentUserEmail == null || currentUserEmail.equalsIgnoreCase("q")) {
                 System.out.println("🔙 Returning to main menu...");
                 return false;
             }

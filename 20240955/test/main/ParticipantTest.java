@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 public class ParticipantTest {
 
-    private final String testCsvPath = "20240955\\DataBase\\test_students_loop.csv";
 
     @Test
     void testParticipantSurveyAssignsLeader() {

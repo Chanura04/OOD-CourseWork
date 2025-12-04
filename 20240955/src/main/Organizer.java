@@ -21,7 +21,10 @@ public class Organizer extends User{
     }
 
     public void storeRegisteredOrganizerData(){
-        File organizerDataFile = new File("20240955\\DataBase\\organizersData.csv");
+        String basePath = System.getProperty("user.dir");
+        String organizerDataFile = basePath + File.separator + "DataBase" + File.separator + "OrganizersDatabase.csv";
+
+
         //save to csv file
         try (FileWriter writer = new FileWriter(organizerDataFile, true)) {
             String[] data={
@@ -36,8 +39,9 @@ public class Organizer extends User{
     }
 
     public int getStoredLastId(){
-        String filePath = "20240955\\DataBase\\organizersData.csv";
-        File playerDataFile = new File(filePath);
+        String basePath = System.getProperty("user.dir");
+        String organizerDataFile = basePath + File.separator + "DataBase" + File.separator + "OrganizersDatabase.csv";
+        File playerDataFile = new File(organizerDataFile);
 
         OrganizerDataLoader organizerDataLoader = new OrganizerDataLoader();
         ArrayList<String> organizerData = organizerDataLoader.getOrganizerData(playerDataFile);

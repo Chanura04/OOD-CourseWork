@@ -60,17 +60,21 @@ public class Dashboard {
                         uploadCsvFileName = handleDataCsvFiles.getUploadCsvFileName();
                         break;
                     case 2://sq 2-Initiate team formations, define team size
+                        if (uploadCsvFileName == null) {
+                            System.out.println("⚠️ Please import participant data first before generating teams.");
+                            break;
+                        }
                         TeamMembersSelection teamMembersSelection = new TeamMembersSelection(uploadCsvFileName);//sq 2.1-Initiate team formations
                         teamMembersSelection.defineTeamSize(input);//sq 2.2 -Define team size
                         teamMembersSelection.generateTeams(input);//sq 2.2 -Initiate team formations
-                        playersCountPerTeam=teamMembersSelection.getTeamPlayerCount();//2.3
-                        totalFormedTeams=teamMembersSelection.getTotalFinalTeamCombination();//2.4
-                        avgSkillValue = teamMembersSelection.getAverage();//2.5
-                        minAvg = teamMembersSelection.getMinimumSkillAverage();//2.6
-                        maxAvg = teamMembersSelection.getMaximumSkillAverage();//2.7
-                        remainingBalancersCount=teamMembersSelection.getRemainingBalancersCount();//2.8
-                        remainingLeadersCount=teamMembersSelection.getRemainingLeadersCount();//2.9
-                        remainingThinkersCount=teamMembersSelection.getRemainingThinkersCount();//2.10
+                        playersCountPerTeam=teamMembersSelection.getTeamPlayerCount();//2.2.25
+                        totalFormedTeams=teamMembersSelection.getTotalFinalTeamCombination();//2.2.26
+                        avgSkillValue = teamMembersSelection.getAverage();//2.2.27
+                        minAvg = teamMembersSelection.getMinimumSkillAverage();//2.2.28
+                        maxAvg = teamMembersSelection.getMaximumSkillAverage();//2.2.29
+                        remainingBalancersCount=teamMembersSelection.getRemainingBalancersCount();//2.2.30
+                        remainingLeadersCount=teamMembersSelection.getRemainingLeadersCount();//2.2.31
+                        remainingThinkersCount=teamMembersSelection.getRemainingThinkersCount();//2.2.32
                         break;
                     case 3:
                         File fileForFinalTeamSelection=new File("possible_teams.csv");
@@ -113,7 +117,7 @@ public class Dashboard {
                             System.out.println("⚠️ No teams found. Please generate teams first.");
                             break;
                         }
-                         ReviewGeneratedTeams vm = new ReviewGeneratedTeams(file);//2.3
+                         ReviewGeneratedTeams vm = new ReviewGeneratedTeams("possible_teams.csv");//2.3
                          vm.setTeamPlayerCount(playersCountPerTeam);//2.4
                          vm.viewFormedTeams();//2.5
                         break;

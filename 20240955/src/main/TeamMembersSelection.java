@@ -22,6 +22,7 @@ public class TeamMembersSelection implements TeamSelection {
     private final ArrayList<String> all_leaders=new ArrayList<>();
     private final ArrayList<String> all_balancers=new ArrayList<>();
     private final ArrayList<String> all_thinkers=new ArrayList<>();
+    private final ArrayList<String> invalid_players=new ArrayList<>();
 
 
     private ArrayList<String> cp_leaders;
@@ -101,25 +102,25 @@ public class TeamMembersSelection implements TeamSelection {
             long endTime = System.currentTimeMillis();
             writeFinalTeamsOnCsvFile(); // sq 2.2.20
 
-            File file = new File("20240955\\files\\possible_teams.csv");
-            if (file.exists()) {
-                ReviewGeneratedTeams vm = new ReviewGeneratedTeams(file);
-                vm.setTeamPlayerCount(playersCountPerTeam);
-                vm.viewFormedTeams();
-            } else {
-                System.out.println("⚠️ No teams file found. Please generate teams first.");
-            }
+            String basePath = System.getProperty("user.dir");
+            String filePath = basePath + File.separator + "files" + File.separator + "possible_teams.csv";
 
+
+            ReviewGeneratedTeams vm = new ReviewGeneratedTeams(filePath);//2.2.21
+            vm.setTeamPlayerCount(playersCountPerTeam);//2.2.22
+            vm.viewFormedTeams();//2.2.23
+
+            //2.2.24
             boolean isAcceptingFormedTeams=inputValidator.getValidResponseInput(input,"\nDo you accept these teams? (Y/N):","y","n");
             if(isAcceptingFormedTeams){
-                exportFormedTeams("20240955\\files\\possible_teams.csv");//sq 2.2.22.1
-                writeRemainingPlayerInCsvFile();//sq 2.2.22.2
-                writeFormedTeamsStaticDetails();//sq 2.2.22.3
+                exportFormedTeams(filePath);//sq 2.2.24.5
+                writeRemainingPlayerInCsvFile();//sq 2.2.24.6
+                writeFormedTeamsStaticDetails();//sq 2.2.24.7
 
             }else{
                 playersCountPerTeam=0;
                 System.out.println("❌ Teams were not accepted. Export cancelled.");
-                File file1 = new File("possible_teams.csv");
+                File file1 = new File(filePath);
                 if (file1.exists()) {
                     HandleDataCsvFiles handleDataCsvFiles = new HandleDataCsvFiles();//sq 2.2.23
                     handleDataCsvFiles.deleteCsvFile(file1); //sq 2.2.24
@@ -140,6 +141,7 @@ public class TeamMembersSelection implements TeamSelection {
         all_leaders.clear();
         all_balancers.clear();
         all_thinkers.clear();
+        invalid_players.clear();
 
         for (int i = 1; i < playerData.size(); i++) {
             String raw = playerData.get(i).replace("[", "").replace("]", "").trim();
@@ -149,6 +151,7 @@ public class TeamMembersSelection implements TeamSelection {
                 case "Leader" -> all_leaders.add(playerData.get(i));
                 case "Balanced" -> all_balancers.add(playerData.get(i));
                 case "Thinker" -> all_thinkers.add(playerData.get(i));
+                default -> invalid_players.add(playerData.get(i));
             }
         }
 
@@ -415,7 +418,9 @@ public class TeamMembersSelection implements TeamSelection {
 
     public void writeFinalTeamsOnCsvFile(){
         int teamNumber=0;
-        try (FileWriter writer = new FileWriter("20240955\\files\\possible_teams.csv")) {
+        String basePath = System.getProperty("user.dir");
+        String filePath = basePath + File.separator + "files" + File.separator + "possible_teams.csv";
+        try (FileWriter writer = new FileWriter(filePath)) {
             writer.write("ID,Name,Email,PreferredGame,SkillLevel,PreferredRole,PersonalityScore,PersonalityType,TeamNumber");
             writer.write("\n");
 
@@ -433,7 +438,9 @@ public class TeamMembersSelection implements TeamSelection {
         }
     }
     public void writeFormedTeamsStaticDetails(){
-        try (FileWriter writer = new FileWriter("20240955\\files\\staticData.csv")) {
+        String basePath = System.getProperty("user.dir");
+        String filePath = basePath + File.separator + "files" + File.separator + "StaticData.csv";
+        try (FileWriter writer = new FileWriter(filePath)) {
             writer.write("PlayersPerTeam,TotalTeamCount,AverageSkillLevel,MinimumSkillLevel,MaximumSkillLevel,RemainingLeaderCount,RemainingBalancerCount,RemainingThinkerCount");
             writer.write("\n");
             writer.write(playersCountPerTeam + "," + selectedTeamsInFirstFilter.size()+','+average+','+minimumSkillAverage+','+maximumSkillAverage+','+getRemainingLeadersCount()+','+getRemainingBalancersCount()+','+getRemainingThinkersCount()+ "\n");
@@ -457,7 +464,6 @@ public class TeamMembersSelection implements TeamSelection {
         Path destinationPath = currentDir.resolve(sourcePath.getFileName());
         try {
             Files.copy(sourcePath, destinationPath, StandardCopyOption.REPLACE_EXISTING);
-//            System.out.println("✅ Teams exported to 'formed_teams.csv'");
             System.out.println("✅ Formed teams are successfully saved");
         } catch (IOException e) {
             System.out.println("⚠️ Error copying file: " + e.getMessage());
@@ -471,6 +477,7 @@ public class TeamMembersSelection implements TeamSelection {
         restRemainingPlayers.addAll(cp_balancers);
         restRemainingPlayers.addAll(cp_leaders);
         restRemainingPlayers.addAll(cp_thinkers);
+
 
         try (FileWriter writer = new FileWriter("remaining_players.csv")) {
             writer.write("ID,Name,Email,PreferredGame,SkillLevel,PreferredRole,PersonalityScore,PersonalityType\n");

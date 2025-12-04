@@ -34,7 +34,7 @@ public class FinalTeamSelection {
         this.totalFormedTeamsCount = totalFormedTeamsCount;
     }
     public void finalResult() {
-        // Generate random team numbers using ArrayList
+
         ArrayList<ArrayList<String>> allTeams = new ArrayList<>();
         ArrayList<Integer> selectedTeamsNumbers = getRandomTeams(requiredTeamCount, totalFormedTeamsCount);
         System.out.println("Selected Teams: " + selectedTeamsNumbers);
@@ -188,7 +188,11 @@ public class FinalTeamSelection {
         }
     }
     public boolean getPreviousStaticData() {
-        File logFile = new File("20240955\\files\\staticData.csv");
+
+        String basePath = System.getProperty("user.dir");
+        String filePath = basePath + File.separator + "files" + File.separator + "StaticData.csv";
+
+        File logFile = new File(filePath);
         try (BufferedReader br = new BufferedReader(new FileReader(logFile))) {
             br.readLine(); // skip header
             String line, lastLine = null;
@@ -239,8 +243,8 @@ public class FinalTeamSelection {
             System.out.println("❌ Teams were not accepted. Export cancelled.");
             File file1 = new File("formed_teams.csv");
             if (file1.exists()) {
-                HandleDataCsvFiles handleDataCsvFiles = new HandleDataCsvFiles();//2.9
-                handleDataCsvFiles.deleteCsvFile(file1);//2.10
+                HandleDataCsvFiles handleDataCsvFiles = new HandleDataCsvFiles();//3.3
+                handleDataCsvFiles.deleteCsvFile(file1);//3.4
             }
         }
     }
@@ -310,7 +314,7 @@ public class FinalTeamSelection {
             return;
         }
         getPreviousStaticData();
-        File file = new File("files/possible_teams.csv");
+        File file = new File("possible_teams.csv");
         if (!file.exists()) {
             System.out.println("⚠️ No teams found. Please generate teams first.");
         }

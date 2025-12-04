@@ -55,11 +55,11 @@ public class Main {
                         currentUserStoredRawNumber = participantLogin.getCurrentUserStoredRawNumber();//11.2
 
                         if (isLogged) {
-                            Dashboard dashboard = new Dashboard();//12
-                            dashboard.setCurrentUserName(currentUserName);//12.1
-                            dashboard.setCurrentUserEmail(currentUserEmail);//12.2
-                            dashboard.setCurrentUserStoredRawNumber(currentUserStoredRawNumber);//12.3
-                            dashboard.participantDashboard(input);//12.4
+                            Dashboard dashboard = new Dashboard();//12         [complete survey 1.1]
+                            dashboard.setCurrentUserName(currentUserName);//12.1         [1.1.1]
+                            dashboard.setCurrentUserEmail(currentUserEmail);//12.2        [1.1.2]
+                            dashboard.setCurrentUserStoredRawNumber(currentUserStoredRawNumber);//12.3      [1.1.3]
+                            dashboard.participantDashboard(input);//12.4            [1.2]
                         }
                         break;
                     case 3:

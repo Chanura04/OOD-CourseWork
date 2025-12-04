@@ -13,9 +13,7 @@ public class ReviewGeneratedTeams {
     public int getTeamPlayerCount(){
         return teamPlayerCount;
     }
-    public ReviewGeneratedTeams(File csvFilePath){
-        this.csvFilePath=csvFilePath;
-    }
+
     public ReviewGeneratedTeams(String csvFileName){
         this.csvFileName=csvFileName;
     }
@@ -23,7 +21,7 @@ public class ReviewGeneratedTeams {
     public void viewFormedTeams(){
 
         if(teamPlayerCount==0){
-            try(BufferedReader br=new BufferedReader((new FileReader(csvFilePath)))) {
+            try(BufferedReader br=new BufferedReader((new FileReader(csvFileName)))) {
 
                 String line;
                 while ((line=br.readLine())!=null){
@@ -34,7 +32,7 @@ public class ReviewGeneratedTeams {
                 throw new RuntimeException(e);
             }
         }else {
-            try (BufferedReader br = new BufferedReader((new FileReader(csvFilePath)))) {
+            try (BufferedReader br = new BufferedReader((new FileReader(csvFileName)))) {
                 br.readLine();
                 String line;
                 int teamNumber = 1;

@@ -143,7 +143,7 @@ public class Participant extends User {
                                     "Enter your skill level (1-10): ", 1, 10);
                             break;
                         case 3:
-                            rolesDescription();//12.7
+                            rolesDescription();//13.2
                             int newRoleNumber = inputValidator.isValidInterInput(input,
                                     "Enter the number of your preferred role: ", 1, 5);//12.8
                             preferredRole = switch (newRoleNumber) {
@@ -158,13 +158,13 @@ public class Participant extends User {
                         case 4:
                             System.out.println("⚠️ Changes cancelled.");
                     }
-                    showSurveyResults();//13
+                    showSurveyResults();//14.2
                     isConfirmed=inputValidator.getValidResponseInput(input,"\nConfirm your preferences (interest game, skill level, preferred role) ? (Y/N):","y","n");
                 }catch (Exception e){
                     System.out.println("⚠️ Error completing survey: " + e.getMessage());
                 }
             }
-            storeSurveyData();//14
+            storeSurveyData();//14.3
             logger.info("Player " + getName() + " completed the survey and stored data.");
 
             if (isSurveyValid) {
@@ -230,7 +230,9 @@ public class Participant extends User {
 
     //Store player data into a csv file
     public void storeRegisteredPlayerData(){
-        File playerDataFile = new File("20240955\\DataBase\\students_loop.csv");
+        String basePath = System.getProperty("user.dir");
+        String playerDataFile = basePath + File.separator + "DataBase" + File.separator + "ParticipantDatabase.csv";
+
         //save to csv file
             try (FileWriter writer = new FileWriter(playerDataFile, true)) {
                 String[] data={
@@ -244,8 +246,9 @@ public class Participant extends User {
     }
 
     private boolean isPlayerSurveyCompleted(){
-        String filePath = "20240955\\DataBase\\students_loop.csv";
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        String basePath = System.getProperty("user.dir");
+        String playerDataFile = basePath + File.separator + "DataBase" + File.separator + "ParticipantDatabase.csv";
+        try (BufferedReader br = new BufferedReader(new FileReader(playerDataFile))) {
             br.readLine(); // Skip header
             String line;
             while ((line = br.readLine()) != null) {
@@ -263,11 +266,13 @@ public class Participant extends User {
     }
 
     public void storeSurveyData(){
-        String filePath = "20240955\\DataBase\\students_loop.csv";
+        String basePath = System.getProperty("user.dir");
+        String playerDataFile = basePath + File.separator + "DataBase" + File.separator + "ParticipantDatabase.csv";
+
         CountDownLatch latch = new CountDownLatch(1);
 
-        // Create and start the thread with our separate task class
-        SurveyProcessorTask surveyProcessorTask = new SurveyProcessorTask(this, filePath, latch);//15
+        // Create and start the thread
+        SurveyProcessorTask surveyProcessorTask = new SurveyProcessorTask(this, playerDataFile, latch);//15
         Thread surveyThread = new Thread(surveyProcessorTask);
         surveyThread.setName("Survey-" + getName());
         surveyThread.start();
@@ -283,7 +288,9 @@ public class Participant extends User {
 
     public int getStoredLastId(){
        ParticipantDataLoader playerDataLoader=new ParticipantDataLoader();
-       File playerDataFile = new File("20240955\\DataBase\\students_loop.csv");
+
+        String basePath = System.getProperty("user.dir");
+        String playerDataFile = basePath + File.separator + "DataBase" + File.separator + "ParticipantDatabase.csv";
 
         ArrayList<String> loadPlayerData=playerDataLoader.getPlayerData(playerDataFile);
        if(loadPlayerData.isEmpty()){

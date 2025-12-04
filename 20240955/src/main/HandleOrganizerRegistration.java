@@ -15,7 +15,10 @@ public class HandleOrganizerRegistration {
     }
 
     public boolean isARegisteredOrganizer() {
-        String filePath = "20240955\\DataBase\\organizersData.csv";
+
+        String basePath = System.getProperty("user.dir");
+        String filePath = basePath + File.separator + "DataBase" + File.separator + "OrganizersDatabase.csv";
+
         File playerDataFile = new File(filePath);
 
         OrganizerDataLoader organizerDataLoader = new OrganizerDataLoader();//5.1.1

@@ -106,15 +106,14 @@ public class HandleDataCsvFiles {
             if (line != null) {
                 String[] values = line.split(",");
 
-                column[0] = values[0];
-                column[1] = values[1];
-                column[2] = values[2];
-                column[3] = values[3];
-                column[4] = values[4];
-                column[5] = values[5];
-                column[6] = values[6];
-                column[7] = values[7];
+                if (values.length < 8) {
+                    System.out.println("❌ Invalid CSV file: Expected 8 columns but found only " + values.length);
+                    return false;
+                }
 
+                for (int idx = 0; idx < 8; idx++) {
+                    column[idx] = values[idx];
+                }
                 playerData.add(Arrays.toString(column));
             }
         } catch (IOException e) {
