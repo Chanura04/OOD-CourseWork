@@ -22,17 +22,17 @@ public class FinalTeamSelection {
     int remainingBalancersCount;
     int remainingThinkersCount;
     private static final Logger logger = Logger.getLogger(FinalTeamSelection.class.getName());
-
     public void setCsvFile(File csvFile) {
         this.csvFile = csvFile;
     }
-
     public void setTeamPlayerCount(int playersCountPerTeam) {
         this.playersCountPerTeam = playersCountPerTeam;
     }
     public void setTotalFormedTeamsCount(int totalFormedTeamsCount) {
         this.totalFormedTeamsCount = totalFormedTeamsCount;
     }
+
+    //Randomly selected all teams display and save to a csv file
     public void finalResult() {
 
         ArrayList<ArrayList<String>> allTeams = new ArrayList<>();
@@ -96,7 +96,7 @@ public class FinalTeamSelection {
         }
 
     }
-
+    //Get random teams from 1 to max number of teams
     private ArrayList<Integer> getRandomTeams(int count, int max) {
         Random random = new Random();
         ArrayList<Integer> teams = new ArrayList<>();
@@ -118,6 +118,7 @@ public class FinalTeamSelection {
                 "PersonalityScore", "PersonalityType", "TeamNumber");
     }
 
+    //Display all formed teams from csv file
     public void viewFormedTeams(File finalSelectedTeams){
 
         try(BufferedReader br=new BufferedReader((new FileReader(finalSelectedTeams)))) {
@@ -162,7 +163,7 @@ public class FinalTeamSelection {
             throw new RuntimeException(e);
         }
     }
-
+    //Get the input for the required teams count from the user
     public void finalTeamsSelection(Scanner input){
         //2.6
         if(!getPreviousStaticData()){
@@ -187,6 +188,8 @@ public class FinalTeamSelection {
             System.out.println(e.getMessage());
         }
     }
+
+    //Get stored static data from the csv file.For maintain the previous data memory
     public boolean getPreviousStaticData() {
 
         String basePath = System.getProperty("user.dir");
@@ -220,7 +223,7 @@ public class FinalTeamSelection {
     }
 
 
-
+    //Check formed teams acceptance from the user
     public  void reviewRandomlySelectedTeams(Scanner input) {
 
         File file = new File("formed_teams.csv");

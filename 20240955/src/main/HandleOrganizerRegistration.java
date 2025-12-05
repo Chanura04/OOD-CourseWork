@@ -14,6 +14,7 @@ public class HandleOrganizerRegistration {
         this.email = email;
     }
 
+    //Check logged in user is a registered organizer or not
     public boolean isARegisteredOrganizer() {
 
         String basePath = System.getProperty("user.dir");

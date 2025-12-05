@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class InputValidator {
-
+    //Handle integer input in survey
     public int isValidInterInput(Scanner input, String prompt, int min, int max) {
         while (true) {
             try {
@@ -22,6 +22,7 @@ public class InputValidator {
             }
         }
     }
+    //Handle accept or reject response
     public boolean getValidResponseInput(Scanner input, String prompt, String y, String n) {
         while (true) {
             try {

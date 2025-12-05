@@ -26,6 +26,7 @@ public class HandleDataCsvFiles {
         return uploadCsvFileName;
     }
 
+    //Check and Accept uploaded csv file.
     public  void dataFileImport(Scanner input) {
         InputValidator inputValidator = new InputValidator();//2.2.1
         try {
@@ -48,6 +49,7 @@ public class HandleDataCsvFiles {
         }
     }
 
+    //If accepted, create a new csv file in the same directory with the same name.
     public void createNewCsvFile(String filePath){
         InputValidator inputValidator = new InputValidator();
         Path sourcePath = Paths.get(filePath);
@@ -96,6 +98,8 @@ public class HandleDataCsvFiles {
         }
 
     }
+
+    //Check if the required fields are included.
     public boolean validateUploadedCSVFile(String csvFilePath) {
         ArrayList<String> playerData = new ArrayList<>();
         String[] column=new String[8];
@@ -142,6 +146,7 @@ public class HandleDataCsvFiles {
         return allPresent;
     }
 
+    //If file is invalid delete the file from the directory.
     public void deleteCsvFile(){
         Path currentDir = Paths.get(System.getProperty("user.dir"));
         Path filePath = currentDir.resolve(fileName);

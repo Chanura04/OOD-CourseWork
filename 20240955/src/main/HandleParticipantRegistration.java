@@ -12,7 +12,7 @@ public class HandleParticipantRegistration {
         this.name = name;
         this.email = email;
     }
-
+    //Check logged in user is a registered participant or not
     public boolean isARegisteredParticipant() {
 
         String basePath = System.getProperty("user.dir");

@@ -1,9 +1,5 @@
 ID,Name,Email,PreferredGame,SkillLevel,PreferredRole,PersonalityScore,PersonalityType,TeamNumber
-P022, Participant_22, user22@university.edu, Chess, 9, Attacker, 97, Leader,9
-P041, Participant_41, user41@university.edu, Basketball, 5, Strategist, 70, Balanced,9
-P003, Participant_3, user3@university.edu, FIFA, 4, Defender, 66, Thinker,9
-P087, Participant_87, user87@university.edu, Basketball, 4, Attacker, 51, Thinker,9
-P028, Participant_28, user28@university.edu, CS:GO, 8, Defender, 90, Leader,2
-P071, Participant_71, user71@university.edu, Chess, 8, Strategist, 70, Balanced,2
-P012, Participant_12, user12@university.edu, DOTA 2, 3, Attacker, 63, Thinker,2
-P093, Participant_93, user93@university.edu, CS:GO, 4, Defender, 51, Thinker,2
+P064, Participant_64, user64@university.edu, CS:GO, 6, Supporter, 92, Leader,3
+P053, Participant_53, user53@university.edu, DOTA 2, 7, Defender, 71, Balanced,3
+P042, Participant_42, user42@university.edu, DOTA 2, 7, Attacker, 53, Thinker,3
+P066, Participant_66, user66@university.edu, Chess, 1, Strategist, 67, Thinker,3
